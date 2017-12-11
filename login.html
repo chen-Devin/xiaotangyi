@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>掌护智能血糖管理系统</title>
+    <link rel="shortcut icon" href="image/icon.ico">
+    <link rel="stylesheet" href="css/login.min.css">
+</head>
+<body>
+<div class="login">
+    <div class="loginBox">
+        <div>
+            <h2 class="tc">掌护智能血糖管理系统</h2>
+            <div class="content">
+                <span class="tip hideItem">请填写完整</span>
+                <div class="userName user">
+                    <input id="userName" name="userName" required type="text" placeholder="帐号">
+                </div>
+                <div class="password user">
+                    <input id="password" name="pwd" required type="password" placeholder="密码">
+                </div>
+                <div class="remberMe" id="remberMe">
+                    <input type="checkbox">
+                    记住我
+                </div>
+                <div class="tips" style="width:100%;font-size:14px;color:red;text-align: center;display: none">
+                    帐号或密码不能为空
+                </div>
+                <button id="loginBtn" class="loginBtn" type="submit">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="js/control/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/custom/config.js"></script>
+
+<script src="js/custom/login.js"></script>
+<script type="text/javascript">
+    (function kickout() {
+        var href = location.href;
+        if (href.indexOf("kickout") > 0) {
+            alert("您的账号在另一台设备上登录，您被挤下线，若不是您本人操作，请立即修改密码！");
+        }
+    })()
+</script>
+</html>
+

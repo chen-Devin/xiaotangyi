@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>系统设置</title>
+    <link rel="shortcut icon" href="../../../image/icon.ico">
+    <!--<link rel="stylesheet" href="../../../css/setting.min.css">-->
+    <link rel="stylesheet" href="../../../css/setting.css">
+</head>
+
+<body>
+    <!--导航栏-->
+    <div class="nav clearfix"></div>
+
+    <div class="main-content clearfix">
+        <div class="leftNav">
+            <ul>
+                <li value="institutionalInformation-manage" class="active">
+                    <a href="javascript:void ( 0 )" onclick="institutionalInformation()">
+                        <img src="../../../image/set_jgxx_press.png">
+                        <span>机构信息</span>
+                    </a>
+                </li>
+                <li value="department-manage" id='departmentManage'>
+                    <a href="javascript:void ( 0 )">
+                        <img src="../../../image/blood_glucose_info_normal.png">
+                        <span>科室管理</span>
+                    </a>
+                </li>
+                <li value="role-manage">
+                    <a href="javascript:void ( 0 )" onclick="loadrole()">
+                        <img src="../../../image/set_jsgl_normal.png">
+                        <span>角色管理</span>
+                    </a>
+                </li>
+                <li value="user-manage" id='userManage'>
+                    <a href="javascript:void ( 0 )">
+                        <img src="../../../image/set_yhgl_normal.png">
+                        <span>用户管理</span>
+                    </a>
+                </li>
+                <li value="setting-manage">
+                    <a href="javascript:void ( 0 )" onclick="loadsetting()">
+                        <img src="../../../image/blood_glucose_parameter_normal.png">
+                        <span>参数设置</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="rightBox">
+            <!-- 机构信息 -->
+            <div class="institutionalInformation-manage main-template-block">
+                <p class='info'>
+                    <span>机构信息</span>
+                    <button class="btn addBtn activeBtn editOrganizationInfo">编辑信息</button>
+                </p>
+                <p class='logo'>
+                    <span>机构logo : </span>
+                    <img src="../../../image/logoBg.png" alt="" id='logoImg'>
+                </p>
+                <p><span>机构名称 : </span><span id='organizationName'></span></p>
+                <p><span>机构地址 : </span><span id='organizationAddress'></span></p>
+                <p><span>机构介绍 : </span><span id='organizationIntroduce'></span></p>
+            </div>
+            <!--机构信息编辑信息弹窗-->
+            <div class="addSugarPop" id="addSugarBox">
+                <!-- <form name="form" action="http://192.168.8.78:8080../../..//organization/addOrganization" method="post" class='text' enctype='multipart/form-data'> -->
+                <div class="addSugarTitile clearfix">
+                    <p class="fl"></p>
+                    <a class="fr" href="javascript:void(0)" id="addSugarCloseBtn"></a>
+                </div>
+                <div class="addSugarContent clearfix">
+                    <div class="list clearfix">
+                        <p class='patientName fl'>机构名称 : </p>
+                        <div class="patientNameSeach text-serach fl">
+                            <input type="text" class="patient-name" name='name'>
+                        </div>
+                    </div>
+                    <div class="list clearfix" style='position:relative'>
+                        <p class="fl">机构logo：</p>
+                        <!-- <input type="text" id="addSugarNo"> -->
+                        <!-- <button class='chooseImg'>选择</button> -->
+                        <!-- <input name="fileName" id="fileBtn" type="file" accept="image/png, image/jpg" /> -->
+                        <!-- <input name="fileName" id="fileBtn" type="file" /> -->
+                        <input type="file" id="logoFile" name="logoFile" />
+                        <span>图片仅支持png、jpg格式,建议尺寸50*50&nbsp;</span>
+                        <p class='chooseImg'>请选择上传的图片</p>
+                        <!-- <a href="javascript:void(0)" id='fileUpload'>上传图片</a> -->
+                    </div>
+                    <div class="list clearfix">
+                        <p class="fl">机构地址：</p>
+                        <input type="text" name='address' id="address">
+                    </div>
+                    <div class="list listLast clearfix">
+                        <p class="fl">备注：</p>
+                        <textarea name='information' class="fl" maxlength="240" id="addSugarRemark"></textarea>
+                    </div>
+                    <p class='textId' style='padding-left:188px;display:none;color:red'>请填写机构名称</p>
+                    <div class="addSugarBtn fr">
+                        <div class='clearfix' style='margin-left:-100%'>
+                            <button class="fl" id="addSugarCancel">取消</button>
+                            <!-- <input type="submit" value='提交'> -->
+                            <button class="active fl" id="addOrganizationInfo">确认</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- </form> -->
+            </div>
+            <!--科室管理-->
+            <div class="department-manage main-template-block">
+                <div class="searchNav">
+                    <div class="clearfix">
+                        <div class="search">
+                            <img src="../../../image/home_search_icon.png">
+                            <input type="text" placeholder="科室编号/科室名称" class="txt">
+                        </div>
+                        <!--<div class="select">
+                            <div class="triangle"></div>
+                            <input type="button" class="select-btn" readonly value="全部科室" />
+                            <div class="list-show scrollBar" style="display: none;">
+                                <ul class="select-list">
+
+                                </ul>
+                            </div>
+                        </div>-->
+                        <button class="btnLeft activeBtn">搜索</button>
+                        <button class="btnLeft resetBtn">重置</button>
+                        <!--<button class="btn import">导入数据</button>-->
+                        <button class="btn addBtn activeBtn">新建科室</button>
+
+                        <!--<button class="btn delAllBtn" value="department-manage">批量删除</button>-->
+                    </div>
+                </div>
+
+                <!--列表模式-->
+                <div class="patientList">
+                    <div class="listContent">
+                        <table class="list" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                    <!--<td class="td1"><input type="checkbox"></td>-->
+                                    <td class="td2">序号</td>
+                                    <td class="td3">科室编号</td>
+                                    <td class="td4">科室名称</td>
+                                    <td class="td5">备注</td>
+                                    <td class="td6">操作</td>
+                                </tr>
+                            </thead>
+                            <tbody class="page1">
+                                <script type="text/template" id="delpartment-list-template">
+                                    <%_.each(obj,function(e,i){%>
+                                        <tr>
+                                            <!--<td class="td1"><input type="checkbox" value="1"></td>-->
+                                            <td class="td2">
+                                                <%=(e.no<10?'0'+e.no:e.no)%>
+                                            </td>
+                                            <td class="td3">
+                                                <%=e.code%>
+                                            </td>
+                                            <td class="td4">
+                                                <%=e.name%>
+                                            </td>
+                                            <td class="td5">
+                                                <%=e.remark%>
+                                            </td>
+                                            <td class="td6">
+                                                <a href="javascript:void (0);" class="editBtn" value="<%=e.departmentId%>">编辑</a>
+                                                <a href="javascript:void(0);" class="delBtn" value="<%=e.departmentId%>">删除</a>
+                                            </td>
+                                        </tr>
+                                        <%})%>
+                                </script>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="page"></div>
+
+                <!--新建科室-->
+                <div class="new-department hideItem addNew">
+                    <div class="content">
+                        <div class="title clearfix"><span>新增科室</span>
+                            <a class="cancelBtn"></a>
+                        </div>
+                        <div class="txt-content">
+                            <div class="item">
+                                <span>科室编号：</span>
+                                <input type="text" class="num">
+                            </div>
+                            <div class="item">
+                                <span>科室名称：</span>
+                                <input type="text" class="name">
+                                <span style="color:#e95959;width: auto;">*</span>
+                            </div>
+                            <div class="item">
+                                <span>备注：</span>
+                                <input type="text" class="msg">
+                            </div>
+                        </div>
+                        <div class="tips hideItem" style="width:100%;height:28px;font-size:14px;color:#e95959;text-align: center;"></div>
+                        <div class="btn">
+                            <button class="cancelBtn">取消</button>
+                            <button class="sureBtn">确定</button>
+                        </div>
+                    </div>
+                </div>
+                <!--导入数据-->
+                <div class="newImport hideItem addNew">
+                    <!--<form id="uploadForm" enctype="multipart/form-data">-->
+                    <!--<form method="post" id="newImportForm" action="http://192.168.8.18:8081../../..//dept/importDeptBatch" target="rfFrame" enctype="multipart/form-data">-->
+                    <div class="contentImport">
+                        <div class="title clearfix"><span>导入数据</span>
+                            <a class="cancelBtn"></a>
+                        </div>
+                        <div class="txt-content">
+                            <div class="item">
+                                <span>选择文件：</span>
+                                <input type="text" class="name">
+                                <input type="file" id="fileBtn" class="chooseFile" name="file" value="选择" multiple />
+                                <a href="../../../docs/department_template.xls">下载模板</a>
+                            </div>
+                        </div>
+                        <div class="tips hideItem" style="width:100%;height:28px;font-size:14px;color:#e95959;text-align: center;"></div>
+                        <div class="btn">
+                            <button class="cancelBtn">取消</button>
+                            <button class="sureBtn">确定</button>
+                            <!--<input type="submit" value="确定"  class="sureBtn" />-->
+                        </div>
+                    </div>
+                    <!--</form>-->
+                    <!--</form>-->
+                    <!--<div id="iframeContent"><iframe id="rfFrame" name="rfFrame" src="about:blank" style=""></iframe></div>-->
+                    <!--<div id="rfFrame" name="rfFrame"  style=""></div>-->
+                </div>
+
+
+            </div>
+            <!--角色管理-->
+            <div class="role-manage main-template-block hideItem">
+                <div class="searchNav">
+                    <div class="clearfix">
+                        <button class="btn addBtn activeBtn">新建角色</button>
+                        <!--<button class="btn delAllBtn" value="role-manage">批量删除</button>-->
+                    </div>
+                </div>
+
+                <!--列表模式-->
+                <div class="patientList">
+                    <div class="listContent">
+                        <table class="list" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                    <!--<td class="td1"><input type="checkbox"></td>-->
+                                    <td class="td2">序号</td>
+                                    <td class="td3">角色名称</td>
+                                    <td class="td4">角色描述</td>
+                                    <td class="td6">操作</td>
+                                </tr>
+                            </thead>
+                            <tbody class="page1">
+                                <script type="text/template" id="role-list-template">
+                                    <%_.each(obj,function(e,i){%>
+                                        <tr>
+                                            <!--<td class="td1"><input type="checkbox" value="1"></td>-->
+                                            <td class="td2">
+                                                <%=(e.no<10?'0'+e.no:e.no)%>
+                                            </td>
+                                            <td class="td3 roleName">
+                                                <%=e.roleName%>
+                                            </td>
+                                            <td class="td4 remark">
+                                                <%=e.remark%>
+                                            </td>
+                                            <td class="td6">
+                                                <a href="javascript:void (0);" class="editBtn" value="<%=e.roleId%>">编辑</a>
+                                                <a href="javascript:void(0);" class="delBtn" value="<%=e.roleId%>">删除</a>
+                                            </td>
+                                        </tr>
+                                        <%})%>
+                                </script>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="page"></div>
+
+                <div class="add-role hideItem">
+                    <div class="content">
+                        <div class="title clearfix"><span>新增角色</span>
+                            <a class="cancelBtn"></a>
+                        </div>
+                        <div class="txt-content">
+                            <div class="item">
+                                <div class="txt">
+                                    <span>角色名称：</span>
+                                    <input type="text" class="roleName">
+                                </div>
+                                <div class="txt">
+                                    <span>角色描述：</span>
+                                    <input type="text" class="remark">
+                                </div>
+                                <div class="range-content">
+                                    <script type="text/template" id="radio-list-template">
+                                        <div class="range">
+                                            <span menuId="2">患者范围:</span>
+                                            <%_.each(obj,function(e,i){%>
+                                                <%if(e.parentId==2){%>
+                                                    <input type="radio" name="range" value="<%=e.menuId%>"><label><%=e.name%></label>
+                                                    <%}%>
+                                                        <%})%>
+                                        </div>
+                                        <div class="range">
+                                            <span menuId="3">血糖管理：</span>
+                                            <%_.each(obj,function(e,i){%>
+                                                <%if(e.parentId==3){%>
+                                                    <input type="radio" name="datarange" value="<%=e.menuId%>"><label><%=e.name%></label>
+                                                    <%}%>
+                                                        <%})%>
+                                        </div>
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="choose-title">
+                                    <input type="checkbox" class="all-choose">
+                                    <span>掌护智能血糖管理系统</span>
+                                </div>
+                                <div class="choose-item">
+                                    <script type="text/template" id="checkbox-list-template">
+                                        <%_.each(obj,function(e,i){%>
+                                            <%if(e.type==0){%>
+                                                <div class="check-item">
+                                                    <input type="checkbox" value="<%=e.menuId%>" class="firstCheck"><span><%=e.name%></span>
+                                                    <div class="second-content">
+                                                        <%_.each(obj,function(ele,j){%>
+                                                            <%if(ele.parentId==e.menuId){%>
+                                                                <input type="checkbox" value="<%=ele.menuId%>"><label for=""><%=ele.name%></label>
+                                                                <%}%>
+                                                                    <%})%>
+                                                    </div>
+                                                </div>
+                                                <%}%>
+                                                    <%})%>
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tips hideItem" style="width:100%;height:28px;font-size:14px;color:#e95959;text-align: center;">请确认角色名称是否填写了以及权限是否开通了!</div>
+                        <div class="btn">
+                            <div class="cancelBtn">取消</div>
+                            <div class="sureBtn">确定</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--用户管理-->
+            <div class="user-manage main-template-block hideItem">
+                <div class="searchNav">
+                    <div class="clearfix">
+                        <div class="search">
+                            <img src="../../../image/home_search_icon.png">
+                            <input type="text" placeholder="账号/姓名" class="txt">
+                        </div>
+                        <div class="select">
+                            <div class="triangle"></div>
+                            <input type="button" class="select-btn" readonly value="全部科室" />
+                            <div class="list-show scrollBar" style="display: none;">
+                                <ul class="select-list user-select-list">
+                                    <script type="text/template" id="select-list-template-titl">
+                                        <%_.each(obj,function(e,i){%>
+                                            <li val="<%=e.departmentId%>">
+                                                <%=e.name%>
+                                            </li>
+                                            <%})%>
+                                    </script>
+                                </ul>
+                            </div>
+                            <!--<div class="list-show scrollBar" style="display: none;">
+                                <ul class="select-list">
+                                	
+
+                                </ul>
+                            </div>-->
+                        </div>
+                        <button class="btnLeft activeBtn">搜索</button>
+                        <button class="btnLeft resetBtn">重置</button>
+
+                        <!--<button class="btn userImport">导入数据</button>-->
+                        <button class="btn addBtn activeBtn">新建帐号</button>
+                        <!--<button class="btn delAllBtn" value="user-manage">批量删除</button>-->
+                    </div>
+                </div>
+
+                <!--列表模式-->
+                <div class="patientList">
+                    <div class="listContent">
+                        <table class="list" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                    <!--<td class="td1"><input type="checkbox"></td>-->
+                                    <td class="td2">帐号</td>
+                                    <td class="td3">姓名</td>
+                                    <td class="td4">职位</td>
+                                    <td class="td5">所属科室</td>
+                                    <td class="td7">手机号码</td>
+                                    <td class="td8">最近登时间</td>
+                                    <td class="td6">操作</td>
+
+                                </tr>
+                            </thead>
+                            <tbody class="page1">
+                                <script type="text/template" id="user-list-template">
+                                    <%_.each(obj,function(e,i){%>
+                                        <tr>
+                                            <!--<td class="td1"><input type="checkbox" value="1"></td>-->
+                                            <td class="td2">
+                                                <%=e.userName%>
+                                            </td>
+                                            <td class="td3">
+                                                <%=e.name%>
+                                            </td>
+                                            <td class="td4">
+                                                <%=e.position%>
+                                            </td>
+                                            <td class="td5">
+                                                <%=e.deptName%>
+                                            </td>
+                                            <td class="td7">
+                                                <%=e.mobile%>
+                                            </td>
+                                            <td class="td8">
+                                                <%=e.lastLoginTime%>
+                                            </td>
+                                            <td class="td6">
+                                                <a href="javascript:void (0);" class="editBtn" sex="<%=e.sex%>" deptId="<%=e.deptId%>" roleId="<%=e.roleId%>" userId="<%=e.userId%>">编辑</a>
+                                                <a href="javascript:void(0);" class="delBtn" value="<%=e.userId%>">删除</a>
+                                            </td>
+                                        </tr>
+                                        <%})%>
+                                </script>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="page"></div>
+
+                <!--新增帐号-->
+                <div class="addNew add-user hideItem">
+                    <div class="content">
+                        <div class="title clearfix">
+                            <span>新增帐号</span>
+                            <a class="cancelBtn"></a>
+                        </div>
+                        <div class="text-content">
+                            <div class="item">
+                                <span>姓名：</span>
+                                <input type="text" class="name">
+                                <span class="must">*</span>
+                            </div>
+                            <div class="item-radio">
+                                <span>性别：</span>
+                                <input type="radio" name="sex" checked="checked" value="1"><label for="">男</label>
+                                <input type="radio" name="sex" value="2"><label for="">女</label>
+                            </div>
+                            <div class="item">
+                                <span>科室：</span>
+                                <div class="select">
+                                    <div class="triangle"></div>
+                                    <input type="button" class="deptId select-btn" readonly value="请选择科室" />
+                                    <div class="list-show scrollBar" style="display: none;">
+                                        <ul class="select-list user-select-list">
+                                            <script type="text/template" id="select-list-template">
+                                                <%_.each(obj,function(e,i){%>
+                                                    <li val="<%=e.departmentId%>">
+                                                        <%=e.name%>
+                                                    </li>
+                                                    <%})%>
+                                            </script>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <span class="must">*</span>
+                            </div>
+                            <div class="item">
+                                <span>角色：</span>
+                                <div class="select">
+                                    <div class="triangle"></div>
+                                    <input type="button" class="roleId select-btn" readonly value="请选择角色" />
+                                    <div class="list-show scrollBar" style="display: none;">
+                                        <ul class="select-list role-select-list">
+                                            <script type="text/template" id="select-role-template">
+                                                <%_.each(obj,function(e,i){%>
+                                                    <li val="<%=e.roleId%>">
+                                                        <%=e.roleName%>
+                                                    </li>
+                                                    <%})%>
+                                            </script>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <span class="must">*</span>
+                            </div>
+                            <div class="item">
+                                <span>职位：</span>
+                                <input type="text" class="position">
+                            </div>
+                            <div class="item">
+                                <span>帐号：</span>
+                                <input type="text" class="userName">
+                                <span class="must">*</span>
+                            </div>
+                            <div class="item">
+                                <span>密码：</span>
+                                <input type="text" class="password">
+                                <span class="must">*</span>
+                            </div>
+                            <div class="item">
+                                <span>手机：</span>
+                                <input type="text" class="mobile" maxlength="11" minlength="11">
+                            </div>
+                            <div class="item tips hideItem" style="color:red;">出错啦！你确认信息都填写完毕了吗？</div>
+                        </div>
+                        <div class="btn">
+                            <button class="cancelBtn">取消</button>
+                            <button class="sureBtn">确定</button>
+                        </div>
+                    </div>
+                </div>
+                <!--导入数据-->
+                <div class="newUserImport hideItem addNew">
+                    <div class="contentImport">
+                        <div class="title clearfix"><span>导入数据</span>
+                            <a class="cancelBtn"></a>
+                        </div>
+                        <div class="txt-content">
+
+                            <div class="item">
+                                <span>选择文件：</span>
+                                <input type="text" class="name">
+                                <input type="file" class="chooseFile" value="选择" />
+                                <a>下载模板</a>
+                            </div>
+
+                        </div>
+                        <div class="tips hideItem" style="width:100%;height:28px;font-size:14px;color:#e95959;text-align: center;"></div>
+                        <div class="btn">
+                            <button class="cancelBtn">取消</button>
+                            <button class="sureBtn">确定</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <!--参数设置-->
+            <div class="setting-manage main-template-block hideItem clearfix">
+                <p class='info'>
+                    <span>血糖参数</span>
+                    <button class="active fr editParameterInfo">编辑信息</button>
+                </p>
+
+                <!--列表模式-->
+                <div class='patientList'>
+                    <div class="listContent">
+                        <table class="list" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                    <td class="td1">时段</td>
+                                    <td class="td2">正常值范围(mmol/L)</td>
+                                </tr>
+                            </thead>
+                            <tbody class='page2'>
+                                <script type="text/template" id="bloodGlucoseInfo-list-template">
+                                    <tr>
+                                        <td class="td2">
+                                            空腹
+                                        </td>
+                                        <td class="td3">
+                                            <span><%=obj.beforeBreakfastEx%></span>
+                                            <span>-</span>
+                                            <span><%=obj.beforeBreakfastAf%></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td2">
+                                            早餐后
+                                        </td>
+                                        <td class="td3">
+                                            <span><%=obj.afterBreakfastEx%></span>
+                                            <span>-</span>
+                                            <span><%=obj.afterBreakfastAf%></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td2">
+                                            午餐前
+                                        </td>
+                                        <td class="td3">
+                                            <span><%=obj.beforeLunchEx%></span>
+                                            <span>-</span>
+                                            <span><%=obj.beforeLunchAf%></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td2">
+                                            午餐后
+                                        </td>
+                                        <td class="td3">
+                                            <span><%=obj.afterLunchEx%></span>
+                                            <span>-</span>
+                                            <span><%=obj.afterLunchAf%></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td2">
+                                            晚餐前
+                                        </td>
+                                        <td class="td3">
+                                            <span><%=obj.beforeDinnerEx%></span>
+                                            <span>-</span>
+                                            <span><%=obj.beforeDinnerAf%></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td2">
+                                            晚餐后
+                                        </td>
+                                        <td class="td3">
+                                            <span><%=obj.afterDinnerEx%></span>
+                                            <span>-</span>
+                                            <span><%=obj.afterDinnerAf%></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td2">
+                                            睡前
+                                        </td>
+                                        <td class="td3">
+                                            <span><%=obj.beforeSleepEx%></span>
+                                            <span>-</span>
+                                            <span><%=obj.beforeSleepAf%></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td2">
+                                            凌晨
+                                        </td>
+                                        <td class="td3">
+                                            <span><%=obj.beforeDawnEx%></span>
+                                            <span>-</span>
+                                            <span><%=obj.beforeDawnAf%></span>
+                                        </td>
+                                    </tr>
+                                </script>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <!--血糖参数编辑信息弹窗-->
+            <div class="editBloodGlucose" id="editBloodGlucose">
+                <div class="addSugarTitile clearfix">
+                    <p class="fl"></p>
+                    <a class="fr" href="javascript:void(0)" id="addBloodGlucoseCloseBtn"></a>
+                </div>
+                <div class="addSugarContent clearfix">
+                    <div class='editBloodGlucoseInfo'>
+                        <div class="list">
+                            <p class='patientName fl'>空腹 :&nbsp;&nbsp;</p>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='afterBreakfastEx'>
+                            <span>&nbsp;-&nbsp;</span>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='afterBreakfastAf'>
+                            <span>&nbsp;&nbsp;momm/L</span>
+                        </div>
+                        <div class="list">
+                            <p class='patientName fl'>早餐后 :&nbsp;&nbsp;</p>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='beforeBreakfastEx'>
+                            <span>&nbsp;-&nbsp;</span>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='beforeBreakfastAf'>
+                            <span>&nbsp;&nbsp;momm/L</span>
+                        </div>
+                        <div class="list">
+                            <p class='patientName fl'>午餐前 :&nbsp;&nbsp;</p>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='afterLunchEx'>
+                            <span>&nbsp;-&nbsp;</span>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='afterLunchAf'>
+                            <span>&nbsp;&nbsp;momm/L</span>
+                        </div>
+                        <div class="list">
+                            <p class='patientName fl'>午餐后 :&nbsp;&nbsp;</p>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='beforeLunchEx'>
+                            <span>&nbsp;-&nbsp;</span>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='beforeLunchAf'>
+                            <span>&nbsp;&nbsp;momm/L</span>
+                        </div>
+                        <div class="list">
+                            <p class='patientName fl'>晚餐前 :&nbsp;&nbsp;</p>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='afterDinnerEx'>
+                            <span>&nbsp;-&nbsp;</span>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='afterDinnerAf'>
+                            <span>&nbsp;&nbsp;momm/L</span>
+                        </div>
+                        <div class="list">
+                            <p class='patientName fl'>晚餐后 :&nbsp;&nbsp;</p>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='beforeDinnerEx'>
+                            <span>&nbsp;-&nbsp;</span>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='beforeDinnerAf'>
+                            <span>&nbsp;&nbsp;momm/L</span>
+                        </div>
+                        <div class="list">
+                            <p class='patientName fl'>睡前 :&nbsp;&nbsp;</p>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='beforeSleepEx'>
+                            <span>&nbsp;-&nbsp;</span>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='beforeSleepAf'>
+                            <span>&nbsp;&nbsp;momm/L</span>
+                        </div>
+                        <div class="list">
+                            <p class='patientName fl'>凌晨 :&nbsp;&nbsp;</p>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='beforeDawnEx'>
+                            <span>&nbsp;-&nbsp;</span>
+                            <input type="text" style='width:50px;height:25px;margin-top:3px;' name='beforeDawnAf'>
+                            <span>&nbsp;&nbsp;momm/L</span>
+                        </div>
+                        <p style='text-align:center;color:red;display:none' id='judgeBloodGlucose'>请正确填写血糖值</p>
+                        <div class="addSugarBtn fr">
+                            <div class='clearfix'>
+                                <button class="fl" id="addBloodGlucoseCancel">取消</button>
+                                <button class="active fl" id="addBloodGlucose">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--批量删除-->
+            <div class="all-del hideItem">
+                <div class="content">
+                    <div class="title">
+                        <span>删除</span>
+                        <a class="cancelBtn"></a>
+                    </div>
+                    <div class="tips">
+                        确定是否移除？
+                    </div>
+                    <div class="btn">
+                        <div class="cancelBtn">取消</div>
+                        <div class="sureBtn">确定</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="PopMask"></div>
+    <!--修改密码弹窗-->
+    <div class="updatePwdPop" id="updatePwdPop"></div>
+
+    <script type="text/javascript" src="../../../js/control/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../../../js/control/underscore.min.js"></script>
+    <script type="text/javascript" src="../../../js/control/ajaxfileupload.js"></script>
+    <script type="text/javascript" src="../../../js/custom/config.js"></script>
+
+    <script type="text/javascript" src="../../../js/custom/common.js"></script>
+    <script type="text/javascript" src="../../../js/custom/createPage.min.js"></script>
+
+    <script type="text/javascript" src="../../../js/custom/setting.js"></script>
+</body>
+
+</html>

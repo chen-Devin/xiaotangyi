@@ -1,0 +1,148 @@
+@charset "utf-8";
+@import "common";
+
+
+.main-content{
+  width:100%;
+  height:90%;
+  padding:20px 20px 0;
+  .boxSizing;
+  .all-content{
+    width:100%;
+    min-height: 100%;
+    background: #fff;
+  }
+  .searchNav{
+    width:100%;
+    background:#fff;
+    height:68px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding:0 20px;
+    font-size:14px;
+    .clearfix{
+      border-bottom: 1px solid @lineCol;
+      width:100%;
+      height:68px;
+      padding:20px 0;
+    }
+    .search{
+      height:100%;width:280px;
+      border:1px solid @lineCol;
+      line-height: 28px;
+      height:28px;
+      color:#999;
+      float:left;
+      .borderRadius;
+      position: relative;
+      img{
+        height:12px;
+        margin-top:7px;
+        position: absolute;
+        left:10px;
+      }
+      input {padding-left:30px;width:100%;
+        .boxSizing;
+        padding-right:10px;
+
+      }
+      input::-webkit-input-placeholder { /* WebKit browsers*/ color:#999;}
+      input:-moz-placeholder {  /* Mozilla Firefox 4 to 18*/ color:#999;}
+      input::-moz-placeholder {  /* Mozilla Firefox 19+*/  color:#999;}
+      input:-ms-input-placeholder { /* Internet Explorer 10+*/ color: #999;}
+    }
+    .choose-time{
+      //width:107px;
+      height:28px;
+      line-height:28px;
+      float: left;
+      margin:0 20px;
+      select{
+        .borderRadius;
+        padding:5px 10px;
+        border:1px solid @lineCol;
+      }
+    }
+    .btn{
+      float: left;
+      padding:0 12px;
+      height:28px;
+      border:1px solid @lineCol;
+      line-height:28px;
+      font-size:14px;
+      color:#111;
+      background:#fff;
+      .borderRadius;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .activeBtn{
+      background:@blue;
+      color:#fff;
+      border:none;
+    }
+    .searchBtn{
+      width:60px;
+      height:28px;font-szie:14px;
+      color:#fff;
+      text-align: center;
+      line-height:28px;
+      background:@blue;
+      margin-left:20px;
+      .borderRadius;
+      cursor: pointer;
+    }
+    .resetBtn{
+      .searchBtn;
+      background:#fff;
+      margin-left: 10px;
+      border: 1px solid @blue;
+      color:@blue;.boxSizing;
+    }
+
+  }
+  .patientList{
+    width:100%;
+    .boxSizing;
+    padding:26px 20px 0;
+    background:#fff;
+    margin-bottom:40px;
+    background:#fff;
+    .list{
+      width:100%;border-collapse: collapse;
+      thead{
+        width:100%;
+        tr{
+          width:100%;
+          background:@blue;
+          td{
+            color:#fff;background:@blue;
+            margin:0;
+            height:40px;
+            text-align: center;
+            border:1px solid @lineCol;
+          }
+        }
+      }
+
+      tbody{
+        tr{
+          width:100%;
+          td{
+            .boxSizing;
+            border: 1px solid @lineCol;font-size:14px;
+            text-align: center;height:40px;line-height:40px;
+            .text;
+          }
+          .td8{width:493px;}
+        }
+      }
+    }
+    .page{
+      margin-top:10px;
+      width:100%;
+      background:#fff;
+    }
+  }
+}

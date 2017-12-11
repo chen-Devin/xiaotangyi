@@ -1,0 +1,281 @@
+@import "../css/common";
+
+.yangxi-gis{
+  position: fixed;
+  width: 100%;
+  height:100%;
+  background:rgba(0,0,0,0.3);
+  min-width: 800px;
+  top:0;
+  left:0;
+  z-index: 999;
+  .yangxi-content{
+    background:#fff;
+    padding:0 20px;
+    width: 740px;
+    position: absolute;
+    top:50%;left:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    height:90%;
+    .title{
+      width:100%;
+      height:60px;
+      line-height:60px;
+      margin:0 auto;
+      font-size:16px;color:#333;
+      border-bottom: 1px solid #eceff1;
+      a{
+        width: 24px;
+        height:24px;float: right;margin-top:18px;cursor: pointer;
+        background:url("../image/close_but_normal.png") no-repeat center;
+        background-size:100%;
+        cursor: pointer;
+      }
+      a:hover{
+        background:url("../image/close_but_press.png") no-repeat center;
+      }
+    }
+
+    .yangxi-search{
+      font-size: 14px;
+      color:#666;
+      padding: 10px 0;
+      input{
+        .borderRadius;
+        width:140px;
+        height:28px;
+        padding:0 10px 0 15px;
+        color:#111;
+        font-size:14px;
+        vertical-align: middle;
+        cursor: pointer;
+        border:1px solid @lineCol;
+      }
+
+      .search-btn{
+        height:28px;
+        border:1px solid @lineCol;
+        .borderRadius;
+        padding:0 15px;
+        line-height:28px;
+        background:#fff;
+        margin-left: 10px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .tips{
+        font-size: 12px;
+        color:red;
+        margin-left: 10px;
+        display: none;
+      }
+    }
+
+    .yangxi-table{
+      width: 100%;
+      height:80%;
+      overflow-y: auto;
+      border:1px solid @lineCol;
+      .page-break{
+        .boxSizing;
+        width:100%;
+        padding:0 20px;
+        .yangxi-title{
+          width: 100%;
+          text-align: center;
+          p:nth-of-type(1){font-size: 20px;color:#666;padding:15px 0;}
+          p:nth-of-type(2){font-size:28px;color:#111;margin-bottom: 30px;}
+        }
+
+        .td-info{
+          width: 100%;border: none;
+          .patient-info{
+            width: 100%;
+            text-align: left;display: -webkit-flex;display: flex;justify-content: space-between;
+            .item{font-szie:16px;color:#000;line-height:30px;}
+            .item:nth-last-of-type(1){text-align: right;}
+          }
+        }
+        .table{
+          border-top:1px solid #999;
+          border-bottom: 1px solid #999;
+          width: 100%;
+          margin-bottom: 10px;
+          position: relative;
+         /* .flex;
+          .justify-content-between;*/
+          table{
+            width: 48%;
+            border-collapse: collapse;
+            color:#111;
+            font-size:12px;
+
+            thead{
+              tr{
+                td{
+                  border:1px solid #999;
+                  text-align: center;
+                  height:28px;
+                  background: #fff;
+                  color:#111;
+                }
+                .time{width: 70px;}
+              }
+              tr:nth-of-type(1){
+                td{border-top:none;}
+              }
+            }
+            tbody{
+              tr{
+                td{
+                  border:1px solid #999;
+                  text-align: center;
+                  height:28px;
+                }
+              }
+              tr:nth-last-child(1){
+                td{border-bottom: none;}
+              }
+            }
+          }
+
+          table:nth-of-type(1){float:left;}
+          table:nth-last-child(1){float: right;}
+        }
+
+        .tips{
+          width:100%;
+          font-size:14px;
+          lien-height:20px;
+          color:#111;
+        }
+        .pageNum{
+          text-align: center;
+          font-size:12px;
+          height:45px;
+          line-height:45px;
+          color:#111;
+        }
+      }
+    }
+
+    .yangxi-btn{
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      //padding:22px 0;
+      button{
+        width:120px;
+        height:36px;
+        line-height: 36px;
+        background:@blue;
+        color:#fff;
+        .borderRadius;
+        cursor: pointer;
+        display: inline-block;
+      }
+      button:nth-of-type(1){
+        background: @greenBtn;
+        margin-right: 20px;
+        display: none;
+      }
+    }
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0mm;
+  padding-bottom: 3mm;
+}
+@media print {
+  /* TODO: 添加打印样式 */
+  .yangxi-table{
+    width: 90%;
+    margin: auto;
+    .page-break{
+      .boxSizing;
+      width:100%;
+      padding:50px 20px 0;
+      .yangxi-title{
+        width: 100%;
+        text-align: center;
+        p:nth-of-type(1){font-size: 20px;color:#666;padding:15px 0;}
+        p:nth-of-type(2){font-size:28px;color:#111;margin-bottom: 30px;}
+      }
+
+      .td-info{
+        width: 100%;border: none;
+        .patient-info{
+          width: 100%;
+          text-align: left;display: -webkit-flex;display: flex;justify-content: space-between;
+          .item{font-szie:16px;color:#000;line-height:30px;}
+          .item:nth-last-of-type(1){text-align: right;}
+        }
+      }
+      .table{
+        border-top:1px solid #000;
+        border-bottom: 1px solid #000;
+        width: 100%;
+        margin-bottom: 10px;
+        position: relative;
+        table{
+          width: 48%;
+          border-collapse: collapse;
+          color:#000;
+          font-size:16px;
+          thead{
+            tr{
+              td{
+                border:1px solid #000;
+                text-align: center;
+                height:45px;
+                background:#fff;
+                color:#000;
+                font-size:16px;
+              }
+              .time{width: 70px;}
+            }
+            tr:nth-of-type(1){
+              //td{border-top:none;}
+            }
+          }
+          tbody{
+            tr{
+              td{
+                border:1px solid #000;
+                text-align: center;
+                height:45px;
+                font-size:16px;
+              }
+            }
+            tr:nth-last-child(1){
+              td{border-bottom: none;}
+            }
+          }
+        }
+        table:nth-of-type(1){float:left;}
+        table:nth-last-child(1){float: right;}
+      }
+
+      .tips{
+        width:100%;
+        font-size:16px;
+        lien-height:20px;
+        color:#000;
+      }
+      .pageNum{
+        text-align: center;
+        font-size:14px;
+        height:45px;
+        line-height:45px;
+        color:#000;
+      }
+    }
+  }
+}

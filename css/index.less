@@ -1,0 +1,952 @@
+@charset "utf-8";
+@import "common";
+.wordhidden{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*主页*/
+.content{
+  padding:20px;
+}
+/*主页左边*/
+.contentLeft{
+  width: 260px;
+  float: left;
+  margin-right:20px;
+  padding-bottom: 3em;
+  background-color: #fff;
+}
+.topDoctor img{
+  display: block;
+  margin:0 auto;
+  margin-top: 56px;
+  margin-bottom: 16px;
+}
+.doctorName{
+  font-size: 18px;
+  color:#111;
+}
+.doctorInfo{
+  color:#666;
+  padding:10px 0 60px 0;
+}
+.midPatient{
+  margin-bottom: 30px;
+}
+.addPatient{
+  width: 180px;
+  height: 36px;
+  background-color: #1D9EEF;
+  text-align: center;
+  line-height: 36px;
+  margin:0 auto;
+  display: block;
+  border-radius: 18px;
+  color:#fff;
+  cursor: pointer;
+}
+.addPatient:before{
+  content:'';
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  padding-right: 5px;
+  /*background-color: red;*/
+  background: url("../image/home_add_icon.png") no-repeat center/12px 12px;
+}
+.searchPatient{
+  width: 180px;
+  height: 36px;
+  line-height: 36px;
+  margin:0 auto;
+  margin-top:16px;
+  border:1px solid #aab9c2;
+  border-radius: 18px;
+  position: relative;
+  cursor: pointer;
+}
+.searchPatient input{
+  display: block;
+  width: 80%;
+  height: 100%;
+  line-height: 36px;
+  margin-left: 30px;
+  color:#aab9c2;
+  background-color: transparent;
+  font-size: 12px;
+}
+
+.searchPatient:before{
+  content:'';
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  padding-right: 5px;
+  /*background-color: red;*/
+  background: url("../image/home_search_icon.png") no-repeat center/12px 12px;
+  position: absolute;
+  top: 12px;
+  left: 14px;
+}
+.searchPatientPop{
+  display: none;
+  width: 180px;
+  max-height: 156px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  border:1px solid #aab9c2;
+  overflow-y: auto;
+  ul{
+    li{
+      padding-left: 10px;
+      color:#111;
+      font-size: 14px;
+      line-height: 28px;
+    }
+  }
+  p{
+    padding-left: 10px;
+    color:#999;
+    font-size: 12px;
+    line-height: 28px;
+  }
+}
+
+
+
+/*折叠菜单*/
+.botHospitalInfo{
+
+}
+.botHospitalInfo li{
+  line-height: 40px;
+}
+
+.inactive::before{
+  content:"";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  padding-right: 16px;
+  background: url("../image/home_type_icon.png") no-repeat center/13px 13px;
+}
+.inactives::before{
+  content:"";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  padding-right: 16px;
+  background: url("../image/home_type2_icon.png") no-repeat center/13px 13px;
+}
+.inactives + ul{
+  display: none;
+}
+
+.levelOne>a{
+  display: block;
+  padding-left: 20px;
+}
+.levelTwo>a{
+  display: block;
+  padding-left: 36px;
+  font-size: 14px;
+}
+.levelTwo>ul li a{
+  display: block;
+  padding-left: 64px;
+  font-size: 12px;
+}
+.levelTwo>ul li.active a{
+  color:#1d9eef;
+}
+.levelOne>a:hover,.levelTwo>a:hover,.levelTwo>ul a:hover{
+  background-color: #ebf0f3;
+}
+
+
+
+
+
+/*主页右边*/
+.contentRight{
+  overflow: hidden;
+}
+.contentRight .bar{
+  margin-bottom: 20px;
+  width: 100%;
+}
+.contentRight .bar ul{
+  width: 100%;
+  font-size:0;
+}
+.contentRight .bar li{
+  display: inline-block;
+  width: 24.4%;
+  height: 180px;
+  text-align: center;
+  cursor: pointer;
+}
+.contentRight .bar li.li_1,
+.contentRight .bar li.li_2,
+.contentRight .bar li.li_3
+{
+  margin-left: .8%;
+}
+
+.contentRight .bar li a{
+  width: 100%;
+  height: 100%;
+}
+
+.contentRight .bar li.li_0{
+  background-color: #f1738b;
+}
+.contentRight .bar li.li_1{
+  background-color: #43c2f1;
+}
+.contentRight .bar li.li_2{
+  background-color: #f18273;
+}
+.contentRight .bar li.li_3{
+  background-color: #00c2b1;
+}
+.bar .num{
+  font-size: 60px;
+  color:#fff;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.bar .numInfo{
+  font-size: 24px;
+  color:#fff;
+}
+.bar .numInfo:before{
+  content: '';
+  width: 18px;
+  height: 21px;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align:middle;
+}
+.bar li.li_0 .numInfo:before{
+  background:url("../image/home_bar1_icon.png") no-repeat center/18px 21px;
+}
+.bar li.li_1 .numInfo:before{
+  background:url("../image/home_bar2_icon.png") no-repeat center/18px 21px;
+}
+.bar li.li_2 .numInfo:before{
+  background:url("../image/home_bar3_icon.png") no-repeat center/18px 21px;
+}
+.bar li.li_3 .numInfo:before{
+  background:url("../image/home_bar4_icon.png") no-repeat center/18px 21px;
+}
+.bedTable{
+  background-color: #fff;
+  padding:0 20px 50px 20px;
+  .bedTableTitle{
+    height: 58px;
+    line-height: 58px;
+    font-size: 16px;
+    color:#1d9eef;
+  }
+  .list{
+    width:110%;
+    padding-right: 20px;
+    .item{
+      display: inline-block;
+      width:8%;
+      margin-right:1%;
+      height:138px;
+      border:1px solid @lineCol;
+      .borderRadius;
+      position: relative;
+      margin-bottom:20px;
+      cursor: pointer;
+      vertical-align:top;
+      .name{
+        width: 100%;
+        font-size:20px;
+        height:50px;
+        color:#111;
+        text-align: center;
+        .wordhidden;
+        line-height:50px;
+      }
+      .info{
+        width: 100%;
+        color:#111;
+        font-size:14px;
+        line-height: 22px;
+        text-align: center;
+        .wordhidden;
+        height:22px;
+      }
+      .time{
+        width:100%;
+        text-align: center;
+        font-size:12px;
+        color:#819cad;
+        line-height:32px;
+        height:32px;
+      }
+      .begNo{
+        width:100%;
+        height:30px;
+        background:#f1f5f8;
+        text-align: center;
+        position: relative;
+        bottom:-1px;
+        font-size:16px;
+        line-height:30px;
+        //padding:0 10px ;
+        .start{
+          cursor: pointer;
+          position: absolute;
+          top:50%;
+          right:7px;
+          margin-top:-9px;
+          width:18px;
+          height:18px;
+          background: url("../image/user_special_but_off2.png")no-repeat center;
+          background-size:100%;
+        }
+        a{
+          display: inline-block;width:100%;
+          color:@blue;
+          height: 30px;
+          span{
+            display: inline-block;
+            text-align: center;
+            width:100%;.wordhidden;
+          }
+        }
+      }
+    }
+    .active{
+      .begNo{
+        .start{
+          background: url("../image/user_special_but_on2.png")no-repeat center;
+        }
+      }
+    }
+    .leaveHospital{
+      .name{
+        color: #819cad;
+      }
+      .info{
+        color: #819cad;
+      }
+      .time{
+        color: #819cad;
+      }
+      .begNo{
+        color: #819cad;
+      }
+    }
+  }
+}
+
+
+
+.analyseTitle{
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  color:#1b1d1e;
+  border-left:6px solid #1d9eef;
+  border-bottom: 1px solid #eceff1;
+  padding:0 20px 0 14px;
+}
+.addPatientAnalyse,.sugarTestAnalyse,.sugarAbnormalAnalyse{
+  margin-bottom: 20px;
+  background-color: #fff;
+  height: 460px;
+}
+.timeSelect{
+  width: 100%;
+  padding-left: 20px;
+}
+.timeSelect p{
+  width: 20%;
+  margin-top: 30px;
+  font-size: 12px;
+  color:#999;
+}
+
+.timeSelect ul {
+	//overflow: hidden;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+.timeSelect ul li{
+  width: 80px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border:1px solid #eceff1;
+  margin-left: 10px;
+  border-radius: 4px;
+}
+
+.timeSelect ul li > a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	font-size: 14px;
+}
+.timeSelect .bg_sel{
+  background-color: #2fa6f0;
+  color:#fff;
+  border:none ;
+}
+
+.timeSelect ul li.timeSlot {
+	width: 88px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	.timeSel-sugarStatus {
+		width: 90%;
+		height: 90%;
+		line-height: 28px;
+		text-align: center;
+		background-color: #fff;
+	}
+	.option_box{
+		width: 100%;
+		max-height: 240px;
+		top: 28px;
+		a{
+			width: 100%;
+			height: 28px;
+			line-height: 28px;
+		}
+	}
+}
+
+/*添加患者的弹窗,编辑患者弹窗*/
+
+.addPatientPop {
+  display: none;
+  width: 62.5%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+/*  margin-left: -31.25%;
+  margin-top: -20%;*/
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 0 15px 25px;
+  z-index: 11;
+  //border:1px solid #000;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  .title {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: 900;
+    color: #1b1d1e;
+    border-bottom: 2px solid #eceff1;
+
+    a {
+      display: block;
+      width: 44px;
+      height: 44px;
+      margin-top: 18px;
+      background: url("../image/close_but2.png") no-repeat center / 44px 44px;
+    }
+  }
+  .addInfo{
+    padding-top: 30px;
+    font-size: 14px;
+    position: relative;
+    .listBox{
+      margin-bottom: 20px;
+      .item {
+        width: 23%;
+        margin-right: 1%;
+        p {
+          width: 40%;
+          height: 30px;
+          /*background-color:red;*/
+          float: left;
+          text-align: right;
+          line-height: 30px;
+          padding-right: 1%;
+          color: #111;
+        }
+        input {
+          width: 54%;
+          height: 30px;
+          /*background-color: blue;*/
+          float: left;
+          color: #666;
+          line-height: 30px;
+          border: 1px solid #d3dadf;
+          border-radius: 5px;
+          text-align: center;
+        }
+        .need{
+          color:red;
+          line-height: 30px;
+          padding-left: 3px;
+        }
+        .colorWhite{
+          color:#fff;
+        }
+        .gender{
+          width: 60%;
+          height: 30px;
+          line-height: 30px;
+          padding-left: 10px;
+          label{
+            input{
+              width: 13px;
+              height: 13px;
+              float:none;
+            }
+          }
+          .male{
+            padding-right: 15%;
+          }
+        }
+        .select_box {
+          width: 54%;
+          .select_txt {
+            width: 100%;
+          }
+          .option_box {
+            //display: block;
+            position: absolute;
+            top: 28px;
+            z-index: 22;
+          }
+        }
+      }
+      .itemFirst{
+        width: 27%;
+      }
+    }
+    .txt{
+      p:nth-of-type(1){
+        width: 9%;
+        text-align: right;
+        color: #111;
+        line-height: 30px;
+      }
+      .textArea {
+        width: 86%;
+        min-height: 30px;
+        border: 1px solid #d3dadf;
+        border-radius: 5px;
+        padding: 16px;
+        line-height: 16px;
+        color: #666;
+        outline: none;
+        resize:none;
+        overflow: hidden;
+      }
+      .need{
+        color:red;
+        line-height: 30px;
+        padding-left: 3px;
+      }
+    }
+  }
+}
+
+.triangle{
+  width:0;
+  height:0;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:7px solid #111111;
+  position: absolute;
+  right:10px;
+  top:15px;
+  z-index: 10;
+}
+
+/*患者血糖打印*/
+.patient-gis-print{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;height: 100%;
+  background:rgba(0,0,0,0.3);
+  z-index: 999;
+  .content{
+    width:40%;
+    background: #fff;
+    position: relative;
+    top:50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    padding:0 20px 75px;
+    .title{
+      width:100%;
+      .boxSizing;
+      height:60px;
+      line-height: 60px;
+      font-size:16px;
+      position: relative;
+      span{line-height: 60px;}
+      .bloodBtn{
+        color:#1D9EEF;
+        width:130px;
+        // line-height: 60px;
+        margin-top: 15px;
+        margin-right: 15px;
+        float: left;
+        border: 1px solid #1D9EEF;
+      }
+      .select-choose{
+        color:white;
+        background-color:#1D9EEF; 
+      }
+      a{
+        width: 24px;
+        height:24px;cursor: pointer;position: absolute;
+        background:url("../image/close_but_normal.png") no-repeat center;
+        background-size:100%;
+        cursor: pointer;
+        right: 0px;
+        top:50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+      a:hover{
+        background:url("../image/close_but_press.png") no-repeat center;
+      }
+    }
+    .user-choose{
+      margin: 10px 0;
+      height: 28px;
+       .user-nurse{
+      float: left;
+    }
+       .select{
+          float: left;
+          margin: 0 5px;
+          display: inline-block;
+          position: relative;
+          height:28px;
+          min-width:100px;
+          max-width: 180px;
+          margin-left: 10px;
+          .select-btn{
+            position: relative;top:0;left:0; cursor: pointer;width: 100%;border: 1px solid @lineCol;
+            margin: 0;
+            width: 100%;
+            .boxSizing;
+            padding:0 10px;
+            height: 100%;
+            .borderRadius;
+            background: #fff;
+            text-align: left;
+          }
+          .triangle{
+            width:0;
+            height:0;
+            border-left:5px solid transparent;
+            border-right:5px solid transparent;
+            border-top:7px solid #111111;
+            position: absolute;
+            right:10px;
+            top:10px;
+            z-index: 10;
+          }
+          .list-show{
+            background:#fff;
+            min-width:100%;
+            //min-height:90px;
+            height:auto;
+            max-height:150px;
+            padding-bottom: 10px;
+            background:#fff;
+            overflow-y: auto;
+            border:1px solid @lineCol;
+            //border-top:none;
+            position: absolute;
+            bottom:0;
+            left: 0;
+            -webkit-transform: translateY(100%);
+            -moz-transform: translateY(100%);
+            -ms-transform: translateY(100%);
+            -o-transform: translateY(100%);
+            transform: translateY(100%);
+            z-index: 100;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+          }
+          .select-list{
+            width:100%;
+            height:auto;
+            background:#fff;
+            z-index: 222;
+            li{
+              //border-left:1px solid @lineCol;
+              width:100%;height:36px;
+              line-height:36px;
+              text-align: center;
+              cursor: pointer;
+              font-size:14px;
+              color:#000;
+              .boxSizing;
+            }
+            li:hover{
+              background:#e6eaed;
+            }
+          }
+        }
+   
+    }
+    .print-content{
+      width: 100%;
+      border:1px solid @lineCol;
+      .boxSizing;
+      padding:8px 18px 40px;
+
+      height: 600px;
+      overflow-y: auto;
+      .hospital-title{
+        width: 100%;
+        margin-bottom: 20px;
+        border: none;
+        p:nth-of-type(1){font-size:20px;color:#666;line-height:36px;
+        // display: none;
+        }
+        p:nth-of-type(2){font-size:24px;color:#111;line-height:40px;}
+      }
+      .td-info{
+        width: 100%;border: none;
+        .patient-info{
+          width: 100%;
+          text-align: left;display: -webkit-flex;display: flex;justify-content: space-between;
+          .item{font-szie:14px;color:#111;line-height:30px;}
+          .item:nth-last-of-type(1){text-align: right;}
+        }
+      }
+      table{
+        width: 100%;text-align: center;
+        margin: 0 auto;
+        font-size:14px;color:#111;border-collapse: collapse;border: none;
+        thead{
+          background:#fff;border-collapse: collapse;border: none;
+          tr{
+            border:none;
+            td:nth-of-type(1){width:19%;}
+            td{width:9%; background:#fff;font-size:14px;color:#111;height:35px;border: 1px solid #999;}
+            .theadspace{display: none;}
+          }
+        }
+        tbody{
+          border-collapse: collapse;
+          tr{
+            border: none;
+            td{
+              height:35px;border: 1px solid #999;
+            }
+          }
+        }
+      }
+    }
+    .btn{
+      width: 100%;
+      height:75px;
+      text-align: center;
+      line-height: 75px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      .boxSizing;
+      button{
+        width:120px;
+        height:36px;
+        color:#fff;
+        background: @greenBtn;
+        display: inline-block;
+        border: none;
+      }
+      //button:nth-of-type(1){margin-right: 20px;}
+
+    }
+  }
+}
+@page {
+  size: A4;
+  margin: 0mm;
+  padding-bottom: 3mm;
+}
+@media print {
+  /* TODO: 添加打印样式 */
+  .print-content{
+    width: 90%;
+    //border:1px solid @lineCol;
+    .boxSizing;
+    padding:18px 30px 30px;
+     padding-left: 0px;
+    margin: 0 auto;
+    // margin-right: -10px;
+    .details-content{
+          .hospital-title{
+          height:110px;
+          vertical-align: middle;
+          width: 100%;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          border: none;
+          p:nth-of-type(1){font-size:26px;color:#000;line-height:70px;
+          }
+          p:nth-of-type(2){font-size:30px;color:#000;line-height:50px;}
+        }
+        .td-info{
+          width: 100%;border: none;
+          .patient-info{
+            width: 100%;
+            text-align: left;display: -webkit-flex;display: flex;justify-content: space-between;
+            .item{font-size:22px;color:#000;line-height:40px;}
+            .item:nth-last-of-type(1){text-align: right;}
+          }
+        }
+        table{
+          width: 100%;text-align: center;
+          margin:auto;
+          font-size:22px;color:#000;border-collapse: collapse;border: none;
+          margin-top: -50px;
+          .theadspace{width:100%;height:50px;border:none;}
+          //.theadspace:nth-of-type(1){display: none;}
+          thead{
+            background:#fff;border: none;
+            tr{
+              border:none;
+              td:nth-of-type(1){width:19%;}
+              td{width:8%;background:#fff;font-size:22px;color:#000;height:55px;border: 1px solid #000;}
+            }
+          }
+          tbody{
+            border-collapse: collapse;
+            tr{
+              border: none;
+              td{
+                font-size: 22px;
+                height:55px;border: 1px solid #000;
+              }
+            }
+          }
+        }
+    }
+    .statistics-content{
+          .hospital-title{
+          height:110px;
+          vertical-align: middle;
+          width: 100%;
+          margin-bottom: 20px;
+          border: none;
+          p:nth-of-type(1){font-size:26px;color:#000;line-height:80px;
+          }
+          p:nth-of-type(2){font-size:30px;color:#000;line-height:50px;}
+        }
+        .td-info{
+          width: 100%;border: none;
+          .patient-info{
+            width: 100%;
+            text-align: left;display: -webkit-flex;display: flex;justify-content: space-between;
+            .item{font-size:22px;color:#000;line-height:40px;}
+            .item:nth-last-of-type(1){text-align: right;}
+          }
+        }
+        table{
+          width: 100%;text-align: center;
+          margin:auto;
+          font-size:22px;color:#000;border-collapse: collapse;border: none;
+          margin-top: -50px;
+          .theadspace{width:100%;height:50px;border:none;}
+          //.theadspace:nth-of-type(1){display: none;}
+          thead{
+            background:#fff;border: none;
+            tr{
+              border:none;
+              td:nth-of-type(1){width:19%;}
+              td{width:9%;background:#fff;font-size:22px;color:#000;height:55px;border: 1px solid #000;}
+            }
+          }
+          tbody{
+            border-collapse: collapse;
+            tr{
+              border: none;
+              td{
+                font-size: 22px;
+                height:55px;border: 1px solid #000;
+              }
+            }
+          }
+        }
+    }
+    .implement-content{
+          .hospital-title{
+          height:110px;
+          vertical-align: middle;
+          width: 100%;
+          margin-bottom: 20px;
+          border: none;
+          p:nth-of-type(1){font-size:26px;color:#000;line-height:80px;
+          }
+          p:nth-of-type(2){font-size:30px;color:#000;line-height:50px;}
+        }
+        .td-info{
+          width: 100%;border: none;
+          .patient-info{
+            width: 100%;
+            text-align: left;display: -webkit-flex;display: flex;justify-content: space-between;
+            .item{font-size:22px;color:#000;line-height:40px;}
+            .item:nth-last-of-type(1){text-align: right;}
+          }
+        }
+        table{
+          width: 100%;text-align: center;
+          margin:auto;
+          font-size:22px;color:#000;border-collapse: collapse;border: none;
+          margin-top: -50px;
+          .theadspace{width:100%;height:50px;border:none;}
+          //.theadspace:nth-of-type(1){display: none;}
+          thead{
+            background:#fff;border: none;
+            tr{
+              border:none;
+              td:nth-of-type(1){width:30%;}
+              td{width:9%;background:#fff;font-size:22px;color:#000;height:55px;border: 1px solid #000;}
+            }
+          }
+          tbody{
+            border-collapse: collapse;
+            tr{
+              border: none;
+              td:nth-of-type(1){width:19%;}
+              td{
+                width:9%;
+                font-size: 22px;
+                height:55px;border: 1px solid #000;
+              }
+            }
+          }
+        }
+    }
+  }
+}
+
+

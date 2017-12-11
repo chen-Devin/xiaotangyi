@@ -1,0 +1,113 @@
+<button class="health" id="healthTipBtn">健康留言</button>
+
+<!--健康干预新增弹窗-->
+<div class="healthTipBox" id="healthTipBox">
+    <div class="healthTipTitle clearfix">
+        <p class="fl">新增留言</p>
+        <a class="fr" href="javascript:void(0)" id="healthCloseAdd"></a>
+    </div>
+    <div class="healthTipContent">
+        <div class="tips">
+            填写留言内容
+        </div>
+        <div class="tipContent">
+            <textarea rows="10" placeholder="输入内容仅限200字" maxlength="200"></textarea>
+            <div id="healthErrorTips" style="color: red; text-align: center; margin: 10px 0px 0px; display: none;">请填写留言内容</div>
+            <div class="healthTipBtn">
+                <button id="healthTipSubmit" class="fr active" value="submit">确认</button>
+                <button id="healthTipCancel" class="fr cancel" type="reset" value="cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--健康干预弹窗-->
+<div class="healthTipBox" id="healthTipShowBox" style="min-height:300px;">
+    <div class="healthTipTitle clearfix">
+        <p class="fl">留言明细</p>
+        <a class="fr" href="javascript:void(0)" id="healthCloseShow"></a>
+    </div>
+    <div class="healthTipContent">
+        <div class="tipContent">
+            <table style="height:90%;" border="0">
+                <tr>
+                    <td style="width:20%;">留言时间：</td>
+                    <td style="text-align:left;">
+                        <label id="healthTipPushTimelb"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">留言内容：</td>
+                    <td>
+                        <textarea  rows="10" readonly="readonly"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+
+<<div class="healthTipTotal" id="healthTipTotalDiv">
+						<div class="analyseTitle">
+							健康留言记录
+						</div>
+						<div class="timeSelect clearfix" id="healthTipTotal">
+							<ul class="fr">
+								<li class="fl timeBtn" data-time="1"><a class="bg_sel " href="javascript:void(0)">最近一周</a></li>
+								<li class="fl timeBtn" data-time="2"><a href="javascript:void(0)">最近一个月</a></li>
+								<li class="fl timeBtn" data-time="3"><a href="javascript:void(0)">最近3个月</a></li>
+								<li class="fl timeBtn" data-time="4"><a href="javascript:void(0)">全部</a></li>
+							</ul>
+						</div>
+						<!--表格-->
+                        <div class="patientList2">
+                            <table class="list" cellspacing="0" cellpadding="0">
+                                <thead>
+                                <tr>
+                                    <td class="td1">留言时间</td>
+                                    <td class="td2">操作人</td>
+                                    <td class="td3">内容</td>
+                                    <td class="td2">发送状态</td>
+                                    <td class="td2">操作</td>
+                                </tr>
+                                </thead>
+                                <tbody class="page1">
+                                <script type="text/template" id="healthTipTotal-list-template">
+                                    <%_.each(obj,function(e,i){%>
+                                        <tr>
+                                            <td>
+                                                <%=e.pushTime%>
+                                            </td>
+                                            <td>
+                                                <%=e.user.name%>
+                                            </td>
+                                            <td>
+                                               <label title="<%=e.content%>"><%= e.content.length > 30 ? e.content.substring(0,30) + '...':e.content%></label>
+                                            </td>
+                                            <td>
+                                                <%if(e.status == 1){%>
+                                                    <%='成功'%>
+                                                <%}else{%>
+                                                    <span style="color:red;"><%='失败'%></span>
+                                                <%}%>
+                                            </td>
+                                            <td>
+                                                <%if(e.status == 1){%>
+                                                    <a href="javascript:void(0);" onclick="viewSmsPush(<%="'"+e.pushTime+"'"%>,<%="'"+e.content.trim()+"'"%>,<%="'"+e.pushId+"'"%>)">查看</a>
+                                                <%}else{%>
+                                                     <a href="javascript:void(0);" onclick="reSendSmsPush(<%="'"+e.pushId+"'"%>)">重发</a>
+                                                <%}%>
+                                            </td>
+                                        </tr>
+                                    <%})%>
+                                </script>
+                                </tbody>
+
+                            </table>
+                            <div class="page" style="margin-top: 20px;"></div>
+                        </div>
+</div>

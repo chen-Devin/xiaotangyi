@@ -1,0 +1,1526 @@
+@charset "utf-8";
+@lineCol: #cecece;
+@blue: #1D9EEF;
+@greenBtn: #00c2b1;
+
+//选项框
+.select_box{
+	width: 120px;
+	border-radius: 4px;
+	position: relative;
+	font-size: 14px;
+	text-align: center;
+	.select_txt{
+		cursor: pointer;
+	}
+	.option_box{
+		display: none;
+		width: 100%;
+		max-height: 144px;
+		overflow-y: auto;
+		border: 1px solid #d3dadf;
+		position: absolute;
+		z-index: 32;
+		a{
+			display: block;
+			height: 36px;
+			line-height: 36px;
+			background-color: #fff;
+			text-align: center;
+			cursor: pointer;
+		}
+		a:hover {
+			background-color: #ebf0f3;
+		}
+	}
+}
+//按钮
+button {
+	display: block;
+	width: 80px;
+	height: 36px;
+	border: 1px solid #d3dadf;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 36px;
+	background-color: transparent;
+	font-size: 16px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+button.active {
+	background-color: #2fa6f0;
+	color: #fff;
+	margin-left: 20px;
+}
+
+//血糖预警弹窗
+.sugarWarnBox{
+	display: none;
+	width: 400px;
+	min-height: 490px;
+	position: absolute;
+	top:10%;
+	left: 50%;
+	margin-left: -200px;
+	background-color: #fff;
+	/*-webkit-transform: translate(-50%,-50%);*/
+	border-radius: 5px;
+	padding:0 20px 20px 20px;
+	z-index: 11;
+	.sugarWarnTitile{
+		width: 100%;
+		height: 60px;
+		line-height: 60px;
+		font-size: 16px;
+		color:#333;
+		border-bottom:1px solid #eceff1;
+		a{
+			width: 24px;
+			height: 24px;
+			background: url("../image/close_but_normal.png") no-repeat center/24px 24px;
+			margin-top: 18px;
+		}
+	}
+	.sugarWarnContent{
+		width: 100%;
+		.tips{
+			padding:16px 0;
+			font-size: 14px;
+			color:#666;
+		}
+		.warnContent{
+			//width: 280px;
+			padding:0 40px;
+			ul{
+				width: 100%;
+				li{
+					width: 100%;
+					height: 26px;
+					margin-bottom: 10px;
+					font-size: 14px;
+					//background-color:red;
+					p{
+						width: 70px;
+						font-size: 16px;
+						color:#111;
+					}
+					input{
+						width: 60px;
+						height: 100%;
+						color:#999;
+						border:1px solid #ccc;
+						border-radius: 3px;
+					}
+					.line{
+						width: 25px;
+						color:#111;
+						display: inline-block;
+					}
+					.unit{
+						width: 52px;
+						color:#666;
+						display: inline-block;
+					}
+				}
+			}
+			.sugarWarnBtn{
+				button{
+					display: block;
+					width: 80px;
+					height: 36px;
+					border:1px solid #d3dadf;
+					border-radius: 5px;
+					text-align: center;
+					line-height: 36px;
+					margin-top: 16px;
+					background-color: transparent;
+					font-size: 16px;
+				}
+				button.active{
+					background-color: #2fa6f0;
+					color:#fff;
+				}
+			}
+		}
+
+	}
+}
+
+
+
+
+/*.sugarWarnBox {
+	display: none;
+	width: 640px;
+	min-height: 490px;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	margin-left: -200px;
+	background-color: #fff;
+	//border: 1px solid #000000;
+	border-radius: 8px;
+	padding: 0 20px 20px 20px;
+	z-index: 11;
+	.sugarWarnTitile {
+		width: 100%;
+		height: 60px;
+		line-height: 60px;
+		font-size: 16px;
+		color: #333;
+		border-bottom: 1px solid #eceff1;
+		a {
+			width: 24px;
+			height: 24px;
+			background: url("../image/close_but_normal.png") no-repeat center/24px 24px;
+			margin-top: 18px;
+		}
+	}
+	.sugarWarnContent {
+		width: 100%;
+		margin-top: 20px;
+		position: relative;
+		.leftSugarWarn {
+			padding: 0 5px;
+			width: 50%;
+			ul {
+				width: 100%;
+				li {
+					width: 100%;
+					height: 26px;
+					margin-bottom: 10px;
+					font-size: 14px;
+					p {
+						width: 65px;
+						font-size: 14px;
+						color: #111;
+					}
+					input {
+						width: 60px;
+						height: 100%;
+						color: #999;
+						border: 1px solid #ccc;
+						border-radius: 3px;
+					}
+					.line {
+						width: 20px;
+						color: #111;
+						display: inline-block;
+					}
+					.unit {
+						width: 52px;
+						color: #666;
+						display: inline-block;
+					}
+				}
+			}
+		}
+		.lineBox {
+			width: 1px;
+			height: 270px;
+			position: absolute;
+			top: 10px;
+			left: 50%;
+			background-color: #ccc;
+			//background-color: red;
+		}
+		.rightSugarWarn {
+			padding-left:20px;
+			width: 50%;
+			//background-color: pink;
+			ul {
+				width: 100%;
+				li {
+					width: 100%;
+					height: 26px;
+					margin-bottom: 10px;
+					font-size: 14px;
+					p {
+						font-size: 14px;
+						color: #111;
+					}
+					input,select {
+						width: 60px;
+						height: 100%;
+						color: #999;
+						border: 1px solid #ccc;
+						border-radius: 3px;
+					}
+					select{
+						color: #111;
+						padding-left: 18px;
+					}
+					.unit {
+						color: #666;
+						display: inline-block;
+					}
+				}
+			}
+
+		}
+	}
+	.tips {
+		padding: 10px 0 15px 0;
+		font-size: 14px;
+		color: #666;
+	}
+	.warnTips{
+		height: 20px;
+		line-height: 20px;
+		color:red;
+		display: none;
+	}
+	.sugarWarnBtn {
+		button {
+			display: block;
+			width: 80px;
+			height: 36px;
+			border: 1px solid #d3dadf;
+			border-radius: 5px;
+			text-align: center;
+			line-height: 36px;
+			background-color: transparent;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		button.active {
+			background-color: #2fa6f0;
+			color: #fff;
+			margin-right: 20px;
+		}
+	}
+}*/
+
+//添加血糖弹窗
+.addSugarPop,.addRecordPop{
+	display: none;
+	min-width: 382px;
+	//min-height: 310px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -191px;
+	margin-top: -20%;
+	background-color: #fff;
+	//border: 1px solid #000000;
+	border-radius: 8px;
+	padding: 0 15px 20px 15px;
+	z-index: 11;
+	.addSugarTitile {
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		font-size: 16px;
+		color: #111;
+		border-bottom: 1px solid @lineCol;
+		a {
+			width: 44px;
+			height: 44px;
+			background: url("../image/close_but2.png") no-repeat center/44px 44px;
+			margin-top: 3px;
+		}
+	}
+	.addSugarContent{
+		padding: 30px 85px 10px 10px;
+		//padding-left: 10px;
+		.list{
+			width: 100%;
+			height: 50px;
+			font-size: 14px;
+			color:#111;
+			position: relative;
+			p{
+				width: 75px;
+				text-align: right;
+				line-height: 30px;
+			}
+			p.addRecordLeftTitile{
+				width: 100px;
+			}
+			input{
+				width: 120px;
+				height: 30px;
+				border-radius: 4px;
+				border:1px solid @lineCol;
+				text-align: center;
+			}
+			.measureTime{
+				width: 180px;
+			}
+			span{
+				color:#666;
+			}
+			.noTips{
+				color:red;
+				font-size: 12px;
+				display: none;
+			}
+		}
+		.listLast{
+			height: 100%;
+			margin-bottom: 10px;
+			textarea{
+				width: 180px;
+				min-height: 110px;
+				outline: none;
+				resize: none;
+				border:1px solid @lineCol;
+				border-radius: 4px;
+				padding:5px;
+				overflow: hidden;
+			}
+		}
+	}
+}
+
+/*基本信息*/
+.basicInfo {
+	width: 100%;
+	background-color: #fff;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.titleRightBtn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin-right: 20px;
+}
+
+.titleRightBtn button {
+	width: 80px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	margin-top: 6px;
+	cursor: pointer;
+}
+
+.titleRightBtn button {
+	display: inline-block;
+	border-radius: 4px;
+	color: #2fa6f0;
+	border:1px solid #2fa6f0;
+}
+
+.titleRightBtn .sugar {
+	//background-color: #2ccca7;
+}
+
+.titleRightBtn .edit {
+	//background-color: #2fa6f0;
+}
+
+.basicInfoDetail {
+	/*margin: 0 1%;*/
+	margin: 0 20px;
+	min-height: 220px;
+	padding: 40px 0;
+}
+
+.basicInfoDetail .list {
+	/*width: 16.3%;*/
+	/*width: 202px;*/
+	min-height: 44px;
+	font-size: 14px;
+	/*background-color: blue;*/
+}
+
+.basicInfoDetail .list.list1 {
+	width: 16%;
+}
+
+.basicInfoDetail .list.list2 {
+	width: 16%;
+}
+
+.basicInfoDetail .list.list3 {
+	width: 20%;
+}
+
+.basicInfoDetail .list.list4 {
+	width: 16%;
+}
+
+.basicInfoDetail .list.list5 {
+	width: 16%;
+}
+
+.basicInfoDetail .list.list6 {
+	width: 16%;
+}
+
+.basicInfoDetail .list .item {
+	width: 30%;
+	color: #1b1d1e;
+}
+
+.basicInfoDetail .list .con {
+	width: 70%;
+	color: #666666;
+}
+.basicInfoDetail .list.list7{
+	width: 32%;
+	.item{
+		width: 15%;
+	}
+	.con{
+		width: 70%;
+	}
+}
+.basicInfoDetail .list.list8{
+	width: 68%;
+	.item{
+		width: 8%;
+	}
+	.con{
+		width: 92%;
+	}
+}
+.basicInfoDetail .list.especially {
+	width: 100%;
+	.item{
+		width: 7%;
+	}
+	.con{
+		width: 93%;
+	}
+}
+
+.basicInfoDetail .txtBox{
+	margin-bottom: 20px;
+}
+
+//按钮切换
+.basicSugarTab {
+	font-size: 16px;
+	margin-bottom: 20px;
+	a {
+		display: inline-block;
+		height: 40px;
+		line-height: 40px;
+		padding: 0 20px;
+		color: #819cad;
+		border-radius: 20px;
+		background-color: #fff;
+		margin-right: 20px;
+	}
+	a.active {
+		background-color: #2fa6f0;
+		color: #fff;
+	}
+}
+
+table {
+	width: 100%;
+	background: #fff;
+	border-collapse: collapse;
+	thead {
+		tr {
+			td {
+				background: @blue;
+				height: 40px;
+				text-align: center;
+				color: #fff;
+				font-size: 14px;
+				border: 1px solid @lineCol;
+			}
+
+		}
+	}
+	tbody {
+		tr {
+			td {
+				height: 40px;
+				font-size: 14px;
+				color: #111;
+				border: 1px solid @lineCol;
+				text-align: center;
+			}
+		}
+	}
+}
+
+//左边
+.tabLeft {
+	width: 100%;
+}
+
+/*血糖概况*/
+.sugarStatus {
+	width: 100%;
+	background-color: #fff;
+	position: relative;
+	margin-bottom: 20px;
+	.analyseTitle {
+		.sugarStatusPrintBtn {
+			display: block;
+			min-width: 10px;
+			height: 24px;
+			line-height: 24px;
+			font-size: 14px;
+			margin-top: 8px;
+			color: #2fa6f0;
+			border-radius: 4px;
+			border: 1px solid #2fa6f0;
+			cursor: pointer;
+			padding: 0 10px;
+			margin-left: 15px;
+		}
+	}
+}
+
+.dataDisplay {
+	width: 98%;
+	height: 190px;
+	margin: 0 1%;
+	//background-color: pink;
+}
+
+.dataDisplay .dataLeft {
+	width: 33%;
+}
+
+.dataDisplay .dataBox {
+	width: 33.3%;
+	margin-top: 40px;
+	text-align: center;
+	position: relative;
+}
+
+.dataDisplay .dataBox .dataNum {
+	font-size: 48px;
+	height: 85px;
+	line-height: 85px;
+}
+
+.dataDisplay .dataBox .sup, .dataDisplay .dataBox .unit {
+	font-size: 14px;
+	color: #999999;
+}
+
+.dataDisplay .dataMin .dataNum {
+	color: #edb344;
+}
+
+.dataDisplay .dataMax .dataNum {
+	color: #e95959;
+}
+
+.dataDisplay .dataCount .dataNum {
+	color: #111111;
+}
+
+.dataDisplay .dataBox .line {
+	display: block;
+	width: 1px;
+	height: 100px;
+	position: absolute;
+	top: 20px;
+	right: 1px;
+	//background-color: red;
+	background-color: #eceff1;
+}
+
+.dataDisplay .dataMid {
+	width: 31%;
+	position: relative;
+	.dataPieChart {
+		width: 60%;
+		height: 190px;
+	}
+	.pieChartLegend {
+		width: 40%;
+		height: 190px;
+		overflow: hidden;
+		font-size: 14px;
+		padding-top: 48px;
+		ul {
+			li {
+				line-height: 47px;
+				span {
+					display: inline-block;
+					i {
+						font-style: normal;
+					}
+				}
+				.sugarFlag {
+					color: #666;
+					width: 58%;
+				}
+				.sugarFlag:before {
+					content: '';
+					text-align: center;
+					width: 16px;
+					height: 20px;
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 10px;
+					//background-color: red;
+				}
+				.count {
+					color: #999;
+				}
+				.high:before {
+					background: url("../image/status_hzxx_high.png") no-repeat center/16px 20px;
+				}
+				.normal:before {
+					background: url("../image/status_hzxx_normal.png") no-repeat center/16px 20px;
+				}
+				.low:before {
+					background: url("../image/status_hzxx_low.png") no-repeat center/16px 20px;
+				}
+			}
+		}
+	}
+	.line {
+		display: block;
+		width: 1px;
+		height: 100px;
+		position: absolute;
+		top: 65px;
+		right: 1px;
+		//background-color: red;
+		background-color: #eceff1;
+	}
+}
+
+.dataDisplay .dataRight {
+	width: 35%;
+	//background-color: lightpink;
+	font-size: 14px;
+	//padding-top: 48px;
+	.dataBarChart {
+		width: 100%;
+		height: 180px;
+	}
+}
+
+/*血糖概况表格*/
+.sugarStatus {
+	padding-bottom: 20px;
+	.patientList {
+		width: 100%;
+		padding: 20px 20px 40px 20px;
+		background: #fff;
+		table {
+			tr {
+				td{
+					position: relative;
+					cursor: pointer;
+				}
+				.td1 {
+					width: 16%;
+				}
+				.td2 {
+					width: 10.5%;
+					span{
+
+					}
+					b{
+						display: none;
+						width: 12px;
+						height: 12px;
+						background: url("../image/icon_handwriting.png") no-repeat center/12px 12px;
+					}
+					.handImg{
+						display: inline-block;
+					}
+					i{width: 0;
+						height: 0;
+						border:5px solid #1d9eef;
+						border-top: 5px solid transparent;
+						border-left: 5px solid transparent;
+						position: absolute;
+						right: 1px;
+						bottom: 1px;
+						display: none;
+					}
+					.handTriangle{
+						display: inline-block;
+					}
+					.addSugarDisplayMask{
+						display: none;
+						width: 100%;
+						height: 40px;
+						//background-color: pink;
+						background-color: transparent;
+						position: absolute;
+						top: 20px;
+						right: -20%;
+						z-index: 20;
+						.addSugarDisplay{
+							display: none;
+							width: 330px;
+							position: absolute;
+							top: 20px;
+							//left: 0;
+							transform: translateX(30%);
+							word-break: break-all;
+							z-index: 22;
+							//border:1px solid red;
+							box-shadow:0 0 2px 2px #ccc;
+							background-color: #fff;
+							padding:10px;
+							text-align: left;
+							//overflow: hidden;
+							//max-height: 110px;
+							//overflow-y: scroll;
+							ul{
+								li{
+									margin-bottom: 10px;
+									.addSugarTitle{
+										width: 60px;
+										padding-right: 10px;
+										text-align: center;
+										border-right: 1px solid @lineCol;
+										vertical-align: middle;
+									}
+									.addSugarTxt{
+										overflow: hidden;
+										max-width: 228px;
+										padding: 0 10px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.page {
+			margin-top: 10px;
+			background: #fff;
+		}
+	}
+}
+
+//血糖测量数据分析
+
+//血糖统计表格
+.sugarTotal {
+	background-color: #fff;
+	.patientList2 {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 26px 20px 50px;
+		margin-bottom: 20px;
+		table {
+			tr {
+				.td1 {
+					width: 16%;
+				}
+				.td2 {
+					width: 10.5%;
+				}
+			}
+		}
+	}
+}
+
+//右边
+/*.tabRight {
+	width: 100%;
+	//background-color: yellow;
+	.sugarTestAnalyse{
+		.analyseTitle{
+			.addRecordBtn {
+				display: block;
+				width: 80px;
+				height: 28px;
+				line-height: 28px;
+				font-size: 14px;
+				margin-top: 6px;
+				color: #fff;
+				border-radius: 4px;
+				background-color: #2fa6f0;
+				cursor: pointer;
+			}
+		}
+	}
+	.patientList3 {
+		width: 100%;
+		padding: 26px 20px 50px;
+		margin-bottom: 20px;
+		background-color: #fff;
+		table {
+			tr {
+				.td1 {
+					width: 25%;
+				}
+				.td2 {
+					width: 30%;
+				}
+				.td3 {
+					width: 55%;
+				}
+			}
+		}
+	}
+}*/
+
+/*患者血糖打印--2*/
+.patient-gis-print2 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 999;
+	.content {
+		width: 40%;
+		background: #fff;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		padding: 0 20px 75px;
+		.title {
+			width: 100%;
+			height: 60px;
+			font-size: 16px;
+			position: relative;
+			span {
+				line-height: 60px;
+			}
+			a {
+				width: 24px;
+				height: 24px;
+				cursor: pointer;
+				position: absolute;
+				background: url("../image/close_but_normal.png") no-repeat center;
+				background-size: 100%;
+				right: 0;
+				top: 50%;
+				-webkit-transform: translateY(-50%);
+				-moz-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				-o-transform: translateY(-50%);
+				transform: translateY(-50%);
+			}
+			a:hover {
+				background: url("../image/close_but_press.png") no-repeat center;
+			}
+		}
+		.print-content2 {
+			width: 100%;
+			border: 1px solid @lineCol;
+			padding: 8px 18px 40px;
+			height: 600px;
+			overflow-y: auto;
+			.hospital-title {
+				width: 100%;
+				margin-bottom: 20px;
+				p:nth-of-type(1) {
+					font-size: 20px;
+					color: #666;
+					line-height: 70px;
+				}
+				p:nth-of-type(2) {
+					font-size: 24px;
+					color: #111;
+					margin-top: -15px;
+				}
+			}
+			.td-info {
+				width: 100%;
+				.patient-info {
+					width: 100%;
+					text-align: left;
+					display: -webkit-flex;
+					display: flex;
+					justify-content: space-between;
+					.item {
+						font-size: 14px;
+						color: #111;
+						line-height: 30px;
+					}
+					.item:nth-last-of-type(1) {
+						text-align: right;
+					}
+				}
+			}
+			table {
+				width: 100%;
+				text-align: center;
+				margin: 0 auto;
+				font-size: 14px;
+				color: #111;
+				border-collapse: collapse;
+				thead {
+					background: #fff;
+					tr {
+						td:nth-of-type(1) {
+							width: 16%;
+						}
+						td {
+							width: 20%;
+							background: #fff;
+							font-size: 14px;
+							color: #111;
+							height: 35px;
+							border: 1px solid #999;
+						}
+					}
+				}
+				tbody {
+					tr {
+						td {
+							height: 35px;
+							border: 1px solid #999;
+						}
+					}
+				}
+			}
+		}
+		.btn {
+			width: 100%;
+			height: 75px;
+			text-align: center;
+			line-height: 75px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			button {
+				width: 120px;
+				height: 36px;
+				color: #fff;
+				background: @greenBtn;
+				display: inline-block;
+				border: none;
+			}
+			//button:nth-of-type(1){margin-right: 20px;}
+
+		}
+	}
+}
+
+@page {
+	size: A4;
+	margin: 0mm;
+	padding-bottom: 3mm;
+}
+
+@media print {
+	/* TODO: 添加打印样式 */
+	.print-content2 {
+		width: 90%;
+		padding: 8px 0 40px;
+		margin: 0 auto;
+		.hospital-title {
+			width: 100%;
+			margin-bottom: 20px;
+			p:nth-of-type(1) {
+				font-size: 26px;
+				color: #000;
+				line-height: 160px;
+			}
+			p:nth-of-type(2) {
+				margin-top: -45px;
+				font-size: 30px;
+				color: #000;
+			}
+		}
+		.td-info {
+			width: 100%;
+			border: none;
+			.patient-info {
+				width: 100%;
+				text-align: left;
+				display: -webkit-flex;
+				display: flex;
+				justify-content: space-between;
+				.item {
+					font-size: 22px;
+					color: #000;
+					line-height: 40px;
+				}
+				.item:nth-last-of-type(1) {
+					text-align: right;
+				}
+			}
+		}
+		table {
+			width: 100%;
+			text-align: center;
+			margin: auto;
+			font-size: 22px;
+			color: #000;
+			border-collapse: collapse;
+			background: #fff;
+			thead {
+				tr {
+					td:nth-of-type(1) {
+						width: 16%;
+					}
+					td {
+						width: 20%;
+						font-size: 22px;
+						color: #000;
+						height: 55px;
+						border: 1px solid #000;
+					}
+				}
+			}
+			tbody {
+				tr {
+					td {
+						font-size: 22px;
+						height: 55px;
+						border: 1px solid #000;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*患者血糖打印--3*/
+.patient-gis-print3 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 999;
+	.content {
+		width: 60%;
+		background: #fff;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		padding: 0 20px 75px;
+		.title {
+			width: 100%;
+			height: 60px;
+			font-size: 16px;
+			position: relative;
+			border-bottom: 1px solid @lineCol;
+			span {
+				line-height: 60px;
+			}
+			a {
+				width: 24px;
+				height: 24px;
+				cursor: pointer;
+				position: absolute;
+				background: url("../image/close_but_normal.png") no-repeat center;
+				background-size: 100%;
+				right: 0;
+				top: 50%;
+				-webkit-transform: translateY(-50%);
+				-moz-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				-o-transform: translateY(-50%);
+				transform: translateY(-50%);
+			}
+			a:hover {
+				background: url("../image/close_but_press.png") no-repeat center;
+			}
+		}
+		.dateSel{
+			input{
+				width: 140px;
+				height: 28px;
+				border:1px solid @lineCol;
+				border-radius: 3px;
+			}
+			a{
+				font-size: 14px;
+				line-height: 28px;
+				height: 28px;
+				padding:0 10px;
+				border: 1px solid @lineCol;
+				display: inline-block;
+				border-radius: 5px;
+			}
+			margin:10px 0;
+		}
+		.print-content3 {
+			width: 100%;
+			border: 1px solid @lineCol;
+			padding: 8px 18px 40px;
+			height: 600px;
+			overflow-y: auto;
+			.hospital-title {
+				width: 100%;
+				p:nth-of-type(1) {
+					font-size: 20px;
+					color: #666;
+					line-height: 70px;
+				}
+				p:nth-of-type(2) {
+					font-size: 24px;
+					color: #111;
+					margin-top: -15px;
+				}
+			}
+			.td-info {
+				width: 100%;
+				.patient-info {
+					width: 100%;
+					text-align: left;
+					display: -webkit-flex;
+					display: flex;
+					justify-content: space-between;
+					.item {
+						font-size: 14px;
+						color: #111;
+						line-height: 30px;
+					}
+					.item:nth-last-of-type(1) {
+						text-align: right;
+					}
+				}
+			}
+			table {
+				width: 100%;
+				text-align: center;
+				margin: 0 auto;
+				font-size: 14px;
+				color: #111;
+				border-collapse: collapse;
+				tbody {
+					tr {
+						td {
+							height: 30px;
+							border: 1px solid #999;
+						}
+						td.td1{
+							width: 10%;
+						}
+						td.td2{
+							width: 8%;
+						}
+						td.keepRight{
+							padding-right: 10px;
+						}
+						td.totalBasic{
+							div{
+								line-height: 35px;
+							}
+						}
+					}
+				}
+			}
+			.footer {
+				margin-top: 10px;
+				font-size:14px;
+				color:#111;
+			}
+		}
+		.btn {
+			width: 100%;
+			height: 75px;
+			text-align: center;
+			line-height: 75px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			button {
+				width: 120px;
+				height: 36px;
+				color: #fff;
+				background: @greenBtn;
+				display: inline-block;
+				border: none;
+			}
+			//button:nth-of-type(1){margin-right: 20px;}
+
+		}
+	}
+}
+
+@media print {
+	/* TODO: 添加打印样式 */
+	.print-content3 {
+		width: 90%;
+		margin: 0 auto;
+		.hospital-title {
+			width: 100%;
+			margin-bottom: 24px;
+			p:nth-of-type(1) {
+				font-size: 26px;
+				color: #000;
+				line-height: 160px;
+			}
+			p:nth-of-type(2) {
+				margin-top: -45px;
+				font-size: 30px;
+				color: #000;
+			}
+		}
+		.td-info {
+			width: 100%;
+			border: none;
+			.patient-info {
+				width: 100%;
+				text-align: left;
+				display: -webkit-flex;
+				display: flex;
+				justify-content: space-between;
+				.item {
+					font-size: 22px;
+					color: #000;
+					line-height: 40px;
+				}
+				.item:nth-last-of-type(1) {
+					text-align: right;
+				}
+			}
+		}
+		table {
+			width: 100%;
+			text-align: center;
+			margin: auto;
+			font-size: 22px;
+			color: #000;
+			border-collapse: collapse;
+			background: #fff;
+			tbody {
+				tr {
+					td {
+						font-size:22px;
+						height: 45px;
+						border: 1px solid #000;
+					}
+					td.keepRight{
+						padding-right: 20px;
+					}
+					td.totalBasic{
+						div{
+							line-height: 55px;
+						}
+					}
+				}
+			}
+		}
+		.footer {
+			margin-top: 20px;
+			font-size:22px;
+			color:#111;
+		}
+	}
+}
+
+
+//flex兼容老版本
+.flex{
+	display: -webkit-box; /*布局方式 相当于display:flex*/
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	display: box;
+}
+.boxSizing{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.time-select-btn{
+	padding-top:20px;
+	.flex;
+	a{
+		display: inline-block;
+		width:60px;
+		height:28px;
+		text-align: center;
+		border:1px solid @lineCol;
+		line-height:28px;
+		margin:0;padding:0;
+	}
+	a:nth-of-type(1){
+		border-right:none;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+	}
+	a:nth-last-of-type(1){
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
+	a.active{
+		background: @blue;
+		color:#fff;
+	}
+}
+
+#table-vertical{
+	width: 100%;
+	padding:20px;
+	text-align: center;
+	background:#fff;
+	position: relative;
+	#positionLeft{
+		width: 1px;
+		height:1px;
+		position: absolute;
+		right: 20px;
+		//background:red;
+	}
+	.page{margin-top: 10px;}
+	.thead{
+		.flex;
+		.td{
+			flex:1;
+			height:40px;
+			line-height:30px;
+			border:1px solid @lineCol;
+			background: @blue;
+			color:#fff;
+			.boxSizing;
+			border-bottom: none;
+		}
+	}
+	.tbody{
+		.tr-time{
+			.flex;
+			.td-time{
+				flex:1;
+				position: relative;
+				.tr{
+					text-align: center;
+					height:40px;
+					line-height: 40px;
+					border-bottom: 1px solid @lineCol;
+					border-right: 1px solid @lineCol;
+					position: relative;
+					font-size: 14px;
+					.txt{
+						width:100%;
+						height:40px;
+						.flex;
+						span{
+							text-align: center;
+							b{font-weight: 100;}
+						}
+						span:nth-of-type(1){
+							font-size: 13px;
+							width:40%;
+							text-align: right;
+						}
+						span:nth-of-type(2){
+							width:40%;
+							text-align: left;
+							margin-left: 20%;
+						}
+					}
+
+					.showmore-remark{
+						background:#fff;
+						text-align: left;
+						//width:165px;
+						width: 100%;
+						border: 1px solid @lineCol;
+						max-height:220px;
+						overflow-y: auto;
+						padding:10px 10px;
+						position: absolute;
+						.boxSizing;
+						bottom:0;right: 0;
+						-webkit-transform: translateY(100%);
+						-moz-transform: translateY(100%);
+						-ms-transform: translateY(100%);
+						-o-transform: translateY(100%);
+						transform: translateY(100%);
+						z-index: 999;
+						font-size:14px;color:#111;
+						display: none;
+
+					}
+				}
+				.td-day{
+					height:40*6px;
+					line-height: 40*6px;
+					border-left: 1px solid @lineCol;
+				}
+				.lastTr{
+					cursor: pointer;
+					.showmore{
+						.boxSizing;
+						padding:20px;
+						border:1px solid @lineCol;
+						background: #fff;
+						position: absolute;
+						bottom:0;
+						right:0;
+						-webkit-transform: translate(90%,100%);
+						-moz-transform: translate(90%,100%);
+						-ms-transform: translate(90%,100%);
+						-o-transform: translate(90%,100%);
+						transform: translate(90%,100%);
+						z-index: 999;
+						padding-bottom: 0;
+						max-height:262px;
+						overflow-y: auto;
+						display: none;
+						ul{
+							li{
+
+								background:#fff;
+								margin-bottom: 20px;
+								.flex;
+								-webkit-box-align:center; /*box的对齐方式 align-items:center;*/
+								-webkit-align-items: center;
+								-ms-flex-align: center;
+								align-items: center;
+								.timeshow{
+									width:125px;
+									.flex;
+									span{
+										-webkit-box-flex: 1;
+										-webkit-flex: 1;
+										-moz-box-flex: 1;
+										-ms-flex: 1;
+										flex:1;
+										text-align: center;
+										b{font-weight: 100;}
+									}
+								}
+								.remark{
+									width:195px;
+									text-align: left;
+									font-size:14px;
+									color:#111;
+									line-height:16px;
+									border-left: 1px solid @lineCol;
+									margin-left: 10px;
+									padding-left:10px;
+								}
+							}
+						}
+					}
+				}
+				.lastTr:after{
+					content: '';
+					display: inline-block;
+					width:0;
+					height:0;
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					border-top: 15px solid transparent;
+					border-right: 15px solid #819cad;
+
+				}
+
+			}
+		}
+
+	}
+
+}

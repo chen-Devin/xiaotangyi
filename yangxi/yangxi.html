@@ -1,0 +1,97 @@
+<div class="yangxi-gis" id="yangxi1">
+    <div class="yangxi-content">
+        <div class="title">
+            <span>血糖记录表二</span>
+            <a class="cancelBtn"></a>
+        </div>
+        <div class="yangxi-search">
+            <input type="button" id="yangxi-startDate" class="laydate-icon" onclick="laydate({elem:'#yangxi-startDate',format: 'YYYY-MM-DD',istoday: true,max:$('#yangxi-endDate').val(),choose:yangxiDate('EX')})">
+            <span> 至 </span>
+            <input type="button" id="yangxi-endDate" class="laydate-icon" onclick="laydate({elem:'#yangxi-endDate',format: 'YYYY-MM-DD',istoday: true,min:$('#yangxi-startDate').val(),choose:yangxiDate('AF')})">
+
+            <button class="search-btn">查询</button>
+
+            <span class="tips">请填写完整的时间范围</span>
+        </div>
+        <div class="yangxi-table scrollBar">
+            <script type="text/template" id="yangxi-table-template">
+                <%_.each(obj,function(e,i){%>
+                <div class="page-break" style="page-break-after:always">
+                    <div class="yangxi-title">
+                        <p>阳西县人民医院</p>
+                        <p>血糖监测表</p>
+                    </div>
+                    <div class="td-info">
+                        <div class="patient-info" >
+                            <div class="item"><span>姓名 : </span><%=e.patientInfo.name%></div>
+                            <div class="item"><span>性别 : </span><%=(e.patientInfo.sex==1?'男':'女')%></div>
+                            <div class="item"><span>年龄 : </span><%=e.patientInfo.age%></div>
+                            <div class="item"><span>科室 : </span><%=e.patientInfo.deptName%></div>
+                            <div class="item"><span>床位号 : </span><%=e.patientInfo.sickbedNo%></div>
+                            <div class="item"><span>住院号 ：</span><%=e.patientInfo.hospitalizationNo%></div>
+                        </div>
+                    </div>
+                    <div class="table clearfix">
+                       <%_.each(e.pageList,function(ele,i){%>
+                        <table>
+                            <thead>
+                            <tr>
+                                <td colspan="2">
+                                    <%=(ele[0].createTime.split(' ')[0].split('-')[0]=='0000'?'&nbsp;&nbsp;&nbsp;&nbsp;':ele[0].createTime.split(' ')[0].split('-')[0])%>年
+                                    <%=(ele[0].createTime.split(' ')[0].split('-')[1]=='00'?'&nbsp;&nbsp;':ele[0].createTime.split(' ')[0].split('-')[1])%>月
+                                </td>
+                                <td rowspan="2">测定值<br/>mmol/L</td>
+                                <td rowspan="2">签名</td>
+                            </tr>
+                            <tr>
+                                <td class="time">日期</td>
+                                <td class="time">时间</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <%_.each(ele,function(element,j){%>
+                                <%if(element.daylist.length>0){%>
+                                    <%_.each(element.daylist,function(dom,l){%>
+                                        <tr>
+                                            <%if(l==0){%>
+                                            <td rowspan="<%=element.daylist.length%>">
+                                                <%if(element.createTime.split(' ')[0].split('-')[2]!='00'){%>
+                                                    <%=element.createTime.split(' ')[0].split('-')[2]%>号
+                                                <%}%>
+                                            </td>
+                                            <%}%>
+                                            <td>
+                                                <%if(element.createTime.split(' ')[0].split('-')[2]!='00'){%>
+                                                 <%=dom.createTime.split(' ')[1].slice(0,5)%>
+                                                <%}%>
+                                            </td>
+                                            <td><%=dom.sugar?dom.sugar:''%></td>
+                                            <td><%=dom.nurseName?dom.nurseName:''%></td>
+                                        </tr>
+                                    <%})%>
+                                <%}%>
+                            <%})%>
+                            </tbody>
+                        </table>
+                        <%})%>
+                    </div>
+                    <div class="tips">
+                        <p>空腹血糖 8h : 血糖正常3.9~5.5mmol/L , 血糖不良5.6~6.9mmol/L , 糖尿病7>mmol/L</p>
+                        <p>空腹血糖危急值 : 生命警戒值<2.8mmol/L或>25mmol/L</p>
+                    </div>
+                    <div class="pageNum">
+                        第 <%=e.currentPage%> 页
+                    </div>
+                </div>
+                <%})%>
+            </script>
+        </div>
+        <div class="yangxi-btn">
+            <button>导出</button>
+            <button class="yangxi-print">打印</button>
+        </div>
+    </div>
+</div>
+
+
+

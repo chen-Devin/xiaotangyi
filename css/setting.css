@@ -1,0 +1,3208 @@
+@charset "utf-8";
+.hideItem {
+    display: none!important;
+}
+
+.borderRadius {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.boxSizing {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html,
+body {
+    min-width: 1500px;
+}
+
+html,
+body {
+    background-color: #EBEBEB;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: #666;
+    font-family: Microsoft YaHei, "微软雅黑";
+    background-color: #f1f5f8;
+}
+
+div,
+li,
+ul,
+p,
+span a,
+em,
+i,
+input,
+dl,
+dd,
+dt {
+    box-sizing: border-box;
+}
+
+input,
+button,
+select {
+    outline: none;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+i {
+    font-style: normal;
+}
+
+img {
+    display: inline-block;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: '';
+    width: 0;
+    height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.fb {
+    font-weight: 700;
+}
+
+.fn {
+    font-weight: 400;
+}
+
+.t2 {
+    text-indent: 2em;
+}
+
+.tl {
+    text-align: left;
+}
+
+.tc {
+    text-align: center;
+}
+
+.tr {
+    text-align: right;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.dn {
+    display: none;
+}
+
+.db {
+    display: block;
+}
+
+.zoom {
+    zoom: 1;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+/*导航栏*/
+
+.nav {
+    width: 100%;
+    height: 70px;
+    background-color: #1D9EEF;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo {
+    width: 330px;
+    height: 70px;
+    padding-left: 20px;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.logo a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.logo a .logoName {
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+.logo a .logoName .hospitalName {
+    font-size: 14px;
+    color: #fff;
+}
+
+.logo a .logoName .sugarSystem {
+    font-size: 12px;
+    color: #b4d8f8;
+}
+
+.navBar {
+    overflow: hidden;
+}
+
+.navBarLeft li {
+    margin-right: 30px;
+}
+
+.navBarLeft li:last-of-type {
+    margin-right: 0;
+}
+
+.navBarLeft li a.active {
+    border-bottom: 2px solid #fff;
+}
+
+.navBarLeft li {
+    position: relative;
+}
+
+.navBarLeft li>i {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: red;
+    position: absolute;
+    top: 22px;
+    right: -5px;
+}
+
+.navBarRight {
+    position: absolute;
+    right: 20px;
+}
+
+.navBarLeft li a,
+.navBarRight>ul>li {
+    font-size: 16px;
+    line-height: 70px;
+    color: #fff;
+}
+
+.navBarRight li img {
+    width: 17px;
+    height: 19px;
+}
+
+.navBarRight li.navMsgImg {
+    padding: 0 24px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navBarRight li.navMsgImg i {
+    display: inline-block;
+    display: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: red;
+    position: absolute;
+    top: 22px;
+    right: 20px;
+}
+
+.navBarRight li a img {
+    vertical-align: middle;
+}
+
+.navBarRight li.line {
+    color: #fff;
+    margin: 0;
+}
+
+.PopMask {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.navBarRight li.nav-my {
+    padding-right: 24px;
+}
+
+.navBarRight .nav-my {
+    width: 100px;
+    height: 70px;
+    position: relative;
+}
+
+.navBarRight .nav-my .user {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 70px;
+    text-align: center;
+    color: #fff;
+}
+
+.navBarRight .nav-my .drapDown-user {
+    display: none;
+    width: 90px;
+    height: 97px;
+    z-index: 2;
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    background: url("../image/user_down_bg.png") no-repeat center;
+}
+
+.navBarRight .nav-my .drapDown-user ul {
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px 0 10px;
+}
+
+.navBarRight .nav-my .drapDown-user ul li {
+    width: 100%;
+    height: 32px;
+    font-size: 12px;
+    line-height: 32px;
+    border-bottom: 1px solid #ccc;
+}
+
+.navBarRight .nav-my .drapDown-user ul li a {
+    display: inline-block;
+    width: 100%;
+    color: #666;
+    height: 32px;
+}
+
+.navBarRight .nav-my .drapDown-user ul li a:hover {
+    color: #2fa6f0;
+}
+
+.navBarRight .nav-my .drapDown-user ul li.active a {
+    color: #2fa6f0;
+}
+
+.navBarRight .nav-my .drapDown-user ul li.last {
+    border-bottom: none;
+}
+
+.navBarRight .nav-my>a:after {
+    content: '';
+    width: 10px;
+    height: 7px;
+    display: inline-block;
+    background: url("../image/icon_user_downpush.png") no-repeat center / 10px 7px;
+    position: absolute;
+    right: 0;
+    top: 31px;
+    margin-right: 10px;
+}
+
+.navMsg {
+    display: none;
+    position: absolute;
+    width: 224px;
+    height: 223px;
+    top: 47px;
+    right: 108px;
+    z-index: 22;
+    background: url('../image/message_bg.png') no-repeat center / 224px 223px;
+}
+
+.navMsg .msgBg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 25px 18px 0 18px;
+    font-size: 12px;
+}
+
+.navMsg .msgBg ul li {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #cecece;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.navMsg .msgBg ul li a {
+    color: #666;
+}
+
+.navMsg .msgBg ul li a:hover {
+    color: #1d9eef;
+}
+
+.navMsg .msgBg a {
+    display: block;
+    line-height: 38px;
+    color: #666;
+}
+
+.navMsg .msgBg a:hover {
+    color: #1d9eef;
+}
+
+.updatePwdPop {
+    display: none;
+    width: 382px;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    z-index: 4;
+    top: 50%;
+    margin-top: -160px;
+    margin-left: -191px;
+    padding: 0 20px 20px 20px;
+    background-color: #fff;
+}
+
+.updatePwdPop .title {
+    line-height: 60px;
+    height: 60px;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+.updatePwdPop .title a {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: url("../image/close_but_normal.png") no-repeat center / 24px 24px;
+    margin-top: 18px;
+}
+
+.updatePwdPop .updatePwd-content {
+    font-size: 14px;
+    color: #666;
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
+
+.updatePwdPop .updatePwd-content .updateList {
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 20px;
+}
+
+.updatePwdPop .updatePwd-content .updateList p {
+    display: inline-block;
+    height: 35px;
+    margin-right: 10px;
+    width: 80px;
+}
+
+.updatePwdPop .updatePwd-content .updateList input {
+    width: 220px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+
+.updatePwdPop .updatePwd-content .updateList-btn {
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+}
+
+.updatePwdPop .updatePwd-content .updateList-btn a {
+    display: inline-block;
+    width: 80px;
+    height: 36px;
+    line-height: 36px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.updatePwdPop .updatePwd-content .updateList-btn a.cancel {
+    margin-left: 20px;
+}
+
+.updatePwdPop .updatePwd-content .updateList-btn a.active {
+    color: #fff;
+    background-color: #2fa6f0;
+}
+
+
+/*
+!*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*!
+::-webkit-scrollbar{width: 8px;height: 16px;background-color:transparent;}
+!*定义滚动条轨道 内阴影+圆角*!
+::-webkit-scrollbar-track {background-color: #fff;}
+!*定义滑块 内阴影+圆角*!
+::-webkit-scrollbar-thumb {border-radius: 3px;background-color: #e6eaed;}
+*/
+
+.scrollBar {
+    scrollbar-face-color: #fff;
+    /*主色调*/
+    scrollbar-highlight-color: #e6eaed;
+    scrollbar-shadow-color: #e6eaed;
+    /*描边颜色*/
+    scrollbar-3dlight-color: #e6eaed;
+    /*左侧边高光颜色*/
+    scrollbar-arrow-color: transparent;
+    /*小三角颜色*/
+    scrollbar-track-color: #e6eaed;
+    scrollbar-darkshadow-color: #DDD;
+}
+
+.scrollBar::-webkit-scrollbar {
+    width: 8px;
+    height: 16px;
+    background-color: transparent;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #e6eaed;
+}
+
+.toast-container {
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    -webkit-transition: opacity .8s;
+    transition: opacity .8s;
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.toast-container.active {
+    opacity: 1;
+}
+
+.toast-message {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    background: #000;
+    padding: 10px;
+}
+
+.flex {
+    display: -webkit-box;
+    /*布局方式 相当于display:flex*/
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: box;
+}
+
+.align-items-start {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.align-items-center {
+    -webkit-box-align: center;
+    /*box的对齐方式 align-items:center;*/
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.align-items-end {
+    -webkit-box-align: end;
+    /*box的对齐方式 align-items:flex-end;*/
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.align-content {
+    align-content: space-between;
+    -webkit-align-content: space-between;
+    -webkit-justify-content: space-between;
+}
+
+.justify-content-start {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.justify-content-center {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.justify-content-between {
+    -webkit-box-pack: justify;
+    /* justify-content: space-between;*/
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.main-content {
+    zoom: 1;
+    width: 100%;
+    height: 90%;
+    padding: 20px 20px 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .leftNav {
+    width: 20%;
+    height: 100%;
+    background: #fff;
+    max-width: 260px;
+    float: left;
+    margin-right: 2%;
+}
+
+.main-content .leftNav ul {
+    width: 100%;
+}
+
+.main-content .leftNav ul li {
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.main-content .leftNav ul li a {
+    display: block;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 40px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    color: #819cad;
+    background: #fff;
+    vertical-align: middle;
+}
+
+.main-content .leftNav ul li a img {
+    width: 26px;
+    vertical-align: middle;
+    margin-right: 25px;
+}
+
+.main-content .leftNav ul .active a {
+    background: #ebf0f3;
+    color: #1D9EEF;
+}
+
+.main-content .rightBox {
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+
+.main-content .rightBox .page {
+    margin: 10px 10px 10px 0;
+}
+
+.main-content .rightBox .department-manage {
+    width: 100%;
+}
+
+.main-content .rightBox .department-manage .searchNav {
+    width: 100%;
+    background: #fff;
+    height: 68px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+.main-content .rightBox .department-manage .searchNav .clearfix {
+    border-bottom: 1px solid #cecece;
+    width: 100%;
+    height: 68px;
+    padding: 20px 0;
+}
+
+.main-content .rightBox .department-manage .searchNav .search {
+    height: 100%;
+    width: 220px;
+    border: 1px solid #cecece;
+    line-height: 28px;
+    margin: 0 5px;
+    height: 28px;
+    color: #999;
+    float: left;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.main-content .rightBox .department-manage .searchNav .search img {
+    height: 12px;
+    margin-top: 7px;
+    position: absolute;
+    left: 10px;
+}
+
+.main-content .rightBox .department-manage .searchNav .search input {
+    padding-left: 30px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 10px;
+}
+
+.main-content .rightBox .department-manage .searchNav .search input::-webkit-input-placeholder {
+    /* WebKit browsers*/
+    color: #999;
+}
+
+.main-content .rightBox .department-manage .searchNav .search input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18*/
+    color: #999;
+}
+
+.main-content .rightBox .department-manage .searchNav .search input::-moz-placeholder {
+    /* Mozilla Firefox 19+*/
+    color: #999;
+}
+
+.main-content .rightBox .department-manage .searchNav .search input:-ms-input-placeholder {
+    /* Internet Explorer 10+*/
+    color: #999;
+}
+
+.main-content .rightBox .department-manage .searchNav .search .select-list {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    z-index: 222;
+}
+
+.main-content .rightBox .department-manage .searchNav .search .select-list li {
+    border-left: 1px solid #cecece;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .department-manage .searchNav .search .select-list li:hover {
+    background: #e6eaed;
+}
+
+.main-content .rightBox .department-manage .searchNav .select {
+    float: left;
+    margin: 0 5px;
+    display: inline-block;
+    position: relative;
+    height: 28px;
+    min-width: 100px;
+    max-width: 180px;
+    margin-left: 10px;
+}
+
+.main-content .rightBox .department-manage .searchNav .select .select-btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    border: 1px solid #cecece;
+    margin: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 100%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #fff;
+    text-align: left;
+}
+
+.main-content .rightBox .department-manage .searchNav .select .triangle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #111111;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+}
+
+.main-content .rightBox .department-manage .searchNav .select .list-show {
+    min-width: 100%;
+    height: auto;
+    max-height: 150px;
+    padding-bottom: 10px;
+    background: #fff;
+    overflow-y: auto;
+    border: 1px solid #cecece;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%);
+    z-index: 100;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.main-content .rightBox .department-manage .searchNav .select .select-list {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    z-index: 222;
+}
+
+.main-content .rightBox .department-manage .searchNav .select .select-list li {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .department-manage .searchNav .select .select-list li:hover {
+    background: #e6eaed;
+}
+
+.main-content .rightBox .department-manage .searchNav .btnLeft {
+    float: left;
+    padding: 0 12px;
+    height: 28px;
+    border: 1px solid #cecece;
+    line-height: 28px;
+    font-size: 14px;
+    color: #111;
+    background: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .department-manage .searchNav .btn {
+    float: right;
+    padding: 0 12px;
+    height: 28px;
+    border: 1px solid #cecece;
+    line-height: 28px;
+    font-size: 14px;
+    color: #111;
+    background: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .department-manage .searchNav .activeBtn {
+    background: #1D9EEF;
+    color: #fff;
+    border: none;
+}
+
+.main-content .rightBox .department-manage .searchNav .delAllBtn {
+    float: right;
+}
+
+.main-content .rightBox .department-manage .patientList {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 26px 20px 0;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.main-content .rightBox .department-manage .patientList .list {
+    width: 100%;
+    border: 1px solid #cecece;
+}
+
+.main-content .rightBox .department-manage .patientList .list thead {
+    width: 100%;
+}
+
+.main-content .rightBox .department-manage .patientList .list thead tr {
+    width: 100%;
+    background: #1D9EEF;
+}
+
+.main-content .rightBox .department-manage .patientList .list thead tr td {
+    color: #fff;
+    background: #1D9EEF;
+    margin: 0;
+    height: 40px;
+    text-align: center;
+    border-right: 1px solid #cecece;
+}
+
+.main-content .rightBox .department-manage .patientList .list tr {
+    width: 100%;
+    border-bottom: 1px solid #cecece;
+    /*.td1{border-left:1px solid @lineCol;width:8%;}
+            .td2,td3,.td4,.td5{width:20%;}
+            .td6{width:12%;}*/
+}
+
+.main-content .rightBox .department-manage .patientList .list tr td {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 1px solid #cecece;
+    font-size: 14px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #cecece;
+}
+
+.main-content .rightBox .department-manage .patientList .list tr td:nth-last-of-type(1) {
+    border-right: none;
+}
+
+.main-content .rightBox .department-manage .patientList .list tbody tr td {
+    color: #333;
+}
+
+.main-content .rightBox .department-manage .patientList .list tbody tr .td6 a {
+    color: #1D9EEF;
+    text-decoration: underline;
+}
+
+.main-content .rightBox .department-manage .patientList .list tbody tr:nth-last-of-type(1) td {
+    border-bottom: none;
+}
+
+.main-content .rightBox .department-manage .patientList .allCount {
+    font-size: 14px;
+    color: #111;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.main-content .rightBox .department-manage .addNew {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.main-content .rightBox .department-manage .addNew .content {
+    width: 382px;
+    height: 400px;
+    background: #fff;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.main-content .rightBox .department-manage .addNew .content .title {
+    width: 342px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #eceff1;
+}
+
+.main-content .rightBox .department-manage .addNew .content .title a {
+    width: 24px;
+    height: 24px;
+    float: right;
+    margin-top: 18px;
+    background: url("../image/close_but_normal.png") no-repeat center;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.main-content .rightBox .department-manage .addNew .content .title a:hover {
+    background: url("../image/close_but_press.png") no-repeat center;
+}
+
+.main-content .rightBox .department-manage .addNew .content .txt-content {
+    margin: 60px auto 40px;
+    width: 100%;
+}
+
+.main-content .rightBox .department-manage .addNew .content .txt-content .item {
+    margin-bottom: 18px;
+}
+
+.main-content .rightBox .department-manage .addNew .content .txt-content .item span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+}
+
+.main-content .rightBox .department-manage .addNew .content .txt-content .item input {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #cecece;
+    width: 220px;
+    height: 36px;
+    margin-left: 17px;
+    vertical-align: middle;
+    line-height: 36px;
+    font-size: 14px;
+    padding: 0 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .department-manage .addNew .content .btn {
+    text-align: right;
+    padding-right: 40px;
+}
+
+.main-content .rightBox .department-manage .addNew .content .btn button {
+    width: 80px;
+    border: 1px solid #cecece;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    color: #111;
+    background: #fff;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .department-manage .addNew .content .btn .sureBtn {
+    margin: 0;
+    background: #1D9EEF;
+    color: #fff;
+    border: none;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport {
+    width: 420px;
+    height: 300px;
+    background: #fff;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport .title {
+    width: 342px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #eceff1;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport .title a {
+    width: 24px;
+    height: 24px;
+    float: right;
+    margin-top: 18px;
+    background: url("../image/close_but_normal.png") no-repeat center;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport .title a:hover {
+    background: url("../image/close_but_press.png") no-repeat center;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport .txt-content {
+    margin: 60px auto 40px;
+    width: 100%;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport .txt-content .item {
+    margin-bottom: 18px;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport .txt-content .item span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport .txt-content .item input {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #cecece;
+    width: 180px;
+    height: 36px;
+    margin: 0 5px;
+    vertical-align: middle;
+    line-height: 36px;
+    font-size: 14px;
+    padding: 0 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport .txt-content .item .chooseFile {
+    display: inline-block;
+    width: 80px;
+    height: 36px;
+    font-size: 14px;
+    background-color: #aebfce;
+    border-radius: 5px;
+    color: white;
+    margin: 0;
+    cursor: pointer;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport .txt-content .item a {
+    display: inline-block;
+    width: 50px;
+    font-size: 12px;
+    color: #2fa6f0;
+    cursor: pointer;
+    margin-left: 120px;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport .btn {
+    text-align: right;
+    padding-right: 40px;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport .btn button {
+    width: 80px;
+    border: 1px solid #cecece;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    color: #111;
+    background: #fff;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .department-manage .addNew .contentImport .btn .sureBtn {
+    margin: 0;
+    background: #1D9EEF;
+    color: #fff;
+    border: none;
+}
+
+.main-content .rightBox .role-manage {
+    width: 100%;
+}
+
+.main-content .rightBox .role-manage .searchNav {
+    width: 100%;
+    background: #fff;
+    height: 68px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+.main-content .rightBox .role-manage .searchNav .clearfix {
+    border-bottom: 1px solid #cecece;
+    width: 100%;
+    height: 68px;
+    padding: 20px 0;
+}
+
+.main-content .rightBox .role-manage .searchNav .search {
+    height: 100%;
+    width: 220px;
+    border: 1px solid #cecece;
+    line-height: 28px;
+    margin: 0 5px;
+    height: 28px;
+    color: #999;
+    float: left;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.main-content .rightBox .role-manage .searchNav .search img {
+    height: 12px;
+    margin-top: 7px;
+    position: absolute;
+    left: 10px;
+}
+
+.main-content .rightBox .role-manage .searchNav .search input {
+    padding-left: 30px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 10px;
+}
+
+.main-content .rightBox .role-manage .searchNav .search input::-webkit-input-placeholder {
+    /* WebKit browsers*/
+    color: #999;
+}
+
+.main-content .rightBox .role-manage .searchNav .search input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18*/
+    color: #999;
+}
+
+.main-content .rightBox .role-manage .searchNav .search input::-moz-placeholder {
+    /* Mozilla Firefox 19+*/
+    color: #999;
+}
+
+.main-content .rightBox .role-manage .searchNav .search input:-ms-input-placeholder {
+    /* Internet Explorer 10+*/
+    color: #999;
+}
+
+.main-content .rightBox .role-manage .searchNav .search .select-list {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    z-index: 222;
+}
+
+.main-content .rightBox .role-manage .searchNav .search .select-list li {
+    border-left: 1px solid #cecece;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .role-manage .searchNav .search .select-list li:hover {
+    background: #e6eaed;
+}
+
+.main-content .rightBox .role-manage .searchNav .select {
+    float: left;
+    margin: 0 5px;
+    display: inline-block;
+    position: relative;
+    height: 28px;
+    min-width: 100px;
+    max-width: 180px;
+    margin-left: 10px;
+}
+
+.main-content .rightBox .role-manage .searchNav .select .select-btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    border: 1px solid #cecece;
+    margin: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 100%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #fff;
+    text-align: left;
+}
+
+.main-content .rightBox .role-manage .searchNav .select .triangle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #111111;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+}
+
+.main-content .rightBox .role-manage .searchNav .select .list-show {
+    min-width: 100%;
+    height: auto;
+    max-height: 150px;
+    padding-bottom: 10px;
+    background: #fff;
+    overflow-y: auto;
+    border: 1px solid #cecece;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%);
+    z-index: 100;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.main-content .rightBox .role-manage .searchNav .select .select-list {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    z-index: 222;
+}
+
+.main-content .rightBox .role-manage .searchNav .select .select-list li {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .role-manage .searchNav .select .select-list li:hover {
+    background: #e6eaed;
+}
+
+.main-content .rightBox .role-manage .searchNav .btnLeft {
+    float: left;
+    padding: 0 12px;
+    height: 28px;
+    border: 1px solid #cecece;
+    line-height: 28px;
+    font-size: 14px;
+    color: #111;
+    background: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .role-manage .searchNav .btn {
+    float: right;
+    padding: 0 12px;
+    height: 28px;
+    border: 1px solid #cecece;
+    line-height: 28px;
+    font-size: 14px;
+    color: #111;
+    background: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .role-manage .searchNav .activeBtn {
+    background: #1D9EEF;
+    color: #fff;
+    border: none;
+}
+
+.main-content .rightBox .role-manage .searchNav .delAllBtn {
+    float: right;
+}
+
+.main-content .rightBox .role-manage .patientList {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 26px 20px 0;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.main-content .rightBox .role-manage .patientList .list {
+    width: 100%;
+    border: 1px solid #cecece;
+}
+
+.main-content .rightBox .role-manage .patientList .list thead {
+    width: 100%;
+}
+
+.main-content .rightBox .role-manage .patientList .list thead tr {
+    width: 100%;
+    background: #1D9EEF;
+}
+
+.main-content .rightBox .role-manage .patientList .list thead tr td {
+    color: #fff;
+    background: #1D9EEF;
+    margin: 0;
+    height: 40px;
+    text-align: center;
+    border-right: 1px solid #cecece;
+}
+
+.main-content .rightBox .role-manage .patientList .list tr {
+    width: 100%;
+    border-bottom: 1px solid #cecece;
+    /*.td1{border-left:1px solid @lineCol;width:8%;}
+            .td2,td3,.td4,.td5{width:20%;}
+            .td6{width:12%;}*/
+}
+
+.main-content .rightBox .role-manage .patientList .list tr td {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 1px solid #cecece;
+    font-size: 14px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #cecece;
+}
+
+.main-content .rightBox .role-manage .patientList .list tr td:nth-last-of-type(1) {
+    border-right: none;
+}
+
+.main-content .rightBox .role-manage .patientList .list tbody tr td {
+    color: #333;
+}
+
+.main-content .rightBox .role-manage .patientList .list tbody tr .td6 a {
+    color: #1D9EEF;
+    text-decoration: underline;
+}
+
+.main-content .rightBox .role-manage .patientList .list tbody tr:nth-last-of-type(1) td {
+    border-bottom: none;
+}
+
+.main-content .rightBox .role-manage .patientList .allCount {
+    font-size: 14px;
+    color: #111;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.main-content .rightBox .role-manage .addNew {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.main-content .rightBox .role-manage .addNew .content {
+    width: 382px;
+    height: 400px;
+    background: #fff;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.main-content .rightBox .role-manage .addNew .content .title {
+    width: 342px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #eceff1;
+}
+
+.main-content .rightBox .role-manage .addNew .content .title a {
+    width: 24px;
+    height: 24px;
+    float: right;
+    margin-top: 18px;
+    background: url("../image/close_but_normal.png") no-repeat center;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.main-content .rightBox .role-manage .addNew .content .title a:hover {
+    background: url("../image/close_but_press.png") no-repeat center;
+}
+
+.main-content .rightBox .role-manage .addNew .content .txt-content {
+    margin: 60px auto 40px;
+    width: 100%;
+}
+
+.main-content .rightBox .role-manage .addNew .content .txt-content .item {
+    margin-bottom: 18px;
+}
+
+.main-content .rightBox .role-manage .addNew .content .txt-content .item span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+}
+
+.main-content .rightBox .role-manage .addNew .content .txt-content .item input {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #cecece;
+    width: 220px;
+    height: 36px;
+    margin-left: 17px;
+    vertical-align: middle;
+    line-height: 36px;
+    font-size: 14px;
+    padding: 0 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .role-manage .addNew .content .btn {
+    text-align: right;
+    padding-right: 40px;
+}
+
+.main-content .rightBox .role-manage .addNew .content .btn button {
+    width: 80px;
+    border: 1px solid #cecece;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    color: #111;
+    background: #fff;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .role-manage .addNew .content .btn .sureBtn {
+    margin: 0;
+    background: #1D9EEF;
+    color: #fff;
+    border: none;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport {
+    width: 420px;
+    height: 300px;
+    background: #fff;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport .title {
+    width: 342px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #eceff1;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport .title a {
+    width: 24px;
+    height: 24px;
+    float: right;
+    margin-top: 18px;
+    background: url("../image/close_but_normal.png") no-repeat center;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport .title a:hover {
+    background: url("../image/close_but_press.png") no-repeat center;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport .txt-content {
+    margin: 60px auto 40px;
+    width: 100%;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport .txt-content .item {
+    margin-bottom: 18px;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport .txt-content .item span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport .txt-content .item input {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #cecece;
+    width: 180px;
+    height: 36px;
+    margin: 0 5px;
+    vertical-align: middle;
+    line-height: 36px;
+    font-size: 14px;
+    padding: 0 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport .txt-content .item .chooseFile {
+    display: inline-block;
+    width: 80px;
+    height: 36px;
+    font-size: 14px;
+    background-color: #aebfce;
+    border-radius: 5px;
+    color: white;
+    margin: 0;
+    cursor: pointer;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport .txt-content .item a {
+    display: inline-block;
+    width: 50px;
+    font-size: 12px;
+    color: #2fa6f0;
+    cursor: pointer;
+    margin-left: 120px;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport .btn {
+    text-align: right;
+    padding-right: 40px;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport .btn button {
+    width: 80px;
+    border: 1px solid #cecece;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    color: #111;
+    background: #fff;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .role-manage .addNew .contentImport .btn .sureBtn {
+    margin: 0;
+    background: #1D9EEF;
+    color: #fff;
+    border: none;
+}
+
+.main-content .rightBox .role-manage .patientList .list tr .td1 {
+    width: 8%;
+    border-left: none!important;
+}
+
+.main-content .rightBox .role-manage .patientList .list tr .td2 {
+    width: 20%;
+}
+
+.main-content .rightBox .role-manage .patientList .list tr .td3,
+.main-content .rightBox .role-manage .patientList .list tr .td4 {
+    width: 30%;
+}
+
+.main-content .rightBox .role-manage .patientList .list tr .td5 {
+    width: 0;
+}
+
+.main-content .rightBox .role-manage .patientList .list tr .td6 {
+    width: 12%;
+}
+
+.main-content .rightBox .role-manage .patientList tbody tr td {
+    color: #333;
+}
+
+.main-content .rightBox .role-manage .patientList tbody tr .td6 a {
+    color: #1D9EEF;
+    text-decoration: underline;
+}
+
+.main-content .rightBox .role-manage .patientList .allCount {
+    font-size: 14px;
+    color: #111;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.main-content .rightBox .role-manage .add-role {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content .rightBox .role-manage .add-role .content {
+    position: relative;
+    width: 80%;
+    background: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.main-content .rightBox .role-manage .add-role .content .title {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #eceff1;
+}
+
+.main-content .rightBox .role-manage .add-role .content .title a {
+    width: 24px;
+    height: 24px;
+    float: right;
+    margin-top: 18px;
+    background: url("../image/close_but_normal.png") no-repeat center;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.main-content .rightBox .role-manage .add-role .content .title a:hover {
+    background: url("../image/close_but_press.png") no-repeat center;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item span {
+    color: #666;
+    font-size: 14px;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .txt {
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .txt span {
+    display: inline-block;
+    text-align: right;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .txt input {
+    width: 200px;
+    height: 36px;
+    padding: 0 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #cecece;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .range-content {
+    margin: 38px 0 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cecece;
+    width: 100%;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .range-content .range {
+    display: inline-block;
+    margin-right: 70px;
+    color: #666;
+    font-size: 14px;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .range-content .range label {
+    margin: 0 30px 0 10px;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .choose-title {
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .choose-title input {
+    width: 14px;
+    height: 14px;
+    margin-right: 16px;
+    vertical-align: middle;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .choose-item {
+    padding-left: 70px;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .choose-item .check-item {
+    margin-bottom: 10px;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .choose-item input {
+    width: 14px;
+    height: 14px;
+    margin-right: 16px;
+    vertical-align: middle;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .choose-item label {
+    margin-right: 20px;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .choose-item .second-content {
+    padding-left: 24px;
+}
+
+.main-content .rightBox .role-manage .add-role .content .txt-content .item .choose-item .second-content label {
+    font-size: 14px;
+}
+
+.main-content .rightBox .role-manage .add-role .content .btn {
+    text-align: right;
+    height: 80px;
+    line-height: 80px;
+}
+
+.main-content .rightBox .role-manage .add-role .content .btn .cancelBtn {
+    width: 80px;
+    height: 36px;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    line-height: 36px;
+    border: 1px solid #cecece;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.main-content .rightBox .role-manage .add-role .content .btn .sureBtn {
+    width: 80px;
+    height: 36px;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    line-height: 36px;
+    border: 1px solid #cecece;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    display: inline-block;
+    border: none;
+    background: #1D9EEF;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.main-content .rightBox .user-manage {
+    width: 100%;
+}
+
+.main-content .rightBox .user-manage .searchNav {
+    width: 100%;
+    background: #fff;
+    height: 68px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+.main-content .rightBox .user-manage .searchNav .clearfix {
+    border-bottom: 1px solid #cecece;
+    width: 100%;
+    height: 68px;
+    padding: 20px 0;
+}
+
+.main-content .rightBox .user-manage .searchNav .search {
+    height: 100%;
+    width: 220px;
+    border: 1px solid #cecece;
+    line-height: 28px;
+    margin: 0 5px;
+    height: 28px;
+    color: #999;
+    float: left;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.main-content .rightBox .user-manage .searchNav .search img {
+    height: 12px;
+    margin-top: 7px;
+    position: absolute;
+    left: 10px;
+}
+
+.main-content .rightBox .user-manage .searchNav .search input {
+    padding-left: 30px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 10px;
+}
+
+.main-content .rightBox .user-manage .searchNav .search input::-webkit-input-placeholder {
+    /* WebKit browsers*/
+    color: #999;
+}
+
+.main-content .rightBox .user-manage .searchNav .search input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18*/
+    color: #999;
+}
+
+.main-content .rightBox .user-manage .searchNav .search input::-moz-placeholder {
+    /* Mozilla Firefox 19+*/
+    color: #999;
+}
+
+.main-content .rightBox .user-manage .searchNav .search input:-ms-input-placeholder {
+    /* Internet Explorer 10+*/
+    color: #999;
+}
+
+.main-content .rightBox .user-manage .searchNav .search .select-list {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    z-index: 222;
+}
+
+.main-content .rightBox .user-manage .searchNav .search .select-list li {
+    border-left: 1px solid #cecece;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .user-manage .searchNav .search .select-list li:hover {
+    background: #e6eaed;
+}
+
+.main-content .rightBox .user-manage .searchNav .select {
+    float: left;
+    margin: 0 5px;
+    display: inline-block;
+    position: relative;
+    height: 28px;
+    min-width: 100px;
+    max-width: 180px;
+    margin-left: 10px;
+}
+
+.main-content .rightBox .user-manage .searchNav .select .select-btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    border: 1px solid #cecece;
+    margin: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 100%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #fff;
+    text-align: left;
+}
+
+.main-content .rightBox .user-manage .searchNav .select .triangle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #111111;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+}
+
+.main-content .rightBox .user-manage .searchNav .select .list-show {
+    min-width: 100%;
+    height: auto;
+    max-height: 150px;
+    padding-bottom: 10px;
+    background: #fff;
+    overflow-y: auto;
+    border: 1px solid #cecece;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%);
+    z-index: 100;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.main-content .rightBox .user-manage .searchNav .select .select-list {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    z-index: 222;
+}
+
+.main-content .rightBox .user-manage .searchNav .select .select-list li {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .user-manage .searchNav .select .select-list li:hover {
+    background: #e6eaed;
+}
+
+.main-content .rightBox .user-manage .searchNav .btnLeft {
+    float: left;
+    padding: 0 12px;
+    height: 28px;
+    border: 1px solid #cecece;
+    line-height: 28px;
+    font-size: 14px;
+    color: #111;
+    background: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .user-manage .searchNav .btn {
+    float: right;
+    padding: 0 12px;
+    height: 28px;
+    border: 1px solid #cecece;
+    line-height: 28px;
+    font-size: 14px;
+    color: #111;
+    background: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .user-manage .searchNav .activeBtn {
+    background: #1D9EEF;
+    color: #fff;
+    border: none;
+}
+
+.main-content .rightBox .user-manage .searchNav .delAllBtn {
+    float: right;
+}
+
+.main-content .rightBox .user-manage .patientList {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 26px 20px 0;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.main-content .rightBox .user-manage .patientList .list {
+    width: 100%;
+    border: 1px solid #cecece;
+}
+
+.main-content .rightBox .user-manage .patientList .list thead {
+    width: 100%;
+}
+
+.main-content .rightBox .user-manage .patientList .list thead tr {
+    width: 100%;
+    background: #1D9EEF;
+}
+
+.main-content .rightBox .user-manage .patientList .list thead tr td {
+    color: #fff;
+    background: #1D9EEF;
+    margin: 0;
+    height: 40px;
+    text-align: center;
+    border-right: 1px solid #cecece;
+}
+
+.main-content .rightBox .user-manage .patientList .list tr {
+    width: 100%;
+    border-bottom: 1px solid #cecece;
+    /*.td1{border-left:1px solid @lineCol;width:8%;}
+            .td2,td3,.td4,.td5{width:20%;}
+            .td6{width:12%;}*/
+}
+
+.main-content .rightBox .user-manage .patientList .list tr td {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 1px solid #cecece;
+    font-size: 14px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #cecece;
+}
+
+.main-content .rightBox .user-manage .patientList .list tr td:nth-last-of-type(1) {
+    border-right: none;
+}
+
+.main-content .rightBox .user-manage .patientList .list tbody tr td {
+    color: #333;
+}
+
+.main-content .rightBox .user-manage .patientList .list tbody tr .td6 a {
+    color: #1D9EEF;
+    text-decoration: underline;
+}
+
+.main-content .rightBox .user-manage .patientList .list tbody tr:nth-last-of-type(1) td {
+    border-bottom: none;
+}
+
+.main-content .rightBox .user-manage .patientList .allCount {
+    font-size: 14px;
+    color: #111;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.main-content .rightBox .user-manage .addNew {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.main-content .rightBox .user-manage .addNew .content {
+    width: 382px;
+    height: 400px;
+    background: #fff;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.main-content .rightBox .user-manage .addNew .content .title {
+    width: 342px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #eceff1;
+}
+
+.main-content .rightBox .user-manage .addNew .content .title a {
+    width: 24px;
+    height: 24px;
+    float: right;
+    margin-top: 18px;
+    background: url("../image/close_but_normal.png") no-repeat center;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.main-content .rightBox .user-manage .addNew .content .title a:hover {
+    background: url("../image/close_but_press.png") no-repeat center;
+}
+
+.main-content .rightBox .user-manage .addNew .content .txt-content {
+    margin: 60px auto 40px;
+    width: 100%;
+}
+
+.main-content .rightBox .user-manage .addNew .content .txt-content .item {
+    margin-bottom: 18px;
+}
+
+.main-content .rightBox .user-manage .addNew .content .txt-content .item span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+}
+
+.main-content .rightBox .user-manage .addNew .content .txt-content .item input {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #cecece;
+    width: 220px;
+    height: 36px;
+    margin-left: 17px;
+    vertical-align: middle;
+    line-height: 36px;
+    font-size: 14px;
+    padding: 0 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .user-manage .addNew .content .btn {
+    text-align: right;
+    padding-right: 40px;
+}
+
+.main-content .rightBox .user-manage .addNew .content .btn button {
+    width: 80px;
+    border: 1px solid #cecece;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    color: #111;
+    background: #fff;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .user-manage .addNew .content .btn .sureBtn {
+    margin: 0;
+    background: #1D9EEF;
+    color: #fff;
+    border: none;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport {
+    width: 420px;
+    height: 300px;
+    background: #fff;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport .title {
+    width: 342px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #eceff1;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport .title a {
+    width: 24px;
+    height: 24px;
+    float: right;
+    margin-top: 18px;
+    background: url("../image/close_but_normal.png") no-repeat center;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport .title a:hover {
+    background: url("../image/close_but_press.png") no-repeat center;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport .txt-content {
+    margin: 60px auto 40px;
+    width: 100%;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport .txt-content .item {
+    margin-bottom: 18px;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport .txt-content .item span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport .txt-content .item input {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #cecece;
+    width: 180px;
+    height: 36px;
+    margin: 0 5px;
+    vertical-align: middle;
+    line-height: 36px;
+    font-size: 14px;
+    padding: 0 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport .txt-content .item .chooseFile {
+    display: inline-block;
+    width: 80px;
+    height: 36px;
+    font-size: 14px;
+    background-color: #aebfce;
+    border-radius: 5px;
+    color: white;
+    margin: 0;
+    cursor: pointer;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport .txt-content .item a {
+    display: inline-block;
+    width: 50px;
+    font-size: 12px;
+    color: #2fa6f0;
+    cursor: pointer;
+    margin-left: 120px;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport .btn {
+    text-align: right;
+    padding-right: 40px;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport .btn button {
+    width: 80px;
+    border: 1px solid #cecece;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    color: #111;
+    background: #fff;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .user-manage .addNew .contentImport .btn .sureBtn {
+    margin: 0;
+    background: #1D9EEF;
+    color: #fff;
+    border: none;
+}
+
+.main-content .rightBox .user-manage .patientList .list {
+    width: 100%;
+}
+
+.main-content .rightBox .user-manage .patientList .list thead {
+    width: 100%;
+}
+
+.main-content .rightBox .user-manage .patientList .list thead tr {
+    width: 100%;
+    background: #1D9EEF;
+}
+
+.main-content .rightBox .user-manage .patientList .list thead tr td {
+    color: #fff;
+    background: #1D9EEF;
+    margin: 0;
+    height: 40px;
+    text-align: center;
+    border-right: 1px solid #cecece;
+}
+
+.main-content .rightBox .user-manage .patientList .list tr .td1 {
+    width: 8%;
+    border-left: none!important;
+}
+
+.main-content .rightBox .user-manage .patientList .list tr .td2,
+.main-content .rightBox .user-manage .patientList .list tr .td3,
+.main-content .rightBox .user-manage .patientList .list tr .td4,
+.main-content .rightBox .user-manage .patientList .list tr .td5,
+.main-content .rightBox .user-manage .patientList .list tr .td7 {
+    width: 12%;
+}
+
+.main-content .rightBox .user-manage .patientList .list tr .td8 {
+    width: 15%;
+}
+
+.main-content .rightBox .user-manage .patientList .list tr .td6 {
+    width: 12%;
+}
+
+.main-content .rightBox .user-manage .patientList .list tbody tr td {
+    color: #333;
+}
+
+.main-content .rightBox .user-manage .patientList .list tbody tr .td6 a {
+    color: #1D9EEF;
+    text-decoration: underline;
+}
+
+.main-content .rightBox .user-manage .patientList .allCount {
+    font-size: 14px;
+    color: #111;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.main-content .rightBox .user-manage .addNew .content {
+    width: 382px;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content {
+    margin-top: 20px;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item {
+    padding-left: 48px;
+    margin-bottom: 20px;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item span {
+    font-size: 14px;
+    color: #666;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item input {
+    width: 220px;
+    line-height: 36px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #cecece;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item .must {
+    font-size: 16px;
+    margin-left: 10px;
+    color: #ff636e;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item .select {
+    display: inline-block;
+    position: relative;
+    height: 36px;
+    width: 220px;
+    vertical-align: middle;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item .select .triangle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #111111;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    z-index: 10;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item .select .select-btn {
+    cursor: pointer;
+    background: #fff;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item .select .list-show {
+    width: 100%;
+    max-height: 180px;
+    background: #fff;
+    overflow-y: auto;
+    border: 1px solid #cecece;
+    border-top: none;
+    position: absolute;
+    bottom: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%);
+    z-index: 100;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item .select .select-list {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    z-index: 222;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item .select .select-list li {
+    border-left: 1px solid #cecece;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item .select .select-list li:hover {
+    background: #e6eaed;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item-radio {
+    padding-left: 48px;
+    margin-bottom: 20px;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item-radio span {
+    font-size: 14px;
+    color: #666;
+}
+
+.main-content .rightBox .user-manage .addNew .content .text-content .item-radio input {
+    width: 14px;
+    height: 14px;
+    margin: 0 20px 0 50px;
+}
+
+.main-content .rightBox .setting-manage {
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+.main-content .rightBox .institutionalInformation-manage {
+    padding: 0 20px;
+}
+
+.main-content .rightBox .institutionalInformation-manage .info {
+    width: 100%;
+    background: #fff;
+    height: 68px;
+    line-height: 68px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 18px;
+    border-bottom: solid 1px #cecece;
+    margin-bottom: -5px;
+}
+
+.main-content .rightBox .institutionalInformation-manage .info .btn {
+    float: right;
+    padding: 0 12px;
+    height: 32px;
+    border: 1px solid #cecece;
+    line-height: 32px;
+    font-size: 15px;
+    color: #111;
+    background: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.main-content .rightBox .institutionalInformation-manage .info .activeBtn {
+    background: #1D9EEF;
+    color: #fff;
+    border: none;
+    margin-top: 13px;
+}
+
+.main-content .rightBox .institutionalInformation-manage p {
+    height: 40px;
+    line-height: 30px;
+}
+
+.main-content .rightBox .institutionalInformation-manage .logo {
+    margin-left: -20px;
+    margin-bottom: 20px;
+    height: 120px;
+}
+
+.main-content .rightBox .institutionalInformation-manage .logo img {
+    vertical-align: top;
+    width: 100px;
+    height: 100px;
+}
+
+.main-content .rightBox .setting-manage {
+    padding: 0 20px;
+}
+
+.main-content .rightBox .setting-manage .info {
+    width: 100%;
+    background: #fff;
+    height: 68px;
+    line-height: 68px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 18px;
+    border-bottom: solid 1px #cecece;
+    margin-bottom: 0px;
+}
+
+.main-content .rightBox .setting-manage button {
+    display: block;
+    width: 80px;
+    height: 32px;
+    border: 1px solid #d3dadf;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 32px;
+    background-color: transparent;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 13px;
+}
+
+.main-content .rightBox .setting-manage button.active {
+    background-color: #2fa6f0;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.main-content .rightBox .setting-manage .patientList {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 26px 0px 0;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.main-content .rightBox .setting-manage .patientList .list {
+    width: 100%;
+    border: 1px solid #cecece;
+}
+
+.main-content .rightBox .setting-manage .patientList .list thead {
+    width: 100%;
+}
+
+.main-content .rightBox .setting-manage .patientList .list thead tr {
+    width: 100%;
+    background: #1D9EEF;
+}
+
+.main-content .rightBox .setting-manage .patientList .list thead tr td {
+    color: #fff;
+    background: #1D9EEF;
+    margin: 0;
+    height: 40px;
+    text-align: center;
+    border-right: 1px solid #cecece;
+}
+
+.main-content .rightBox .setting-manage .patientList .list tr {
+    width: 100%;
+    border-bottom: 1px solid #cecece;
+}
+
+.main-content .rightBox .setting-manage .patientList .list tr td {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 1px solid #cecece;
+    font-size: 14px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #cecece;
+}
+
+.main-content .rightBox .setting-manage .patientList .list tr td:nth-last-of-type(1) {
+    border-right: none;
+}
+
+.main-content .rightBox .setting-manage .patientList .list tbody tr td {
+    color: #333;
+}
+
+.main-content .rightBox .setting-manage .patientList .list tbody tr:nth-last-of-type(1) td {
+    border-bottom: none;
+    width: 50%;
+}
+
+.main-content .rightBox .all-del {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.main-content .rightBox .all-del .content {
+    width: 382px;
+    height: 262px;
+    background: #fff;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -191px;
+    margin-top: -131px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.main-content .rightBox .all-del .content .title {
+    width: 342px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #eceff1;
+}
+
+.main-content .rightBox .all-del .content .title a {
+    width: 24px;
+    height: 24px;
+    float: right;
+    margin-top: 18px;
+    background: url("../image/close_but_normal.png") no-repeat center;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.main-content .rightBox .all-del .content .title a:hover {
+    background: url("../image/close_but_press.png") no-repeat center;
+}
+
+.main-content .rightBox .all-del .content .tips {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+}
+
+.main-content .rightBox .all-del .content .btn {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+}
+
+.main-content .rightBox .all-del .content .btn .cancelBtn {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #fff;
+    width: 80px;
+    height: 36px;
+    border: 1px solid #cecece;
+    font-size: 16px;
+    color: #111;
+    text-align: center;
+    margin-right: 20px;
+    line-height: 36px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.main-content .rightBox .all-del .content .btn .sureBtn {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #fff;
+    width: 80px;
+    height: 36px;
+    border: 1px solid #cecece;
+    font-size: 16px;
+    color: #111;
+    text-align: center;
+    margin-right: 20px;
+    line-height: 36px;
+    display: inline-block;
+    cursor: pointer;
+    background: #1D9EEF;
+    color: #fff;
+    margin: 0;
+    border: none;
+}
+
+.main-content .addSugarPop,
+.main-content .editBloodGlucose {
+    display: none;
+    min-width: 382px;
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    margin-left: -191px;
+    margin-top: -20%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 0 15px 20px 15px;
+    z-index: 11;
+}
+
+.main-content .addSugarPop .clearfix,
+.main-content .editBloodGlucose .clearfix {
+    border-bottom: none !important;
+}
+
+.main-content .addSugarPop .addSugarTitile,
+.main-content .editBloodGlucose .addSugarTitile {
+    width: 100%;
+    padding: 0px 15px;
+    padding-top: 15px;
+    height: 50px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #cecece !important;
+}
+
+.main-content .addSugarPop .addSugarTitile a,
+.main-content .editBloodGlucose .addSugarTitile a {
+    width: 44px;
+    height: 30px;
+    background: url("../image/close_but2.png") no-repeat center / 44px 44px;
+    margin-top: -3px;
+}
+
+.main-content .addSugarPop .addSugarContent,
+.main-content .editBloodGlucose .addSugarContent {
+    padding: 0px 85px 10px 10px;
+}
+
+.main-content .addSugarPop .addSugarContent .list,
+.main-content .editBloodGlucose .addSugarContent .list {
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    color: #111;
+    position: relative;
+}
+
+.main-content .addSugarPop .addSugarContent .list p,
+.main-content .editBloodGlucose .addSugarContent .list p {
+    width: 75px;
+    text-align: right;
+    line-height: 30px;
+}
+
+.main-content .addSugarPop .addSugarContent .list p.addRecordLeftTitile,
+.main-content .editBloodGlucose .addSugarContent .list p.addRecordLeftTitile {
+    width: 100px;
+}
+
+.main-content .addSugarPop .addSugarContent .list input,
+.main-content .editBloodGlucose .addSugarContent .list input {
+    width: 120px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #cecece;
+    text-align: center;
+}
+
+.main-content .addSugarPop .addSugarContent .list .measureTime,
+.main-content .editBloodGlucose .addSugarContent .list .measureTime {
+    width: 180px;
+}
+
+.main-content .addSugarPop .addSugarContent .list span,
+.main-content .editBloodGlucose .addSugarContent .list span {
+    color: #666;
+}
+
+.main-content .addSugarPop .addSugarContent .list .noTips,
+.main-content .editBloodGlucose .addSugarContent .list .noTips {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+.main-content .addSugarPop .addSugarContent .list .chooseImg,
+.main-content .editBloodGlucose .addSugarContent .list .chooseImg {
+    color: red;
+    position: absolute;
+    left: 100px;
+    top: 23px;
+    width: 200px;
+    display: none;
+}
+
+.main-content .addSugarPop .addSugarContent .listLast,
+.main-content .editBloodGlucose .addSugarContent .listLast {
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.main-content .addSugarPop .addSugarContent .listLast textarea,
+.main-content .editBloodGlucose .addSugarContent .listLast textarea {
+    width: 180px;
+    min-height: 110px;
+    outline: none;
+    resize: none;
+    border: 1px solid #cecece;
+    border-radius: 4px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.main-content .addSugarPop .addSugarContent .select_box,
+.main-content .editBloodGlucose .addSugarContent .select_box {
+    width: 120px;
+    border-radius: 4px;
+    position: relative;
+    font-size: 14px;
+    text-align: center;
+}
+
+.main-content .addSugarPop .addSugarContent .select_box .select_txt,
+.main-content .editBloodGlucose .addSugarContent .select_box .select_txt {
+    cursor: pointer;
+}
+
+.main-content .addSugarPop .addSugarContent .select_box .option_box,
+.main-content .editBloodGlucose .addSugarContent .select_box .option_box {
+    display: none;
+    width: 100%;
+    max-height: 144px;
+    overflow-y: auto;
+    border: 1px solid #d3dadf;
+    position: absolute;
+    z-index: 32;
+}
+
+.main-content .addSugarPop .addSugarContent .select_box .option_box a,
+.main-content .editBloodGlucose .addSugarContent .select_box .option_box a {
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    background-color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.main-content .addSugarPop .addSugarContent .select_box .option_box a:hover,
+.main-content .editBloodGlucose .addSugarContent .select_box .option_box a:hover {
+    background-color: #ebf0f3;
+}
+
+.main-content .addSugarPop .addSugarContent button,
+.main-content .editBloodGlucose .addSugarContent button {
+    display: block;
+    width: 80px;
+    height: 36px;
+    border: 1px solid #d3dadf;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 36px;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.main-content .addSugarPop .addSugarContent button.active,
+.main-content .editBloodGlucose .addSugarContent button.active {
+    background-color: #2fa6f0;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.main-content .addSugarPop .addSugarContent button.chooseImg,
+.main-content .editBloodGlucose .addSugarContent button.chooseImg {
+    display: inline !important;
+    background-color: #819CAD;
+    height: 32px;
+    line-height: 32px;
+    vertical-align: middle;
+    margin-top: -1px;
+}
+
+.main-content .addSugarPop .addSugarContent .patientName,
+.main-content .editBloodGlucose .addSugarContent .patientName {
+    margin-left: -5px;
+}
+
+.main-content .addSugarPop .addSugarContent .patientNameSeach,
+.main-content .editBloodGlucose .addSugarContent .patientNameSeach {
+    margin-left: 5px;
+}
+
+.main-content .addSugarPop .addSugarContent .text-list span,
+.main-content .editBloodGlucose .addSugarContent .text-list span {
+    color: #000;
+}
+
+.main-content .addSugarPop .addSugarContent .choiceOnePatient,
+.main-content .editBloodGlucose .addSugarContent .choiceOnePatient {
+    display: none;
+    position: absolute;
+    left: 80px;
+    top: 50px;
+    color: red;
+}
+
+.main-content .addSugarPop .addSugarContent .patient-name,
+.main-content .editBloodGlucose .addSugarContent .patient-name,
+.main-content .addSugarPop .addSugarContent #addSugarNo,
+.main-content .editBloodGlucose .addSugarContent #addSugarNo {
+    width: 250px !important;
+}
+
+.main-content .addSugarPop .addSugarContent #address,
+.main-content .editBloodGlucose .addSugarContent #address,
+.main-content .addSugarPop .addSugarContent #addSugarRemark,
+.main-content .editBloodGlucose .addSugarContent #addSugarRemark {
+    width: 80% !important;
+}
+
+.main-content .editBloodGlucose {
+    left: 50% !important;
+}
+
+.main-content .editBloodGlucose .list {
+    height: 40px !important;
+}
+
+.main-content #fileUpload {
+    color: #2FA6F0;
+    font-size: 16px;
+}
+
+.main-content #fileUpload:hover {
+    text-decoration: underline;
+}

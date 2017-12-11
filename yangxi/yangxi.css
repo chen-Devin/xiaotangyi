@@ -1,0 +1,826 @@
+.hideItem {
+  display: none!important;
+}
+.borderRadius {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.boxSizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html,
+body {
+  min-width: 1200px;
+}
+html,
+body {
+  background-color: #EBEBEB;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: #666;
+  font-family: Microsoft YaHei, "微软雅黑";
+  background-color: #f1f5f8;
+}
+div,
+li,
+ul,
+p,
+span a,
+em,
+i,
+input,
+dl,
+dd,
+dt {
+  box-sizing: border-box;
+}
+input,
+button,
+select {
+  outline: none;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+i {
+  font-style: normal;
+}
+img {
+  display: inline-block;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  color: #333;
+  text-decoration: none;
+}
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  width: 0;
+  height: 0;
+  clear: both;
+  display: block;
+  visibility: hidden;
+  overflow: hidden;
+}
+.fb {
+  font-weight: 700;
+}
+.fn {
+  font-weight: 400;
+}
+.t2 {
+  text-indent: 2em;
+}
+.tl {
+  text-align: left;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.dn {
+  display: none;
+}
+.db {
+  display: block;
+}
+.zoom {
+  zoom: 1;
+}
+.hidden {
+  visibility: hidden;
+}
+/*导航栏*/
+.nav {
+  width: 100%;
+  height: 70px;
+  background-color: #1D9EEF;
+  padding: 0 20px;
+  position: relative;
+}
+.logo {
+  width: 330px;
+  height: 70px;
+  padding-left: 20px;
+  padding-top: 20px;
+  cursor: pointer;
+}
+.logo a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.logo a .logoName {
+  overflow: hidden;
+  padding-left: 10px;
+}
+.logo a .logoName .hospitalName {
+  font-size: 16px;
+  color: #fff;
+}
+.logo a .logoName .sugarSystem {
+  font-size: 14px;
+  color: #b4d8f8;
+}
+.navBar {
+  overflow: hidden;
+}
+.navBarLeft li {
+  margin-right: 30px;
+}
+.navBarLeft li:last-of-type {
+  margin-right: 0;
+}
+.navBarLeft li a.active {
+  border-bottom: 2px solid #fff;
+}
+.navBarLeft li {
+  position: relative;
+}
+.navBarLeft li > i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: red;
+  position: absolute;
+  top: 22px;
+  right: -5px;
+}
+.navBarRight {
+  position: absolute;
+  right: 20px;
+}
+.navBarLeft li a,
+.navBarRight > ul > li {
+  font-size: 18px;
+  line-height: 70px;
+  color: #fff;
+}
+.navBarRight li img {
+  width: 17px;
+  height: 19px;
+}
+.navBarRight li.navMsgImg {
+  padding: 0 24px;
+  cursor: pointer;
+  position: relative;
+}
+.navBarRight li.navMsgImg i {
+  display: inline-block;
+  display: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: red;
+  position: absolute;
+  top: 22px;
+  right: 20px;
+}
+.navBarRight li a img {
+  vertical-align: middle;
+}
+.navBarRight li.line {
+  color: #fff;
+  margin: 0;
+}
+.PopMask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+.navBarRight li.nav-my {
+  padding-right: 24px;
+}
+.navBarRight .nav-my {
+  width: 100px;
+  height: 70px;
+  position: relative;
+}
+.navBarRight .nav-my .user {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 70px;
+  text-align: center;
+  color: #fff;
+}
+.navBarRight .nav-my .drapDown-user {
+  display: none;
+  width: 90px;
+  height: 97px;
+  z-index: 2;
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  background: url("../image/user_down_bg.png") no-repeat center;
+}
+.navBarRight .nav-my .drapDown-user ul {
+  width: 100%;
+  height: 100%;
+  padding: 20px 10px 0 10px;
+}
+.navBarRight .nav-my .drapDown-user ul li {
+  width: 100%;
+  height: 32px;
+  font-size: 14px;
+  line-height: 32px;
+  border-bottom: 1px solid #ccc;
+}
+.navBarRight .nav-my .drapDown-user ul li a {
+  display: inline-block;
+  width: 100%;
+  color: #666;
+  height: 32px;
+}
+.navBarRight .nav-my .drapDown-user ul li a:hover {
+  color: #2fa6f0;
+}
+.navBarRight .nav-my .drapDown-user ul li.active a {
+  color: #2fa6f0;
+}
+.navBarRight .nav-my .drapDown-user ul li.last {
+  border-bottom: none;
+}
+.navBarRight .nav-my > a:after {
+  content: '';
+  width: 10px;
+  height: 7px;
+  display: inline-block;
+  background: url("../image/icon_user_downpush.png") no-repeat center / 10px 7px;
+  position: absolute;
+  right: 0;
+  top: 31px;
+  margin-right: 10px;
+}
+.navMsg {
+  display: none;
+  position: absolute;
+  width: 224px;
+  height: 223px;
+  top: 47px;
+  right: 108px;
+  z-index: 22;
+  background: url('../image/message_bg.png') no-repeat center / 224px 223px;
+}
+.navMsg .msgBg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 25px 18px 0 18px;
+  font-size: 14px;
+}
+.navMsg .msgBg ul li {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #cecece;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.navMsg .msgBg ul li a {
+  color: #666;
+}
+.navMsg .msgBg ul li a:hover {
+  color: #1d9eef;
+}
+.navMsg .msgBg a {
+  display: block;
+  line-height: 38px;
+  color: #666;
+}
+.navMsg .msgBg a:hover {
+  color: #1d9eef;
+}
+.updatePwdPop {
+  display: none;
+  width: 382px;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  z-index: 4;
+  top: 50%;
+  margin-top: -160px;
+  margin-left: -191px;
+  padding: 0 20px 20px 20px;
+  background-color: #fff;
+}
+.updatePwdPop .title {
+  line-height: 60px;
+  height: 60px;
+  font-size: 18px;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+}
+.updatePwdPop .title a {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: url("../image/close_but_normal.png") no-repeat center / 24px 24px;
+  margin-top: 18px;
+}
+.updatePwdPop .updatePwd-content {
+  font-size: 16px;
+  color: #666;
+  padding-top: 35px;
+  padding-bottom: 50px;
+}
+.updatePwdPop .updatePwd-content .updateList {
+  height: 35px;
+  line-height: 35px;
+  margin-bottom: 20px;
+}
+.updatePwdPop .updatePwd-content .updateList p {
+  display: inline-block;
+  height: 35px;
+  margin-right: 10px;
+  width: 80px;
+}
+.updatePwdPop .updatePwd-content .updateList input {
+  width: 220px;
+  height: 35px;
+  line-height: 35px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+.updatePwdPop .updatePwd-content .updateList-btn {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+}
+.updatePwdPop .updatePwd-content .updateList-btn a {
+  display: inline-block;
+  width: 80px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 18px;
+}
+.updatePwdPop .updatePwd-content .updateList-btn a.cancel {
+  margin-left: 20px;
+}
+.updatePwdPop .updatePwd-content .updateList-btn a.active {
+  color: #fff;
+  background-color: #2fa6f0;
+}
+/*
+!*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*!
+::-webkit-scrollbar{width: 8px;height: 16px;background-color:transparent;}
+!*定义滚动条轨道 内阴影+圆角*!
+::-webkit-scrollbar-track {background-color: #fff;}
+!*定义滑块 内阴影+圆角*!
+::-webkit-scrollbar-thumb {border-radius: 3px;background-color: #e6eaed;}
+*/
+.scrollBar {
+  scrollbar-face-color: #fff;
+  /*主色调*/
+  scrollbar-highlight-color: #e6eaed;
+  scrollbar-shadow-color: #e6eaed;
+  /*描边颜色*/
+  scrollbar-3dlight-color: #e6eaed;
+  /*左侧边高光颜色*/
+  scrollbar-arrow-color: transparent;
+  /*小三角颜色*/
+  scrollbar-track-color: #e6eaed;
+  scrollbar-darkshadow-color: #DDD;
+}
+.scrollBar::-webkit-scrollbar {
+  width: 8px;
+  height: 16px;
+  background-color: transparent;
+}
+.scrollBar::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+.scrollBar::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #e6eaed;
+}
+.toast-container {
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: opacity .8s;
+  transition: opacity .8s;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.toast-container.active {
+  opacity: 1;
+}
+.toast-message {
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+  background: #000;
+  padding: 10px;
+}
+.flex {
+  display: -webkit-box;
+  /*布局方式 相当于display:flex*/
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: box;
+}
+.align-items-start {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.align-items-center {
+  -webkit-box-align: center;
+  /*box的对齐方式 align-items:center;*/
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.align-items-end {
+  -webkit-box-align: end;
+  /*box的对齐方式 align-items:flex-end;*/
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+.align-content {
+  align-content: space-between;
+  -webkit-align-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.justify-content-start {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.justify-content-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.justify-content-between {
+  -webkit-box-pack: justify;
+  /* justify-content: space-between;*/
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.yangxi-gis {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  min-width: 800px;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.yangxi-gis .yangxi-content {
+  background: #fff;
+  padding: 0 20px;
+  width: 740px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 90%;
+}
+.yangxi-gis .yangxi-content .title {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  margin: 0 auto;
+  font-size: 18px;
+  color: #333;
+  border-bottom: 1px solid #eceff1;
+}
+.yangxi-gis .yangxi-content .title a {
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin-top: 18px;
+  background: url("../image/close_but_normal.png") no-repeat center;
+  background-size: 100%;
+  cursor: pointer;
+}
+.yangxi-gis .yangxi-content .title a:hover {
+  background: url("../image/close_but_press.png") no-repeat center;
+}
+.yangxi-gis .yangxi-content .yangxi-search {
+  font-size: 16px;
+  color: #666;
+  padding: 10px 0;
+}
+.yangxi-gis .yangxi-content .yangxi-search input {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  width: 140px;
+  height: 28px;
+  padding: 0 10px 0 15px;
+  color: #111;
+  font-size: 16px;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #cecece;
+}
+.yangxi-gis .yangxi-content .yangxi-search .search-btn {
+  height: 28px;
+  border: 1px solid #cecece;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0 15px;
+  line-height: 28px;
+  background: #fff;
+  margin-left: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+.yangxi-gis .yangxi-content .yangxi-search .tips {
+  font-size: 14px;
+  color: red;
+  margin-left: 10px;
+  display: none;
+}
+.yangxi-gis .yangxi-content .yangxi-table {
+  width: 100%;
+  height: 80%;
+  overflow-y: auto;
+  border: 1px solid #cecece;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .yangxi-title {
+  width: 100%;
+  text-align: center;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .yangxi-title p:nth-of-type(1) {
+  font-size: 22px;
+  color: #666;
+  padding: 15px 0;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .yangxi-title p:nth-of-type(2) {
+  font-size: 30px;
+  color: #111;
+  margin-bottom: 30px;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .td-info {
+  width: 100%;
+  border: none;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .td-info .patient-info {
+  width: 100%;
+  text-align: left;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .td-info .patient-info .item {
+  font-szie: 16px;
+  color: #000;
+  line-height: 30px;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .td-info .patient-info .item:nth-last-of-type(1) {
+  text-align: right;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .table {
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+  /* .flex;
+          .justify-content-between;*/
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .table table {
+  width: 48%;
+  border-collapse: collapse;
+  color: #111;
+  font-size: 14px;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .table table thead tr td {
+  border: 1px solid #999;
+  text-align: center;
+  height: 28px;
+  background: #fff;
+  color: #111;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .table table thead tr .time {
+  width: 70px;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .table table thead tr:nth-of-type(1) td {
+  border-top: none;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .table table tbody tr td {
+  border: 1px solid #999;
+  text-align: center;
+  height: 28px;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .table table tbody tr:nth-last-child(1) td {
+  border-bottom: none;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .table table:nth-of-type(1) {
+  float: left;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .table table:nth-last-child(1) {
+  float: right;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .tips {
+  width: 100%;
+  font-size: 16px;
+  lien-height: 20px;
+  color: #111;
+}
+.yangxi-gis .yangxi-content .yangxi-table .page-break .pageNum {
+  text-align: center;
+  font-size: 14px;
+  height: 45px;
+  line-height: 45px;
+  color: #111;
+}
+.yangxi-gis .yangxi-content .yangxi-btn {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+.yangxi-gis .yangxi-content .yangxi-btn button {
+  width: 120px;
+  height: 36px;
+  line-height: 36px;
+  background: #1D9EEF;
+  color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+}
+.yangxi-gis .yangxi-content .yangxi-btn button:nth-of-type(1) {
+  background: #00c2b1;
+  margin-right: 20px;
+  display: none;
+}
+@page {
+  size: A4;
+  margin: 0mm;
+  padding-bottom: 3mm;
+}
+@media print {
+  /* TODO: 添加打印样式 */
+  .yangxi-table {
+    width: 90%;
+    margin: auto;
+  }
+  .yangxi-table .page-break {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 50px 20px 0;
+  }
+  .yangxi-table .page-break .yangxi-title {
+    width: 100%;
+    text-align: center;
+  }
+  .yangxi-table .page-break .yangxi-title p:nth-of-type(1) {
+    font-size: 22px;
+    color: #666;
+    padding: 15px 0;
+  }
+  .yangxi-table .page-break .yangxi-title p:nth-of-type(2) {
+    font-size: 30px;
+    color: #111;
+    margin-bottom: 30px;
+  }
+  .yangxi-table .page-break .td-info {
+    width: 100%;
+    border: none;
+  }
+  .yangxi-table .page-break .td-info .patient-info {
+    width: 100%;
+    text-align: left;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+  .yangxi-table .page-break .td-info .patient-info .item {
+    font-szie: 16px;
+    color: #000;
+    line-height: 30px;
+  }
+  .yangxi-table .page-break .td-info .patient-info .item:nth-last-of-type(1) {
+    text-align: right;
+  }
+  .yangxi-table .page-break .table {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .yangxi-table .page-break .table table {
+    width: 48%;
+    border-collapse: collapse;
+    color: #000;
+    font-size: 18px;
+  }
+  .yangxi-table .page-break .table table thead tr td {
+    border: 1px solid #000;
+    text-align: center;
+    height: 45px;
+    background: #fff;
+    color: #000;
+    font-size: 18px;
+  }
+  .yangxi-table .page-break .table table thead tr .time {
+    width: 70px;
+  }
+  .yangxi-table .page-break .table table tbody tr td {
+    border: 1px solid #000;
+    text-align: center;
+    height: 45px;
+    font-size: 18px;
+  }
+  .yangxi-table .page-break .table table tbody tr:nth-last-child(1) td {
+    border-bottom: none;
+  }
+  .yangxi-table .page-break .table table:nth-of-type(1) {
+    float: left;
+  }
+  .yangxi-table .page-break .table table:nth-last-child(1) {
+    float: right;
+  }
+  .yangxi-table .page-break .tips {
+    width: 100%;
+    font-size: 18px;
+    lien-height: 20px;
+    color: #000;
+  }
+  .yangxi-table .page-break .pageNum {
+    text-align: center;
+    font-size: 16px;
+    height: 45px;
+    line-height: 45px;
+    color: #000;
+  }
+}

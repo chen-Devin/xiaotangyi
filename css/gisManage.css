@@ -1,0 +1,1689 @@
+@charset "utf-8";
+.hideItem {
+  display: none!important;
+}
+.borderRadius {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.boxSizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html,
+body {
+  min-width: 1200px;
+}
+html,
+body {
+  background-color: #EBEBEB;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: #666;
+  font-family: Microsoft YaHei, "微软雅黑";
+  background-color: #f1f5f8;
+}
+div,
+li,
+ul,
+p,
+span a,
+em,
+i,
+input,
+dl,
+dd,
+dt {
+  box-sizing: border-box;
+}
+input,
+button,
+select {
+  outline: none;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+i {
+  font-style: normal;
+}
+img {
+  display: inline-block;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  color: #333;
+  text-decoration: none;
+}
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  width: 0;
+  height: 0;
+  clear: both;
+  display: block;
+  visibility: hidden;
+  overflow: hidden;
+}
+.fb {
+  font-weight: 700;
+}
+.fn {
+  font-weight: 400;
+}
+.t2 {
+  text-indent: 2em;
+}
+.tl {
+  text-align: left;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.dn {
+  display: none;
+}
+.db {
+  display: block;
+}
+.zoom {
+  zoom: 1;
+}
+.hidden {
+  visibility: hidden;
+}
+/*导航栏*/
+.nav {
+  width: 100%;
+  height: 70px;
+  background-color: #1D9EEF;
+  padding: 0 20px;
+  position: relative;
+}
+.logo {
+  width: 330px;
+  height: 70px;
+  padding-left: 20px;
+  padding-top: 20px;
+  cursor: pointer;
+}
+.logo a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.logo a .logoName {
+  overflow: hidden;
+  padding-left: 10px;
+}
+.logo a .logoName .hospitalName {
+  font-size: 14px;
+  color: #fff;
+}
+.logo a .logoName .sugarSystem {
+  font-size: 12px;
+  color: #b4d8f8;
+}
+.navBar {
+  overflow: hidden;
+}
+.navBarLeft li {
+  margin-right: 30px;
+}
+.navBarLeft li:last-of-type {
+  margin-right: 0;
+}
+.navBarLeft li a.active {
+  border-bottom: 2px solid #fff;
+}
+.navBarLeft li {
+  position: relative;
+}
+.navBarLeft li > i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: red;
+  position: absolute;
+  top: 22px;
+  right: -5px;
+}
+.navBarRight {
+  position: absolute;
+  right: 20px;
+}
+.navBarLeft li a,
+.navBarRight > ul > li {
+  font-size: 16px;
+  line-height: 70px;
+  color: #fff;
+}
+.navBarRight li img {
+  width: 17px;
+  height: 19px;
+}
+.navBarRight li.navMsgImg {
+  padding: 0 24px;
+  cursor: pointer;
+  position: relative;
+}
+.navBarRight li.navMsgImg i {
+  display: inline-block;
+  display: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: red;
+  position: absolute;
+  top: 22px;
+  right: 20px;
+}
+.navBarRight li a img {
+  vertical-align: middle;
+}
+.navBarRight li.line {
+  color: #fff;
+  margin: 0;
+}
+.PopMask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+.navBarRight li.nav-my {
+  padding-right: 24px;
+}
+.navBarRight .nav-my {
+  width: 100px;
+  height: 70px;
+  position: relative;
+}
+.navBarRight .nav-my .user {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 70px;
+  text-align: center;
+  color: #fff;
+}
+.navBarRight .nav-my .drapDown-user {
+  display: none;
+  width: 90px;
+  height: 97px;
+  z-index: 2;
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  background: url("../image/user_down_bg.png") no-repeat center;
+}
+.navBarRight .nav-my .drapDown-user ul {
+  width: 100%;
+  height: 100%;
+  padding: 20px 10px 0 10px;
+}
+.navBarRight .nav-my .drapDown-user ul li {
+  width: 100%;
+  height: 32px;
+  font-size: 12px;
+  line-height: 32px;
+  border-bottom: 1px solid #ccc;
+}
+.navBarRight .nav-my .drapDown-user ul li a {
+  display: inline-block;
+  width: 100%;
+  color: #666;
+  height: 32px;
+}
+.navBarRight .nav-my .drapDown-user ul li a:hover {
+  color: #2fa6f0;
+}
+.navBarRight .nav-my .drapDown-user ul li.active a {
+  color: #2fa6f0;
+}
+.navBarRight .nav-my .drapDown-user ul li.last {
+  border-bottom: none;
+}
+.navBarRight .nav-my > a:after {
+  content: '';
+  width: 10px;
+  height: 7px;
+  display: inline-block;
+  background: url("../image/icon_user_downpush.png") no-repeat center / 10px 7px;
+  position: absolute;
+  right: 0;
+  top: 31px;
+  margin-right: 10px;
+}
+.navMsg {
+  display: none;
+  position: absolute;
+  width: 224px;
+  height: 223px;
+  top: 47px;
+  right: 108px;
+  z-index: 22;
+  background: url('../image/message_bg.png') no-repeat center / 224px 223px;
+}
+.navMsg .msgBg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 25px 18px 0 18px;
+  font-size: 12px;
+}
+.navMsg .msgBg ul li {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #cecece;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.navMsg .msgBg ul li a {
+  color: #666;
+}
+.navMsg .msgBg ul li a:hover {
+  color: #1d9eef;
+}
+.navMsg .msgBg a {
+  display: block;
+  line-height: 38px;
+  color: #666;
+}
+.navMsg .msgBg a:hover {
+  color: #1d9eef;
+}
+.updatePwdPop {
+  display: none;
+  width: 382px;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  z-index: 4;
+  top: 50%;
+  margin-top: -160px;
+  margin-left: -191px;
+  padding: 0 20px 20px 20px;
+  background-color: #fff;
+}
+.updatePwdPop .title {
+  line-height: 60px;
+  height: 60px;
+  font-size: 16px;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+}
+.updatePwdPop .title a {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: url("../image/close_but_normal.png") no-repeat center / 24px 24px;
+  margin-top: 18px;
+}
+.updatePwdPop .updatePwd-content {
+  font-size: 14px;
+  color: #666;
+  padding-top: 35px;
+  padding-bottom: 50px;
+}
+.updatePwdPop .updatePwd-content .updateList {
+  height: 35px;
+  line-height: 35px;
+  margin-bottom: 20px;
+}
+.updatePwdPop .updatePwd-content .updateList p {
+  display: inline-block;
+  height: 35px;
+  margin-right: 10px;
+  width: 80px;
+}
+.updatePwdPop .updatePwd-content .updateList input {
+  width: 220px;
+  height: 35px;
+  line-height: 35px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+.updatePwdPop .updatePwd-content .updateList-btn {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+}
+.updatePwdPop .updatePwd-content .updateList-btn a {
+  display: inline-block;
+  width: 80px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.updatePwdPop .updatePwd-content .updateList-btn a.cancel {
+  margin-left: 20px;
+}
+.updatePwdPop .updatePwd-content .updateList-btn a.active {
+  color: #fff;
+  background-color: #2fa6f0;
+}
+/*
+!*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*!
+::-webkit-scrollbar{width: 8px;height: 16px;background-color:transparent;}
+!*定义滚动条轨道 内阴影+圆角*!
+::-webkit-scrollbar-track {background-color: #fff;}
+!*定义滑块 内阴影+圆角*!
+::-webkit-scrollbar-thumb {border-radius: 3px;background-color: #e6eaed;}
+*/
+.scrollBar {
+  scrollbar-face-color: #fff;
+  /*主色调*/
+  scrollbar-highlight-color: #e6eaed;
+  scrollbar-shadow-color: #e6eaed;
+  /*描边颜色*/
+  scrollbar-3dlight-color: #e6eaed;
+  /*左侧边高光颜色*/
+  scrollbar-arrow-color: transparent;
+  /*小三角颜色*/
+  scrollbar-track-color: #e6eaed;
+  scrollbar-darkshadow-color: #DDD;
+}
+.scrollBar::-webkit-scrollbar {
+  width: 8px;
+  height: 16px;
+  background-color: transparent;
+}
+.scrollBar::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+.scrollBar::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #e6eaed;
+}
+.toast-container {
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: opacity .8s;
+  transition: opacity .8s;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.toast-container.active {
+  opacity: 1;
+}
+.toast-message {
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+  background: #000;
+  padding: 10px;
+}
+.flex {
+  display: -webkit-box;
+  /*布局方式 相当于display:flex*/
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: box;
+}
+.align-items-start {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.align-items-center {
+  -webkit-box-align: center;
+  /*box的对齐方式 align-items:center;*/
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.align-items-end {
+  -webkit-box-align: end;
+  /*box的对齐方式 align-items:flex-end;*/
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+.align-content {
+  align-content: space-between;
+  -webkit-align-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.justify-content-start {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.justify-content-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.justify-content-between {
+  -webkit-box-pack: justify;
+  /* justify-content: space-between;*/
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.main-content {
+  width: 100%;
+  height: 90%;
+  padding: 20px 20px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /*自定义模糊输入框*/
+  /*左边子菜单*/
+}
+.main-content .select {
+  display: inline-block;
+  position: relative;
+  height: 28px;
+  min-width: 100px;
+  max-width: 180px;
+  margin-left: 5px;
+}
+.main-content .select .select-btn {
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  border: 1px solid #cecece;
+  margin: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 100%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  text-align: left;
+}
+.main-content .select .triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #111111;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+}
+.main-content .select .list-show {
+  min-width: 100%;
+  height: auto;
+  max-height: 150px;
+  padding-bottom: 10px;
+  background: #fff;
+  overflow-y: auto;
+  border: 1px solid #cecece;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  z-index: 100;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.main-content .select .select-list {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  z-index: 222;
+}
+.main-content .select .select-list li {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.main-content .select .select-list li:hover {
+  background: #e6eaed;
+}
+.main-content .text-serach {
+  max-width: 180px;
+  margin-left: 5px;
+  display: inline-block;
+  position: relative;
+  height: 28px;
+  min-width: 100px;
+  margin-left: 0;
+}
+.main-content .text-serach .select-btn {
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  border: 1px solid #cecece;
+  margin: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 100%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  text-align: left;
+}
+.main-content .text-serach .triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #111111;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+}
+.main-content .text-serach .list-show {
+  min-width: 100%;
+  height: auto;
+  max-height: 150px;
+  padding-bottom: 10px;
+  background: #fff;
+  overflow-y: auto;
+  border: 1px solid #cecece;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  z-index: 100;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.main-content .text-serach .select-list {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  z-index: 222;
+}
+.main-content .text-serach .select-list li {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.main-content .text-serach .select-list li:hover {
+  background: #e6eaed;
+}
+.main-content .text-serach input {
+  cursor: text;
+}
+.main-content .text-serach .text-show {
+  min-width: 100%;
+  height: auto;
+  max-height: 150px;
+  padding-bottom: 10px;
+  background: #fff;
+  overflow-y: auto;
+  border: 1px solid #cecece;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  z-index: 100;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  left: -1px;
+  min-width: 190px !important;
+  box-shadow: 0px 0px 1px #cecece;
+  width: auto!important;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.main-content .text-serach .text-show .text-list {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  z-index: 222;
+}
+.main-content .text-serach .text-show .text-list li {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.main-content .text-serach .text-show .text-list li:hover {
+  background: #e6eaed;
+}
+.main-content .text-serach .text-show .text-list li {
+  width: 100%;
+  display: table;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 5px;
+}
+.main-content .text-serach .text-show .text-list li span {
+  display: table-cell;
+  width: 33%;
+}
+.main-content .text-serach .text-show .text-list > span {
+  text-align: center;
+}
+.main-content .leftNav {
+  height: 100%;
+  background: #fff;
+  width: 260px;
+  float: left;
+  margin-right: 2%;
+}
+.main-content .leftNav ul {
+  width: 100%;
+}
+.main-content .leftNav ul li {
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  cursor: pointer;
+}
+.main-content .leftNav ul li a {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 40px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 16px;
+  color: #819cad;
+  background: #fff;
+  vertical-align: middle;
+}
+.main-content .leftNav ul li a img {
+  width: 30px;
+  vertical-align: middle;
+  margin-right: 25px;
+}
+.main-content .leftNav ul .active a {
+  background: #ebf0f3;
+  color: #1D9EEF;
+}
+.main-content .rightBox {
+  min-height: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+.main-content .all-content {
+  width: 100%;
+  min-height: 100%;
+  background: #fff;
+}
+.main-content .searchNav {
+  width: 100%;
+  background: #fff;
+  height: 68px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px;
+  font-size: 14px;
+}
+.main-content .searchNav .clearfix {
+  border-bottom: 1px solid #cecece;
+  width: 100%;
+  height: 68px;
+  padding: 20px 0;
+}
+.main-content .searchNav .search {
+  height: 100%;
+  width: 280px;
+  border: 1px solid #cecece;
+  line-height: 28px;
+  height: 28px;
+  color: #999;
+  float: left;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  position: relative;
+}
+.main-content .searchNav .search img {
+  height: 12px;
+  margin-top: 7px;
+  position: absolute;
+  left: 10px;
+}
+.main-content .searchNav .search input {
+  padding-left: 30px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+.main-content .searchNav .search input::-webkit-input-placeholder {
+  /* WebKit browsers*/
+  color: #999;
+}
+.main-content .searchNav .search input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18*/
+  color: #999;
+}
+.main-content .searchNav .search input::-moz-placeholder {
+  /* Mozilla Firefox 19+*/
+  color: #999;
+}
+.main-content .searchNav .search input:-ms-input-placeholder {
+  /* Internet Explorer 10+*/
+  color: #999;
+}
+.main-content .searchNav .choose-time {
+  height: 28px;
+  line-height: 28px;
+  float: left;
+  margin-right: 20px;
+}
+.main-content .searchNav .choose-time select {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  border: 1px solid #cecece;
+}
+.main-content .searchNav .btn {
+  float: left;
+  padding: 0 12px;
+  height: 28px;
+  border: 1px solid #cecece;
+  line-height: 28px;
+  font-size: 14px;
+  color: #111;
+  background: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.main-content .searchNav .activeBtn {
+  background: #1D9EEF;
+  color: #fff;
+  border: none;
+}
+.main-content .searchNav .searchBtn {
+  width: 60px;
+  height: 28px;
+  font-szie: 14px;
+  color: #fff;
+  text-align: center;
+  line-height: 28px;
+  background: #1D9EEF;
+  margin-right: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.main-content .searchNav .resetBtn {
+  width: 60px;
+  height: 28px;
+  font-szie: 14px;
+  color: #fff;
+  text-align: center;
+  line-height: 28px;
+  background: #1D9EEF;
+  margin-right: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #fff;
+  color: #1D9EEF;
+  border: 1px solid #1D9EEF;
+}
+.main-content .searchNav .addBloodSugar {
+  width: 80px;
+  height: 28px;
+  font-szie: 14px;
+  color: #fff;
+  text-align: center;
+  line-height: 28px;
+  background: #1D9EEF;
+  margin-right: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.main-content .searchNav .printRecordBtn {
+  width: 140px;
+  height: 28px;
+  font-szie: 14px;
+  color: #fff;
+  text-align: center;
+  line-height: 28px;
+  background: #00c2b1;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.main-content .patientList {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 26px 20px 0;
+  margin-bottom: 40px;
+  background: #fff;
+}
+.main-content .patientList .list {
+  width: 100%;
+  border-collapse: collapse;
+}
+.main-content .patientList .list thead {
+  width: 100%;
+}
+.main-content .patientList .list thead tr {
+  width: 100%;
+  background: #1D9EEF;
+}
+.main-content .patientList .list thead tr td {
+  color: #fff;
+  background: #1D9EEF;
+  margin: 0;
+  height: 40px;
+  text-align: center;
+  border: 1px solid #cecece;
+}
+.main-content .patientList .list tr {
+  width: 100%;
+}
+.main-content .patientList .list tr td {
+  border: 1px solid #cecece;
+  font-size: 14px;
+  text-align: center;
+  height: 40px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 5px;
+}
+.main-content .patientList .list tr .td1 {
+  width: 118px;
+}
+.main-content .patientList .list tr .td9 {
+  width: 203px;
+}
+.main-content .patientList tbody tr td {
+  color: #333;
+}
+.main-content .page {
+  margin-top: 10px;
+  background: #fff;
+}
+.main-content .gis-addrecord {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
+}
+.main-content .gis-addrecord .searchNav {
+  padding: 0;
+  border-bottom: 1px solid #cecece;
+  font-size: 14px;
+  color: #111;
+  display: -webkit-box;
+  /*布局方式 相当于display:flex*/
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: box;
+  -webkit-box-align: center;
+  /*box的对齐方式 align-items:center;*/
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+}
+.main-content .gis-addrecord .searchNav span {
+  margin-right: 5px;
+}
+.main-content .gis-addrecord .searchNav span:nth-of-type(2) {
+  margin-left: 5px;
+}
+.main-content .gis-addrecord .searchNav input {
+  height: 28px;
+  width: 140px;
+  border: 1px solid #cecece;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.main-content .gis-addrecord .searchNav .searchBtn {
+  margin-right: 10px;
+  margin-left: 20px;
+}
+.main-content .gis-addrecord .gis-addrecord-table {
+  padding: 20px 0;
+}
+.main-content .gis-addrecord .gis-addrecord-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.main-content .gis-addrecord .gis-addrecord-table table thead tr td {
+  border: 1px solid #cecece;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  background: #1D9EEF;
+  height: 40px;
+}
+.main-content .gis-addrecord .gis-addrecord-table table thead tr td:nth-of-type(1) {
+  width: 15%;
+}
+.main-content .gis-addrecord .gis-addrecord-table table thead tr td:nth-of-type(2) {
+  width: 15%;
+}
+.main-content .gis-addrecord .gis-addrecord-table table thead tr td:nth-of-type(3) {
+  width: 15%;
+}
+.main-content .gis-addrecord .gis-addrecord-table table thead tr td:nth-of-type(4) {
+  width: 15%;
+}
+.main-content .gis-addrecord .gis-addrecord-table table thead tr td:last-child {
+  width: 10%;
+}
+.main-content .gis-addrecord .gis-addrecord-table table tbody tr td {
+  border: 1px solid #cecece;
+  text-align: center;
+  font-size: 14px;
+  color: #111;
+  height: 40px;
+}
+.main-content .gis-addrecord .gis-addrecord-table table tbody tr td a {
+  color: #1D9EEF;
+}
+.main-content .gis-addrecord .addrecordPupop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.main-content .gis-addrecord .addrecordPupop .content {
+  width: 270px;
+  background: #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px 75px;
+}
+.main-content .gis-addrecord .addrecordPupop .content .title {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #333;
+}
+.main-content .gis-addrecord .addrecordPupop .content .title a {
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin-top: 18px;
+  background: url("../image/close_but_normal.png") no-repeat center;
+  background-size: 100%;
+  cursor: pointer;
+}
+.main-content .gis-addrecord .addrecordPupop .content .title a:hover {
+  background: url("../image/close_but_press.png") no-repeat center;
+}
+.main-content .gis-addrecord .addrecordPupop .content .text-content .item {
+  font-size: 14px;
+  color: #111;
+  margin-bottom: 10px;
+}
+.main-content .gis-addrecord .addrecordPupop .content .text-content .item input {
+  border: 1px #cecece solid;
+  height: 30px;
+  width: 140px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.main-content .gis-addrecord .addrecordPupop .content .text-content .item input:disabled {
+  color: #8b959b;
+  font-size: 14px;
+  background-color: #eceff1;
+}
+.main-content .gis-addrecord .addrecordPupop .content .text-content .item > span {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+}
+.main-content .gis-addrecord .addrecordPupop .content .text-content .tips {
+  font-size: 14px;
+  color: red;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+.main-content .gis-addrecord .addrecordPupop .content .btn {
+  width: 100%;
+  position: absolute;
+  bottom: 29px;
+  height: 36px;
+  left: 0;
+  text-align: center;
+}
+.main-content .gis-addrecord .addrecordPupop .content .btn .cancelBtn {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #cecece;
+  font-size: 16px;
+  color: #111;
+  text-align: center;
+  margin-right: 20px;
+  line-height: 36px;
+  display: inline-block;
+  cursor: pointer;
+}
+.main-content .gis-addrecord .addrecordPupop .content .btn .sureBtn {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #cecece;
+  font-size: 16px;
+  color: #111;
+  text-align: center;
+  margin-right: 20px;
+  line-height: 36px;
+  display: inline-block;
+  cursor: pointer;
+  background: #1D9EEF;
+  color: #fff;
+  margin: 0;
+  border: none;
+}
+.main-content .addSugarPop,
+.main-content .addRecordPop {
+  display: none;
+  min-width: 382px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -191px;
+  margin-top: -20%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0 15px 20px 15px;
+  z-index: 11;
+}
+.main-content .addSugarPop .clearfix,
+.main-content .addRecordPop .clearfix {
+  border-bottom: none !important;
+}
+.main-content .addSugarPop .addSugarTitile,
+.main-content .addRecordPop .addSugarTitile {
+  width: 100%;
+  height: 50px;
+  line-height: 20px;
+  font-size: 16px;
+  color: #111;
+  border-bottom: 1px solid #cecece !important;
+}
+.main-content .addSugarPop .addSugarTitile a,
+.main-content .addRecordPop .addSugarTitile a {
+  width: 44px;
+  height: 30px;
+  background: url("../image/close_but2.png") no-repeat center / 44px 44px;
+  margin-top: -3px;
+}
+.main-content .addSugarPop .addSugarContent,
+.main-content .addRecordPop .addSugarContent {
+  padding: 0px 85px 10px 10px;
+}
+.main-content .addSugarPop .addSugarContent .list,
+.main-content .addRecordPop .addSugarContent .list {
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  color: #111;
+  position: relative;
+}
+.main-content .addSugarPop .addSugarContent .list p,
+.main-content .addRecordPop .addSugarContent .list p {
+  width: 75px;
+  text-align: right;
+  line-height: 30px;
+}
+.main-content .addSugarPop .addSugarContent .list p.addRecordLeftTitile,
+.main-content .addRecordPop .addSugarContent .list p.addRecordLeftTitile {
+  width: 100px;
+}
+.main-content .addSugarPop .addSugarContent .list input,
+.main-content .addRecordPop .addSugarContent .list input {
+  width: 120px;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #cecece;
+  text-align: center;
+}
+.main-content .addSugarPop .addSugarContent .list .measureTime,
+.main-content .addRecordPop .addSugarContent .list .measureTime {
+  width: 180px;
+}
+.main-content .addSugarPop .addSugarContent .list span,
+.main-content .addRecordPop .addSugarContent .list span {
+  color: #666;
+}
+.main-content .addSugarPop .addSugarContent .list .noTips,
+.main-content .addRecordPop .addSugarContent .list .noTips {
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+.main-content .addSugarPop .addSugarContent .listLast,
+.main-content .addRecordPop .addSugarContent .listLast {
+  height: 100%;
+  margin-bottom: 10px;
+}
+.main-content .addSugarPop .addSugarContent .listLast textarea,
+.main-content .addRecordPop .addSugarContent .listLast textarea {
+  width: 180px;
+  min-height: 110px;
+  outline: none;
+  resize: none;
+  border: 1px solid #cecece;
+  border-radius: 4px;
+  padding: 5px;
+  overflow: hidden;
+}
+.main-content .addSugarPop .addSugarContent .select_box,
+.main-content .addRecordPop .addSugarContent .select_box {
+  width: 120px;
+  border-radius: 4px;
+  position: relative;
+  font-size: 14px;
+  text-align: center;
+}
+.main-content .addSugarPop .addSugarContent .select_box .select_txt,
+.main-content .addRecordPop .addSugarContent .select_box .select_txt {
+  cursor: pointer;
+}
+.main-content .addSugarPop .addSugarContent .select_box .option_box,
+.main-content .addRecordPop .addSugarContent .select_box .option_box {
+  display: none;
+  width: 100%;
+  max-height: 144px;
+  overflow-y: auto;
+  border: 1px solid #d3dadf;
+  position: absolute;
+  z-index: 32;
+}
+.main-content .addSugarPop .addSugarContent .select_box .option_box a,
+.main-content .addRecordPop .addSugarContent .select_box .option_box a {
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.main-content .addSugarPop .addSugarContent .select_box .option_box a:hover,
+.main-content .addRecordPop .addSugarContent .select_box .option_box a:hover {
+  background-color: #ebf0f3;
+}
+.main-content .addSugarPop .addSugarContent button,
+.main-content .addRecordPop .addSugarContent button {
+  display: block;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #d3dadf;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 36px;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.main-content .addSugarPop .addSugarContent button.active,
+.main-content .addRecordPop .addSugarContent button.active {
+  background-color: #2fa6f0;
+  color: #fff;
+  margin-left: 20px;
+}
+.main-content .addSugarPop .addSugarContent .triangle,
+.main-content .addRecordPop .addSugarContent .triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #111;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  z-index: 10;
+}
+.main-content .addSugarPop .addSugarContent .patientName,
+.main-content .addRecordPop .addSugarContent .patientName {
+  margin-left: -5px;
+}
+.main-content .addSugarPop .addSugarContent .patientNameSeach,
+.main-content .addRecordPop .addSugarContent .patientNameSeach {
+  margin-left: 5px;
+}
+.main-content .addSugarPop .addSugarContent .text-list span,
+.main-content .addRecordPop .addSugarContent .text-list span {
+  color: #000;
+}
+.main-content .addSugarPop .addSugarContent .choiceOnePatient,
+.main-content .addRecordPop .addSugarContent .choiceOnePatient {
+  display: none;
+  position: absolute;
+  left: 80px;
+  top: 50px;
+  color: red;
+}
+.main-content .edit,
+.main-content .delete {
+  color: #1d9eef;
+}
+.main-content .all-del {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.3);
+}
+.main-content .all-del .content {
+  width: 382px;
+  height: 262px;
+  background: #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-left: -191px;
+  margin-top: -131px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.main-content .all-del .content .title {
+  width: 342px;
+  height: 60px;
+  line-height: 60px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #333;
+  border-bottom: 1px solid #eceff1;
+}
+.main-content .all-del .content .title a {
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin-top: 18px;
+  background: url("../image/close_but_normal.png") no-repeat center;
+  background-size: 100%;
+  cursor: pointer;
+}
+.main-content .all-del .content .title a:hover {
+  background: url("../image/close_but_press.png") no-repeat center;
+}
+.main-content .all-del .content .tips {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+}
+.main-content .all-del .content .btn {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+}
+.main-content .all-del .content .btn .cancelBtn {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #cecece;
+  font-size: 16px;
+  color: #111;
+  text-align: center;
+  margin-right: 20px;
+  line-height: 36px;
+  display: inline-block;
+  cursor: pointer;
+}
+.main-content .all-del .content .btn .sureBtn {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #cecece;
+  font-size: 16px;
+  color: #111;
+  text-align: center;
+  margin-right: 20px;
+  line-height: 36px;
+  display: inline-block;
+  cursor: pointer;
+  background: #1D9EEF;
+  color: #fff;
+  margin: 0;
+  border: none;
+}
+.consultantsRecord {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.3);
+  overflow-y: scroll;
+}
+.consultantsRecord .content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 60%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.consultantsRecord .content .title {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  color: #111;
+  font-size: 16px;
+  line-height: 60px;
+  background: #fff;
+}
+.consultantsRecord .content .title input {
+  width: 140px;
+  height: 28px;
+  border: 1px solid #cecece;
+  border-radius: 3px;
+}
+.consultantsRecord .content .title a {
+  width: 24px;
+  height: 24px;
+  background: url("../image/close_but_normal.png") no-repeat center;
+  background-size: 100%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+  cursor: pointer;
+}
+.consultantsRecord .content .title a:hover {
+  background: url("../image/close_but_press.png") no-repeat center;
+}
+.consultantsRecord .content .btncontent {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+.consultantsRecord .content .btncontent .btn {
+  width: 120px;
+  height: 36px;
+  font-size: 16px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  text-align: center;
+  background: #00c2b1;
+  cursor: pointer;
+  color: #fff;
+}
+.consultantsRecord .content .btncontent .print {
+  background: #1D9EEF;
+  border: none;
+  margin-left: 20px;
+}
+.consultantsRecord .content .print-content {
+  width: 100%;
+  height: 500px;
+  overflow-y: scroll;
+  border: 1px solid #cecece;
+}
+.consultantsRecord .content .print-content table {
+  width: 95%;
+  margin: 20px auto;
+  font-size: 12px;
+  color: #111;
+  text-align: center;
+  border-collapse: collapse;
+}
+.consultantsRecord .content .print-content table thead tr .hospitalName {
+  font-size: 20px;
+  color: #666;
+  width: 100%;
+  height: 40px;
+  vertical-align: top;
+}
+.consultantsRecord .content .print-content table thead tr .titleName {
+  width: 100%;
+  font-size: 24px;
+  color: #111;
+  border-bottom: 1px solid #999;
+  height: 65px;
+  vertical-align: top;
+}
+.consultantsRecord .content .print-content table thead .sheetHead {
+  height: 34px;
+}
+.consultantsRecord .content .print-content table thead .sheetHead td {
+  border: 1px solid #999;
+}
+.consultantsRecord .content .print-content table tbody tr {
+  height: 34px;
+}
+.consultantsRecord .content .print-content table tbody tr td {
+  border: 1px solid #999;
+}
+.consultantsRecord .content .print-content table tbody tr .td1 {
+  width: 15%;
+}
+.consultantsRecord .content .print-content table tbody tr .td2 {
+  width: 9%;
+}
+.consultantsRecord .content .print-content table tbody tr .td3 {
+  width: 22%;
+}
+.consultantsRecord .content .print-content table tbody tr .td4 {
+  width: 27%;
+}
+@page {
+  size: A4;
+  margin: 1cm;
+}
+@media print {
+  /* TODO: 添加打印样式 */
+  .print-content {
+    width: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: auto;
+  }
+  table {
+    width: 90%;
+    margin: auto;
+    font-size: 22px;
+    color: #111;
+    text-align: center;
+    border-collapse: collapse;
+    position: relative;
+  }
+  table thead tr .hospitalName {
+    font-size: 30px;
+    color: #666;
+    line-height: 64px;
+    text-align: center;
+    width: 100%;
+  }
+  table thead tr .titleName {
+    width: 100%;
+    text-align: center;
+    font-size: 34px;
+    color: #111;
+    height: 100px;
+    vertical-align: middle;
+  }
+  table thead .sheetHead {
+    height: 75px;
+  }
+  table thead .sheetHead td {
+    border: 1px solid #000;
+  }
+  table tbody tr {
+    height: 70px;
+  }
+  table tbody tr td {
+    border: 1px solid #000;
+    padding: 0 10px;
+  }
+  table tbody tr .td1 {
+    width: 15%;
+  }
+  table tbody tr .td2 {
+    width: 9%;
+  }
+  table tbody tr .td3 {
+    width: 22%;
+  }
+  table tbody tr .td4 {
+    width: 27%;
+  }
+}

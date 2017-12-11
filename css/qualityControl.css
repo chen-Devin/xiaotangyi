@@ -1,0 +1,2498 @@
+.hideItem {
+  display: none!important;
+}
+.borderRadius {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.boxSizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html,
+body {
+  min-width: 1200px;
+}
+html,
+body {
+  background-color: #EBEBEB;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: #666;
+  font-family: Microsoft YaHei, "微软雅黑";
+  background-color: #f1f5f8;
+}
+div,
+li,
+ul,
+p,
+span a,
+em,
+i,
+input,
+dl,
+dd,
+dt {
+  box-sizing: border-box;
+}
+input,
+button,
+select {
+  outline: none;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+i {
+  font-style: normal;
+}
+img {
+  display: inline-block;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  color: #333;
+  text-decoration: none;
+}
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  width: 0;
+  height: 0;
+  clear: both;
+  display: block;
+  visibility: hidden;
+  overflow: hidden;
+}
+.fb {
+  font-weight: 700;
+}
+.fn {
+  font-weight: 400;
+}
+.t2 {
+  text-indent: 2em;
+}
+.tl {
+  text-align: left;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.dn {
+  display: none;
+}
+.db {
+  display: block;
+}
+.zoom {
+  zoom: 1;
+}
+.hidden {
+  visibility: hidden;
+}
+/*导航栏*/
+.nav {
+  width: 100%;
+  height: 70px;
+  background-color: #1D9EEF;
+  padding: 0 20px;
+  position: relative;
+}
+.logo {
+  width: 330px;
+  height: 70px;
+  padding-left: 20px;
+  padding-top: 20px;
+  cursor: pointer;
+}
+.logo a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.logo a .logoName {
+  overflow: hidden;
+  padding-left: 10px;
+}
+.logo a .logoName .hospitalName {
+  font-size: 14px;
+  color: #fff;
+}
+.logo a .logoName .sugarSystem {
+  font-size: 12px;
+  color: #b4d8f8;
+}
+.navBar {
+  overflow: hidden;
+}
+.navBarLeft li {
+  margin-right: 30px;
+}
+.navBarLeft li:last-of-type {
+  margin-right: 0;
+}
+.navBarLeft li a.active {
+  border-bottom: 2px solid #fff;
+}
+.navBarLeft li {
+  position: relative;
+}
+.navBarLeft li > i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: red;
+  position: absolute;
+  top: 22px;
+  right: -5px;
+}
+.navBarRight {
+  position: absolute;
+  right: 20px;
+}
+.navBarLeft li a,
+.navBarRight > ul > li {
+  font-size: 16px;
+  line-height: 70px;
+  color: #fff;
+}
+.navBarRight li img {
+  width: 17px;
+  height: 19px;
+}
+.navBarRight li.navMsgImg {
+  padding: 0 24px;
+  cursor: pointer;
+  position: relative;
+}
+.navBarRight li.navMsgImg i {
+  display: inline-block;
+  display: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: red;
+  position: absolute;
+  top: 22px;
+  right: 20px;
+}
+.navBarRight li a img {
+  vertical-align: middle;
+}
+.navBarRight li.line {
+  color: #fff;
+  margin: 0;
+}
+.PopMask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+.navBarRight li.nav-my {
+  padding-right: 24px;
+}
+.navBarRight .nav-my {
+  width: 100px;
+  height: 70px;
+  position: relative;
+}
+.navBarRight .nav-my .user {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 70px;
+  text-align: center;
+  color: #fff;
+}
+.navBarRight .nav-my .drapDown-user {
+  display: none;
+  width: 90px;
+  height: 97px;
+  z-index: 2;
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  background: url("../image/user_down_bg.png") no-repeat center;
+}
+.navBarRight .nav-my .drapDown-user ul {
+  width: 100%;
+  height: 100%;
+  padding: 20px 10px 0 10px;
+}
+.navBarRight .nav-my .drapDown-user ul li {
+  width: 100%;
+  height: 32px;
+  font-size: 12px;
+  line-height: 32px;
+  border-bottom: 1px solid #ccc;
+}
+.navBarRight .nav-my .drapDown-user ul li a {
+  display: inline-block;
+  width: 100%;
+  color: #666;
+  height: 32px;
+}
+.navBarRight .nav-my .drapDown-user ul li a:hover {
+  color: #2fa6f0;
+}
+.navBarRight .nav-my .drapDown-user ul li.active a {
+  color: #2fa6f0;
+}
+.navBarRight .nav-my .drapDown-user ul li.last {
+  border-bottom: none;
+}
+.navBarRight .nav-my > a:after {
+  content: '';
+  width: 10px;
+  height: 7px;
+  display: inline-block;
+  background: url("../image/icon_user_downpush.png") no-repeat center / 10px 7px;
+  position: absolute;
+  right: 0;
+  top: 31px;
+  margin-right: 10px;
+}
+.navMsg {
+  display: none;
+  position: absolute;
+  width: 224px;
+  height: 223px;
+  top: 47px;
+  right: 108px;
+  z-index: 22;
+  background: url('../image/message_bg.png') no-repeat center / 224px 223px;
+}
+.navMsg .msgBg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 25px 18px 0 18px;
+  font-size: 12px;
+}
+.navMsg .msgBg ul li {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #cecece;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.navMsg .msgBg ul li a {
+  color: #666;
+}
+.navMsg .msgBg ul li a:hover {
+  color: #1d9eef;
+}
+.navMsg .msgBg a {
+  display: block;
+  line-height: 38px;
+  color: #666;
+}
+.navMsg .msgBg a:hover {
+  color: #1d9eef;
+}
+.updatePwdPop {
+  display: none;
+  width: 382px;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  z-index: 4;
+  top: 50%;
+  margin-top: -160px;
+  margin-left: -191px;
+  padding: 0 20px 20px 20px;
+  background-color: #fff;
+}
+.updatePwdPop .title {
+  line-height: 60px;
+  height: 60px;
+  font-size: 16px;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+}
+.updatePwdPop .title a {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: url("../image/close_but_normal.png") no-repeat center / 24px 24px;
+  margin-top: 18px;
+}
+.updatePwdPop .updatePwd-content {
+  font-size: 14px;
+  color: #666;
+  padding-top: 35px;
+  padding-bottom: 50px;
+}
+.updatePwdPop .updatePwd-content .updateList {
+  height: 35px;
+  line-height: 35px;
+  margin-bottom: 20px;
+}
+.updatePwdPop .updatePwd-content .updateList p {
+  display: inline-block;
+  height: 35px;
+  margin-right: 10px;
+  width: 80px;
+}
+.updatePwdPop .updatePwd-content .updateList input {
+  width: 220px;
+  height: 35px;
+  line-height: 35px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+.updatePwdPop .updatePwd-content .updateList-btn {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+}
+.updatePwdPop .updatePwd-content .updateList-btn a {
+  display: inline-block;
+  width: 80px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.updatePwdPop .updatePwd-content .updateList-btn a.cancel {
+  margin-left: 20px;
+}
+.updatePwdPop .updatePwd-content .updateList-btn a.active {
+  color: #fff;
+  background-color: #2fa6f0;
+}
+/*
+!*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*!
+::-webkit-scrollbar{width: 8px;height: 16px;background-color:transparent;}
+!*定义滚动条轨道 内阴影+圆角*!
+::-webkit-scrollbar-track {background-color: #fff;}
+!*定义滑块 内阴影+圆角*!
+::-webkit-scrollbar-thumb {border-radius: 3px;background-color: #e6eaed;}
+*/
+.scrollBar {
+  scrollbar-face-color: #fff;
+  /*主色调*/
+  scrollbar-highlight-color: #e6eaed;
+  scrollbar-shadow-color: #e6eaed;
+  /*描边颜色*/
+  scrollbar-3dlight-color: #e6eaed;
+  /*左侧边高光颜色*/
+  scrollbar-arrow-color: transparent;
+  /*小三角颜色*/
+  scrollbar-track-color: #e6eaed;
+  scrollbar-darkshadow-color: #DDD;
+}
+.scrollBar::-webkit-scrollbar {
+  width: 8px;
+  height: 16px;
+  background-color: transparent;
+}
+.scrollBar::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+.scrollBar::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #e6eaed;
+}
+.toast-container {
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: opacity .8s;
+  transition: opacity .8s;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.toast-container.active {
+  opacity: 1;
+}
+.toast-message {
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+  background: #000;
+  padding: 10px;
+}
+.flex {
+  display: -webkit-box;
+  /*布局方式 相当于display:flex*/
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: box;
+}
+.align-items-start {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.align-items-center {
+  -webkit-box-align: center;
+  /*box的对齐方式 align-items:center;*/
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.align-items-end {
+  -webkit-box-align: end;
+  /*box的对齐方式 align-items:flex-end;*/
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+.align-content {
+  align-content: space-between;
+  -webkit-align-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.justify-content-start {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.justify-content-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.justify-content-between {
+  -webkit-box-pack: justify;
+  /* justify-content: space-between;*/
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.qualityControl {
+  zoom: 1;
+  width: 100%;
+  height: 90%;
+  padding: 20px 20px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.qualityControl input[type="button"] {
+  background: #fff;
+}
+.qualityControl .leftNav {
+  height: 100%;
+  background: #fff;
+  width: 260px;
+  float: left;
+  margin-right: 2%;
+}
+.qualityControl .leftNav ul {
+  width: 100%;
+}
+.qualityControl .leftNav ul li {
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  cursor: pointer;
+}
+.qualityControl .leftNav ul li a {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 40px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 16px;
+  color: #819cad;
+  background: #fff;
+  vertical-align: middle;
+}
+.qualityControl .leftNav ul li a img {
+  width: 30px;
+  vertical-align: middle;
+  margin-right: 25px;
+}
+.qualityControl .leftNav ul .active a {
+  background: #ebf0f3;
+  color: #1D9EEF;
+}
+.qualityControl .rightBox {
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+.qualityControl .rightBox .page {
+  margin: 10px 10px 10px 0;
+}
+.qualityControl .rightBox .quality-manage {
+  wdith: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.qualityControl .rightBox .quality-manage .title-search {
+  width: 100%;
+  padding: 18px 0;
+  border-bottom: 1px solid #cecece;
+  position: relative;
+}
+.qualityControl .rightBox .quality-manage .title-search div {
+  display: inline-block;
+  width: 130px;
+  height: 28px;
+  line-height: 28px;
+}
+.qualityControl .rightBox .quality-manage .title-search div input {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: #111;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0 10px;
+  border: 1px solid #cecece;
+  cursor: pointer;
+}
+.qualityControl .rightBox .quality-manage .title-search span {
+  font-size: 14px;
+  color: #666;
+  margin-right: 10px;
+}
+.qualityControl .rightBox .quality-manage .title-search .btn {
+  width: 60px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #1D9EEF;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.qualityControl .rightBox .quality-manage .title-search .resetBtn {
+  background: #fff;
+  color: #1D9EEF;
+  border: 1px solid #1D9EEF;
+}
+.qualityControl .rightBox .quality-manage .title-search .print-btn {
+  color: #111;
+  background: #fff;
+  border: 1px solid #cecece;
+  position: absolute;
+  right: 0;
+}
+.qualityControl .rightBox .quality-manage .title-search .select {
+  display: inline-block;
+  position: relative;
+  height: 28px;
+  min-width: 100px;
+  max-width: 180px;
+  margin-left: 105px;
+}
+.qualityControl .rightBox .quality-manage .title-search .select .select-btn {
+  position: relative;
+  top: 0;
+  left: 0px;
+  cursor: pointer;
+  border: 1px solid #cecece;
+  margin: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 100%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  text-align: left;
+}
+.qualityControl .rightBox .quality-manage .title-search .select .triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #111111;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+}
+.qualityControl .rightBox .quality-manage .title-search .select .list-show {
+  min-width: 100%;
+  height: auto;
+  max-height: 150px;
+  padding-bottom: 10px;
+  background: #fff;
+  overflow-y: auto;
+  border: 1px solid #cecece;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  z-index: 100;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.qualityControl .rightBox .quality-manage .title-search .select .select-list {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  z-index: 222;
+}
+.qualityControl .rightBox .quality-manage .title-search .select .select-list li {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .quality-manage .title-search .select .select-list li:hover {
+  background: #e6eaed;
+}
+.qualityControl .rightBox .quality-manage .title-search .condition {
+  padding-left: 30px;
+  width: 230px;
+  cursor: auto;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .quality-manage .title-search .seach {
+  position: relative;
+}
+.qualityControl .rightBox .quality-manage .title-search .seach img {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.qualityControl .rightBox .quality-manage .quality-content .content {
+  padding: 20px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .quality-manage .quality-content .content table {
+  width: 100%;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+.qualityControl .rightBox .quality-manage .quality-content .content table thead {
+  width: 100%;
+  background: #1D9EEF;
+}
+.qualityControl .rightBox .quality-manage .quality-content .content table thead tr {
+  height: 40px;
+}
+.qualityControl .rightBox .quality-manage .quality-content .content table thead tr td {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #cecece;
+}
+.qualityControl .rightBox .quality-manage .quality-content .content table thead tr td:nth-last-of-type(1) {
+  border: none;
+}
+.qualityControl .rightBox .quality-manage .quality-content .content table tbody tr td {
+  height: 40px;
+  border: 1px solid #cecece;
+  font-size: 14px;
+  color: #111;
+  text-align: center;
+}
+.qualityControl .rightBox .quality-manage .print-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.qualityControl .rightBox .quality-manage .print-page .content {
+  width: 1000px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px 30px;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .title {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid #cecece;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1b1d1e;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .title a {
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin-top: 18px;
+  background: url("../image/close_but_normal.png") no-repeat center;
+  background-size: 100%;
+  cursor: pointer;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .title a:hover {
+  background: url("../image/close_but_press.png") no-repeat center;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #cecece;
+  position: relative;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search div {
+  display: inline-block;
+  width: 130px;
+  height: 28px;
+  line-height: 28px;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search div input {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: #111;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0 10px;
+  border: 1px solid #cecece;
+  cursor: pointer;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search .btn-searchBtn {
+  width: 60px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #1D9EEF;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search .select {
+  display: inline-block;
+  position: relative;
+  height: 28px;
+  width: 180px;
+  min-width: 100px;
+  max-width: 180px;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search .select .select-btn {
+  position: relative;
+  top: 0;
+  left: 0px;
+  cursor: pointer;
+  border: 1px solid #cecece;
+  margin: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 100%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  text-align: left;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search .select .triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #111111;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search .select .list-show {
+  min-width: 100%;
+  height: auto;
+  max-height: 150px;
+  padding-bottom: 10px;
+  background: #fff;
+  overflow-y: auto;
+  border: 1px solid #cecece;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  z-index: 100;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search .select .select-list {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  z-index: 222;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search .select .select-list li {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search .select .select-list li:hover {
+  background: #e6eaed;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search .condition {
+  padding-left: 30px;
+  width: 230px;
+  cursor: auto;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search .seach {
+  position: relative;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-search .seach img {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content {
+  width: 100%;
+  border: 1px solid #cecece;
+  margin-bottom: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 8px 18px 40px;
+  height: 600px;
+  overflow-y: auto;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content .hospital-title {
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content .hospital-title p:nth-of-type(1) {
+  font-size: 20px;
+  color: #666;
+  line-height: 36px;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content .hospital-title p:nth-of-type(2) {
+  font-size: 24px;
+  color: #111;
+  line-height: 40px;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content .td-info {
+  width: 100%;
+  border: none;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content .td-info .patient-info {
+  width: 100%;
+  text-align: left;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content .td-info .patient-info .item {
+  font-szie: 14px;
+  color: #111;
+  line-height: 30px;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content .td-info .patient-info .item:nth-last-of-type(1) {
+  text-align: right;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content table {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #111;
+  border-collapse: collapse;
+  border: none;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content table thead {
+  background: #fff;
+  border-collapse: collapse;
+  border: none;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content table thead tr {
+  border: none;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content table thead tr td:nth-of-type(1) {
+  width: 7%;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content table thead tr td {
+  width: 7%;
+  background: #fff;
+  font-size: 14px;
+  color: #111;
+  height: 35px;
+  border: 1px solid #999;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content table thead tr .theadspace {
+  display: none;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content table tbody {
+  border-collapse: collapse;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content table tbody tr {
+  border: none;
+}
+.qualityControl .rightBox .quality-manage .print-page .content .print-content table tbody tr td {
+  height: 35px;
+  border: 1px solid #999;
+}
+.qualityControl .rightBox .quality-manage .print-page .btn {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .quality-manage .print-page .btn button {
+  width: 120px;
+  height: 36px;
+  color: #fff;
+  background: #00c2b1;
+  display: inline-block;
+  border: none;
+}
+.qualityControl .rightBox .batch-manage {
+  wdith: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.qualityControl .rightBox .batch-manage .title-search {
+  width: 100%;
+  padding: 18px 0;
+  border-bottom: 1px solid #cecece;
+  position: relative;
+}
+.qualityControl .rightBox .batch-manage .title-search div {
+  display: inline-block;
+  width: 130px;
+  height: 28px;
+  line-height: 28px;
+}
+.qualityControl .rightBox .batch-manage .title-search div input {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: #111;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0 10px;
+  border: 1px solid #cecece;
+  cursor: pointer;
+}
+.qualityControl .rightBox .batch-manage .title-search span {
+  font-size: 14px;
+  color: #666;
+  margin-right: 10px;
+}
+.qualityControl .rightBox .batch-manage .title-search .btn {
+  width: 60px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #1D9EEF;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.qualityControl .rightBox .batch-manage .title-search .resetBtn {
+  background: #fff;
+  color: #1D9EEF;
+  border: 1px solid #1D9EEF;
+}
+.qualityControl .rightBox .batch-manage .title-search .print-btn {
+  color: #111;
+  background: #fff;
+  border: 1px solid #cecece;
+  position: absolute;
+  right: 0;
+}
+.qualityControl .rightBox .batch-manage .title-search .select {
+  display: inline-block;
+  position: relative;
+  height: 28px;
+  min-width: 100px;
+  max-width: 180px;
+  margin-left: 105px;
+}
+.qualityControl .rightBox .batch-manage .title-search .select .select-btn {
+  position: relative;
+  top: 0;
+  left: 0px;
+  cursor: pointer;
+  border: 1px solid #cecece;
+  margin: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 100%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  text-align: left;
+}
+.qualityControl .rightBox .batch-manage .title-search .select .triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #111111;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+}
+.qualityControl .rightBox .batch-manage .title-search .select .list-show {
+  min-width: 100%;
+  height: auto;
+  max-height: 150px;
+  padding-bottom: 10px;
+  background: #fff;
+  overflow-y: auto;
+  border: 1px solid #cecece;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  z-index: 100;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.qualityControl .rightBox .batch-manage .title-search .select .select-list {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  z-index: 222;
+}
+.qualityControl .rightBox .batch-manage .title-search .select .select-list li {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .batch-manage .title-search .select .select-list li:hover {
+  background: #e6eaed;
+}
+.qualityControl .rightBox .batch-manage .title-search .condition {
+  padding-left: 30px;
+  width: 230px;
+  cursor: auto;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .batch-manage .title-search .seach {
+  position: relative;
+}
+.qualityControl .rightBox .batch-manage .title-search .seach img {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.qualityControl .rightBox .batch-manage .quality-content .content {
+  padding: 20px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .batch-manage .quality-content .content table {
+  width: 100%;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+.qualityControl .rightBox .batch-manage .quality-content .content table thead {
+  width: 100%;
+  background: #1D9EEF;
+}
+.qualityControl .rightBox .batch-manage .quality-content .content table thead tr {
+  height: 40px;
+}
+.qualityControl .rightBox .batch-manage .quality-content .content table thead tr td {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #cecece;
+}
+.qualityControl .rightBox .batch-manage .quality-content .content table thead tr td:nth-last-of-type(1) {
+  border: none;
+}
+.qualityControl .rightBox .batch-manage .quality-content .content table tbody tr td {
+  height: 40px;
+  border: 1px solid #cecece;
+  font-size: 14px;
+  color: #111;
+  text-align: center;
+}
+.qualityControl .rightBox .batch-manage .print-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.qualityControl .rightBox .batch-manage .print-page .content {
+  width: 1000px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px 30px;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .title {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid #cecece;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1b1d1e;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .title a {
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin-top: 18px;
+  background: url("../image/close_but_normal.png") no-repeat center;
+  background-size: 100%;
+  cursor: pointer;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .title a:hover {
+  background: url("../image/close_but_press.png") no-repeat center;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #cecece;
+  position: relative;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search div {
+  display: inline-block;
+  width: 130px;
+  height: 28px;
+  line-height: 28px;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search div input {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: #111;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0 10px;
+  border: 1px solid #cecece;
+  cursor: pointer;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search .btn-searchBtn {
+  width: 60px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #1D9EEF;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search .select {
+  display: inline-block;
+  position: relative;
+  height: 28px;
+  width: 180px;
+  min-width: 100px;
+  max-width: 180px;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search .select .select-btn {
+  position: relative;
+  top: 0;
+  left: 0px;
+  cursor: pointer;
+  border: 1px solid #cecece;
+  margin: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 100%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  text-align: left;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search .select .triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #111111;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search .select .list-show {
+  min-width: 100%;
+  height: auto;
+  max-height: 150px;
+  padding-bottom: 10px;
+  background: #fff;
+  overflow-y: auto;
+  border: 1px solid #cecece;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  z-index: 100;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search .select .select-list {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  z-index: 222;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search .select .select-list li {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search .select .select-list li:hover {
+  background: #e6eaed;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search .condition {
+  padding-left: 30px;
+  width: 230px;
+  cursor: auto;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search .seach {
+  position: relative;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-search .seach img {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content {
+  width: 100%;
+  border: 1px solid #cecece;
+  margin-bottom: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 8px 18px 40px;
+  height: 600px;
+  overflow-y: auto;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content .hospital-title {
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content .hospital-title p:nth-of-type(1) {
+  font-size: 20px;
+  color: #666;
+  line-height: 36px;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content .hospital-title p:nth-of-type(2) {
+  font-size: 24px;
+  color: #111;
+  line-height: 40px;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content .td-info {
+  width: 100%;
+  border: none;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content .td-info .patient-info {
+  width: 100%;
+  text-align: left;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content .td-info .patient-info .item {
+  font-szie: 14px;
+  color: #111;
+  line-height: 30px;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content .td-info .patient-info .item:nth-last-of-type(1) {
+  text-align: right;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content table {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #111;
+  border-collapse: collapse;
+  border: none;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content table thead {
+  background: #fff;
+  border-collapse: collapse;
+  border: none;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content table thead tr {
+  border: none;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content table thead tr td:nth-of-type(1) {
+  width: 7%;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content table thead tr td {
+  width: 7%;
+  background: #fff;
+  font-size: 14px;
+  color: #111;
+  height: 35px;
+  border: 1px solid #999;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content table thead tr .theadspace {
+  display: none;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content table tbody {
+  border-collapse: collapse;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content table tbody tr {
+  border: none;
+}
+.qualityControl .rightBox .batch-manage .print-page .content .print-content table tbody tr td {
+  height: 35px;
+  border: 1px solid #999;
+}
+.qualityControl .rightBox .batch-manage .print-page .btn {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .batch-manage .print-page .btn button {
+  width: 120px;
+  height: 36px;
+  color: #fff;
+  background: #00c2b1;
+  display: inline-block;
+  border: none;
+}
+.qualityControl .rightBox .batch-manage .title-search {
+  width: 100%;
+  padding: 18px 0;
+  border-bottom: 1px solid #cecece;
+}
+.qualityControl .rightBox .batch-manage .title-search .allCondition {
+  width: 100%;
+}
+.qualityControl .rightBox .batch-manage .title-search .allCondition div {
+  display: inline-block;
+  width: 130px;
+  height: 28px;
+  line-height: 28px;
+}
+.qualityControl .rightBox .batch-manage .title-search .allCondition div input {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: #111;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0 10px;
+  border: 1px solid #cecece;
+  cursor: pointer;
+}
+.qualityControl .rightBox .batch-manage .title-search .allCondition span {
+  font-size: 14px;
+  color: #666;
+  margin-right: 10px;
+}
+.qualityControl .rightBox .batch-manage .title-search .allCondition .condition {
+  padding-left: 30px;
+  width: 400px;
+  cursor: auto;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.qualityControl .rightBox .batch-manage .title-search .allCondition .seach {
+  position: relative;
+}
+.qualityControl .rightBox .batch-manage .title-search .allCondition .seach img {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.qualityControl .rightBox .batch-manage .title-search .btn {
+  width: 60px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #1D9EEF;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.qualityControl .rightBox .batch-manage .title-search .resetBtn {
+  background: #fff;
+  color: #1D9EEF;
+  border: 1px solid #1D9EEF;
+}
+.qualityControl .rightBox .batch-manage .title-search .batchBtn {
+  padding: 0 12px;
+  height: 28px;
+  line-height: 28px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #fff;
+  background: #1D9EEF;
+  cursor: pointer;
+}
+.qualityControl .rightBox .batch-manage .content {
+  padding: 20px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .batch-manage .content table {
+  width: 100%;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+.qualityControl .rightBox .batch-manage .content table thead {
+  width: 100%;
+  background: #1D9EEF;
+}
+.qualityControl .rightBox .batch-manage .content table thead tr {
+  height: 40px;
+}
+.qualityControl .rightBox .batch-manage .content table thead tr td {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #cecece;
+}
+.qualityControl .rightBox .batch-manage .content table thead tr td:nth-last-of-type(1) {
+  border: none;
+}
+.qualityControl .rightBox .batch-manage .content table tbody tr td {
+  height: 40px;
+  border: 1px solid #cecece;
+  font-size: 14px;
+  color: #111;
+  text-align: center;
+}
+.qualityControl .rightBox .batch-manage .new-batch {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.qualityControl .rightBox .batch-manage .new-batch .content {
+  width: 950px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px 30px;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .title {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid #cecece;
+  font-size: 16px;
+  color: #1b1d1e;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .title a {
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin-top: 18px;
+  background: url("../image/close_but_normal.png") no-repeat center;
+  background-size: 100%;
+  cursor: pointer;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .title a:hover {
+  background: url("../image/close_but_press.png") no-repeat center;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content {
+  padding: 20px 0;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content .item {
+  width: 100%;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content .item span {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+  margin-right: 20px;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content .item input {
+  width: 220px;
+  height: 36px;
+  border: 1px solid #cecece;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content .item textarea {
+  width: 670px;
+  height: 65px;
+  border: 1px solid #cecece;
+  vertical-align: top;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  resize: none;
+  font-size: 14px;
+  font-family: Microsoft YaHei, "微软雅黑";
+  outline: medium;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5px 10px;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content .item .second-item {
+  width: 49%;
+  display: inline-block;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content .item .range-item {
+  width: 49%;
+  display: inline-block;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content .item .range-item input {
+  width: 90px;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content .item .range-item span:nth-of-type(2) {
+  width: auto;
+  margin: 0 10px;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content .item .timeBtn {
+  position: relative;
+  display: inline-block;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content .item .timeBtn input {
+  cursor: pointer;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content .item .triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #111111;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  z-index: 10;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .text-content .item:nth-last-of-type(1) {
+  margin: 0;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .tips {
+  width: 100%;
+  text-align: center;
+  color: #cf4444;
+  font-size: 14px;
+  line-height: 28px;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .btn {
+  width: 100%;
+  text-align: right;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .btn button {
+  width: 80px;
+  height: 36px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .btn .cancelBtn {
+  background: #fff;
+  border: 1px solid #cecece;
+  margin-right: 40px;
+}
+.qualityControl .rightBox .batch-manage .new-batch .content .btn .sureBtn {
+  background: #1D9EEF;
+  color: #fff;
+}
+.qualityControl .rightBox .all-del {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.qualityControl .rightBox .all-del .content {
+  width: 382px;
+  height: 262px;
+  background: #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-left: -191px;
+  margin-top: -131px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.qualityControl .rightBox .all-del .content .title {
+  width: 342px;
+  height: 60px;
+  line-height: 60px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #333;
+  border-bottom: 1px solid #eceff1;
+}
+.qualityControl .rightBox .all-del .content .title a {
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin-top: 18px;
+  background: url("../image/close_but_normal.png") no-repeat center;
+  background-size: 100%;
+  cursor: pointer;
+}
+.qualityControl .rightBox .all-del .content .title a:hover {
+  background: url("../image/close_but_press.png") no-repeat center;
+}
+.qualityControl .rightBox .all-del .content .tips {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+}
+.qualityControl .rightBox .all-del .content .btn {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+}
+.qualityControl .rightBox .all-del .content .btn .cancelBtn {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #cecece;
+  font-size: 16px;
+  color: #111;
+  text-align: center;
+  margin-right: 20px;
+  line-height: 36px;
+  display: inline-block;
+  cursor: pointer;
+}
+.qualityControl .rightBox .all-del .content .btn .sureBtn {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #cecece;
+  font-size: 16px;
+  color: #111;
+  text-align: center;
+  margin-right: 20px;
+  line-height: 36px;
+  display: inline-block;
+  cursor: pointer;
+  background: #1D9EEF;
+  color: #fff;
+  margin: 0;
+  border: none;
+}
+.qualityControl .rightBox .KeepOnRecord-del {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.qualityControl .rightBox .KeepOnRecord-del .content {
+  width: 382px;
+  height: 262px;
+  background: #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-left: -191px;
+  margin-top: -131px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.qualityControl .rightBox .KeepOnRecord-del .content .title {
+  width: 342px;
+  height: 60px;
+  line-height: 60px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #333;
+  border-bottom: 1px solid #eceff1;
+}
+.qualityControl .rightBox .KeepOnRecord-del .content .title a {
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin-top: 18px;
+  background: url("../image/close_but_normal.png") no-repeat center;
+  background-size: 100%;
+  cursor: pointer;
+}
+.qualityControl .rightBox .KeepOnRecord-del .content .title a:hover {
+  background: url("../image/close_but_press.png") no-repeat center;
+}
+.qualityControl .rightBox .KeepOnRecord-del .content .tips {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+}
+.qualityControl .rightBox .KeepOnRecord-del .content .btn {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+}
+.qualityControl .rightBox .KeepOnRecord-del .content .btn .cancelBtn {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #cecece;
+  font-size: 16px;
+  color: #111;
+  text-align: center;
+  margin-right: 20px;
+  line-height: 36px;
+  display: inline-block;
+  cursor: pointer;
+}
+.qualityControl .rightBox .KeepOnRecord-del .content .btn .sureBtn {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #cecece;
+  font-size: 16px;
+  color: #111;
+  text-align: center;
+  margin-right: 20px;
+  line-height: 36px;
+  display: inline-block;
+  cursor: pointer;
+  background: #1D9EEF;
+  color: #fff;
+  margin: 0;
+  border: none;
+}
+.qualityControl .rightBox .select {
+  display: inline-block;
+  position: relative;
+  height: 28px;
+  min-width: 120px;
+  max-width: 180px;
+  margin-left: 10px;
+}
+.qualityControl .rightBox .select .select-btn {
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid #cecece;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 26px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  text-align: left;
+  overflow: hidden;
+}
+.qualityControl .rightBox .select .triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #111111;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+}
+.qualityControl .rightBox .select .list-show {
+  min-width: 100%;
+  height: auto;
+  max-height: 150px;
+  padding-bottom: 10px;
+  background: #fff;
+  overflow-y: auto;
+  border: 1px solid #cecece;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  z-index: 100;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.qualityControl .rightBox .select .select-list {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  z-index: 222;
+}
+.qualityControl .rightBox .select .select-list li {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.qualityControl .rightBox .select .select-list li:hover {
+  background: #e6eaed;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search {
+  width: 100%;
+  padding: 18px 0 18px 20px;
+  border-bottom: 1px solid #cecece;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search span {
+  font-size: 14px;
+  color: #666;
+  margin-right: 10px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search .search {
+  height: 100%;
+  width: 220px;
+  border: 1px solid #cecece;
+  line-height: 28px;
+  height: 28px;
+  color: #999;
+  float: left;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  position: relative;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search .search img {
+  height: 12px;
+  margin-top: 7px;
+  position: absolute;
+  left: 10px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search .search input {
+  padding-left: 30px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search .search input::-webkit-input-placeholder {
+  /* WebKit browsers*/
+  color: #999;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search .search input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18*/
+  color: #999;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search .search input::-moz-placeholder {
+  /* Mozilla Firefox 19+*/
+  color: #999;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search .search input:-ms-input-placeholder {
+  /* Internet Explorer 10+*/
+  color: #999;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search .btn {
+  width: auto;
+  padding: 0 15px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #1D9EEF;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search .resetBtn {
+  background: #fff;
+  color: #1D9EEF;
+  border: 1px solid #1D9EEF;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search .cousultantsBtn {
+  float: right;
+  margin-right: 20px;
+  border: none;
+  width: auto;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .title-search .cousultantsBtn .cancelconsultants {
+  background: #cf4444;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content table {
+  width: 100%;
+  background: #fff;
+  border-left: 1px solid #cecece;
+  font-size: 14px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content table thead {
+  border: 1px solid #cecece;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content table thead tr td {
+  background: #1D9EEF;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  border-right: 1px solid #cecece;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content table thead tr td:nth-of-type(1) {
+  min-width: 48px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content table thead tr td:nth-of-type(4) {
+  width: 380px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content table thead tr td:nth-last-child(1) {
+  border: none;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content table tbody tr td {
+  height: 40px;
+  font-size: 14px;
+  color: #111;
+  border-bottom: 1px solid #cecece;
+  border-right: 1px solid #cecece;
+  text-align: center;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content table tbody tr td a {
+  color: #1D9EEF;
+  margin: 0 8px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content table tbody tr td:nth-of-type(4) {
+  padding-left: 20px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content table tbody tr td:nth-of-type(4) span {
+  display: block;
+  width: 340px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content table tbody tr td:nth-of-type(5) {
+  width: 150px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .content table tbody .alreadyCheck td {
+  color: #999!important;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop {
+  display: none;
+  min-width: 382px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -191px;
+  margin-top: -20%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0 15px 20px 15px;
+  z-index: 11;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .clearfix,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .clearfix {
+  border-bottom: none !important;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarTitile,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarTitile {
+  width: 100%;
+  height: 50px;
+  line-height: 20px;
+  font-size: 16px;
+  color: #111;
+  border-bottom: 1px solid #cecece !important;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarTitile a,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarTitile a {
+  width: 44px;
+  height: 64px;
+  background: url("../image/close_but2.png") no-repeat center / 44px 44px;
+  margin-top: -3px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent {
+  padding: 0px 85px 10px 10px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .list,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .list {
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  color: #111;
+  position: relative;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .list p,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .list p {
+  width: 75px;
+  text-align: right;
+  line-height: 30px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .list p.addRecordLeftTitile,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .list p.addRecordLeftTitile {
+  width: 100px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .list input,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .list input {
+  width: 120px;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #cecece;
+  text-align: center;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .list .measureTime,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .list .measureTime {
+  width: 180px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .list span,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .list span {
+  color: #666;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .list .noTips,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .list .noTips {
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .listLast,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .listLast {
+  height: 100%;
+  margin-bottom: 10px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .listLast textarea,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .listLast textarea {
+  width: 180px;
+  min-height: 110px;
+  outline: none;
+  resize: none;
+  border: 1px solid #cecece;
+  border-radius: 4px;
+  padding: 5px;
+  overflow: hidden;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent button,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent button {
+  display: block;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #d3dadf;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 36px;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent button.active,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent button.active {
+  background-color: #2fa6f0;
+  color: #fff;
+  margin-left: 20px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .patientName,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .patientName {
+  margin-left: -5px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .patientNameSeach,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .patientNameSeach {
+  margin-left: 5px;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .text-list span,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .text-list span {
+  color: #000;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarContent .choiceOnePatient,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarContent .choiceOnePatient {
+  display: none;
+  position: absolute;
+  left: 20px;
+  top: -12px;
+  color: red;
+}
+.qualityControl .rightBox .KeepOnRecord-manage .addGroupConsultation .addSugarBtn,
+.qualityControl .rightBox .KeepOnRecord-manage .addRecordPop .addSugarBtn {
+  margin-top: 5px;
+  position: relative;
+}
+@page {
+  size: A4;
+  margin: 0mm;
+  size: landscape;
+}
+@media print {
+  /* TODO: 添加打印样式 */
+  .print-content {
+    width: 90%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 8px 0px 20px;
+    margin: 0 auto;
+  }
+  .print-content .hospital-title {
+    height: 100px;
+    padding-top: 30px;
+    vertical-align: middle;
+    width: 100%;
+    margin-bottom: 5px;
+    border: none;
+  }
+  .print-content .hospital-title p:nth-of-type(1) {
+    font-size: 16px;
+    color: #000;
+    line-height: 20px;
+  }
+  .print-content .hospital-title p:nth-of-type(2) {
+    font-size: 20px;
+    color: #000;
+    line-height: 30px;
+  }
+  .print-content .td-info {
+    width: 100%;
+    border: none;
+  }
+  .print-content .td-info .patient-info {
+    width: 100%;
+    text-align: left;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+  .print-content .td-info .patient-info .item {
+    font-size: 12px;
+    color: #000;
+    line-height: 20px;
+  }
+  .print-content .td-info .patient-info .item:nth-last-of-type(1) {
+    text-align: right;
+  }
+  .print-content table {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    font-size: 12px;
+    color: #000;
+    border-collapse: collapse;
+    border: none;
+  }
+  .print-content table .theadspace {
+    width: 100%;
+    height: 30px;
+    border: none;
+  }
+  .print-content table thead {
+    background: #fff;
+    border: none;
+  }
+  .print-content table thead tr {
+    border: none;
+  }
+  .print-content table thead tr td:nth-of-type(1) {
+    width: 7%;
+  }
+  .print-content table thead tr td {
+    width: 7%;
+    background: #fff;
+    font-size: 12px;
+    color: #000;
+    height: 35px;
+    border: 1px solid #000;
+  }
+  .print-content table tbody {
+    border-collapse: collapse;
+  }
+  .print-content table tbody tr {
+    border: none;
+  }
+  .print-content table tbody tr td {
+    font-size: 12px;
+    height: 35px;
+    border: 1px solid #000;
+  }
+}
+@media print {
+  /* TODO: 添加打印样式 */
+  .content {
+    width: 100%;
+    padding: 20px 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .content table {
+    width: 100%;
+    font-size: 20px;
+    border-collapse: collapse;
+  }
+  .content table thead {
+    width: 100%;
+    background-color: #1D9EEF;
+    /*-webkit-print-color-adjust: exact;
+        background-color: unset;
+        box-shadow: inset 0 0 0 40px #1D9EEF;*/
+  }
+  .content table thead tr {
+    height: 50px;
+  }
+  .content table thead tr td {
+    background-color: #1D9EEF;
+    color: #fff;
+    text-align: center;
+    font-size: 22px;
+    border: 1px solid #cecece;
+  }
+  .content table thead tr td:nth-last-of-type(1) {
+    display: none;
+  }
+  .content table tbody tr td {
+    height: 50px;
+    border: 1px solid #cecece;
+    font-size: 22px;
+    color: #111;
+    text-align: center;
+  }
+  .content table tbody tr td:nth-last-of-type(1) {
+    width: 150px;
+  }
+  .content table tbody tr td:nth-last-of-type(1) a {
+    display: block;
+    color: #1D9EEF;
+    width: 50%;
+    float: left;
+    text-align: center;
+  }
+  .content table tbody tr td:nth-last-of-type(1) {
+    display: none;
+  }
+}

@@ -1,0 +1,1434 @@
+@charset "utf-8";
+.select_box {
+  width: 120px;
+  border-radius: 4px;
+  position: relative;
+  font-size: 14px;
+  text-align: center;
+}
+.select_box .select_txt {
+  cursor: pointer;
+}
+.select_box .option_box {
+  display: none;
+  width: 100%;
+  max-height: 144px;
+  overflow-y: auto;
+  border: 1px solid #d3dadf;
+  position: absolute;
+  z-index: 32;
+}
+.select_box .option_box a {
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.select_box .option_box a:hover {
+  background-color: #ebf0f3;
+}
+button {
+  display: block;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #d3dadf;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 36px;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+button.active {
+  background-color: #2fa6f0;
+  color: #fff;
+  margin-left: 20px;
+}
+.sugarWarnBox {
+  display: none;
+  width: 400px;
+  min-height: 490px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  margin-left: -200px;
+  background-color: #fff;
+  /*-webkit-transform: translate(-50%,-50%);*/
+  border-radius: 5px;
+  padding: 0 20px 20px 20px;
+  z-index: 11;
+}
+.sugarWarnBox .sugarWarnTitile {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 16px;
+  color: #333;
+  border-bottom: 1px solid #eceff1;
+}
+.sugarWarnBox .sugarWarnTitile a {
+  width: 24px;
+  height: 24px;
+  background: url("../image/close_but_normal.png") no-repeat center / 24px 24px;
+  margin-top: 18px;
+}
+.sugarWarnBox .sugarWarnContent {
+  width: 100%;
+}
+.sugarWarnBox .sugarWarnContent .tips {
+  padding: 16px 0;
+  font-size: 14px;
+  color: #666;
+}
+.sugarWarnBox .sugarWarnContent .warnContent {
+  padding: 0 40px;
+}
+.sugarWarnBox .sugarWarnContent .warnContent ul {
+  width: 100%;
+}
+.sugarWarnBox .sugarWarnContent .warnContent ul li {
+  width: 100%;
+  height: 26px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.sugarWarnBox .sugarWarnContent .warnContent ul li p {
+  width: 70px;
+  font-size: 16px;
+  color: #111;
+}
+.sugarWarnBox .sugarWarnContent .warnContent ul li input {
+  width: 60px;
+  height: 100%;
+  color: #999;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.sugarWarnBox .sugarWarnContent .warnContent ul li .line {
+  width: 25px;
+  color: #111;
+  display: inline-block;
+}
+.sugarWarnBox .sugarWarnContent .warnContent ul li .unit {
+  width: 52px;
+  color: #666;
+  display: inline-block;
+}
+.sugarWarnBox .sugarWarnContent .warnContent .sugarWarnBtn button {
+  display: block;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #d3dadf;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 36px;
+  margin-top: 16px;
+  background-color: transparent;
+  font-size: 16px;
+}
+.sugarWarnBox .sugarWarnContent .warnContent .sugarWarnBtn button.active {
+  background-color: #2fa6f0;
+  color: #fff;
+}
+/*.sugarWarnBox {
+	display: none;
+	width: 640px;
+	min-height: 490px;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	margin-left: -200px;
+	background-color: #fff;
+	//border: 1px solid #000000;
+	border-radius: 8px;
+	padding: 0 20px 20px 20px;
+	z-index: 11;
+	.sugarWarnTitile {
+		width: 100%;
+		height: 60px;
+		line-height: 60px;
+		font-size: 16px;
+		color: #333;
+		border-bottom: 1px solid #eceff1;
+		a {
+			width: 24px;
+			height: 24px;
+			background: url("../image/close_but_normal.png") no-repeat center/24px 24px;
+			margin-top: 18px;
+		}
+	}
+	.sugarWarnContent {
+		width: 100%;
+		margin-top: 20px;
+		position: relative;
+		.leftSugarWarn {
+			padding: 0 5px;
+			width: 50%;
+			ul {
+				width: 100%;
+				li {
+					width: 100%;
+					height: 26px;
+					margin-bottom: 10px;
+					font-size: 14px;
+					p {
+						width: 65px;
+						font-size: 14px;
+						color: #111;
+					}
+					input {
+						width: 60px;
+						height: 100%;
+						color: #999;
+						border: 1px solid #ccc;
+						border-radius: 3px;
+					}
+					.line {
+						width: 20px;
+						color: #111;
+						display: inline-block;
+					}
+					.unit {
+						width: 52px;
+						color: #666;
+						display: inline-block;
+					}
+				}
+			}
+		}
+		.lineBox {
+			width: 1px;
+			height: 270px;
+			position: absolute;
+			top: 10px;
+			left: 50%;
+			background-color: #ccc;
+			//background-color: red;
+		}
+		.rightSugarWarn {
+			padding-left:20px;
+			width: 50%;
+			//background-color: pink;
+			ul {
+				width: 100%;
+				li {
+					width: 100%;
+					height: 26px;
+					margin-bottom: 10px;
+					font-size: 14px;
+					p {
+						font-size: 14px;
+						color: #111;
+					}
+					input,select {
+						width: 60px;
+						height: 100%;
+						color: #999;
+						border: 1px solid #ccc;
+						border-radius: 3px;
+					}
+					select{
+						color: #111;
+						padding-left: 18px;
+					}
+					.unit {
+						color: #666;
+						display: inline-block;
+					}
+				}
+			}
+
+		}
+	}
+	.tips {
+		padding: 10px 0 15px 0;
+		font-size: 14px;
+		color: #666;
+	}
+	.warnTips{
+		height: 20px;
+		line-height: 20px;
+		color:red;
+		display: none;
+	}
+	.sugarWarnBtn {
+		button {
+			display: block;
+			width: 80px;
+			height: 36px;
+			border: 1px solid #d3dadf;
+			border-radius: 5px;
+			text-align: center;
+			line-height: 36px;
+			background-color: transparent;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		button.active {
+			background-color: #2fa6f0;
+			color: #fff;
+			margin-right: 20px;
+		}
+	}
+}*/
+.addSugarPop,
+.addRecordPop {
+  display: none;
+  min-width: 382px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -191px;
+  margin-top: -20%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0 15px 20px 15px;
+  z-index: 11;
+}
+.addSugarPop .addSugarTitile,
+.addRecordPop .addSugarTitile {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  color: #111;
+  border-bottom: 1px solid #cecece;
+}
+.addSugarPop .addSugarTitile a,
+.addRecordPop .addSugarTitile a {
+  width: 44px;
+  height: 44px;
+  background: url("../image/close_but2.png") no-repeat center / 44px 44px;
+  margin-top: 3px;
+}
+.addSugarPop .addSugarContent,
+.addRecordPop .addSugarContent {
+  padding: 30px 85px 10px 10px;
+}
+.addSugarPop .addSugarContent .list,
+.addRecordPop .addSugarContent .list {
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  color: #111;
+  position: relative;
+}
+.addSugarPop .addSugarContent .list p,
+.addRecordPop .addSugarContent .list p {
+  width: 75px;
+  text-align: right;
+  line-height: 30px;
+}
+.addSugarPop .addSugarContent .list p.addRecordLeftTitile,
+.addRecordPop .addSugarContent .list p.addRecordLeftTitile {
+  width: 100px;
+}
+.addSugarPop .addSugarContent .list input,
+.addRecordPop .addSugarContent .list input {
+  width: 120px;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #cecece;
+  text-align: center;
+}
+.addSugarPop .addSugarContent .list .measureTime,
+.addRecordPop .addSugarContent .list .measureTime {
+  width: 180px;
+}
+.addSugarPop .addSugarContent .list span,
+.addRecordPop .addSugarContent .list span {
+  color: #666;
+}
+.addSugarPop .addSugarContent .list .noTips,
+.addRecordPop .addSugarContent .list .noTips {
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+.addSugarPop .addSugarContent .listLast,
+.addRecordPop .addSugarContent .listLast {
+  height: 100%;
+  margin-bottom: 10px;
+}
+.addSugarPop .addSugarContent .listLast textarea,
+.addRecordPop .addSugarContent .listLast textarea {
+  width: 180px;
+  min-height: 110px;
+  outline: none;
+  resize: none;
+  border: 1px solid #cecece;
+  border-radius: 4px;
+  padding: 5px;
+  overflow: hidden;
+}
+/*基本信息*/
+.basicInfo {
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  margin-bottom: 20px;
+}
+.titleRightBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 20px;
+}
+.titleRightBtn button {
+  width: 80px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  margin-top: 6px;
+  cursor: pointer;
+}
+.titleRightBtn button {
+  display: inline-block;
+  border-radius: 4px;
+  color: #2fa6f0;
+  border: 1px solid #2fa6f0;
+}
+.basicInfoDetail {
+  /*margin: 0 1%;*/
+  margin: 0 20px;
+  min-height: 220px;
+  padding: 40px 0;
+}
+.basicInfoDetail .list {
+  /*width: 16.3%;*/
+  /*width: 202px;*/
+  min-height: 44px;
+  font-size: 14px;
+  /*background-color: blue;*/
+}
+.basicInfoDetail .list.list1 {
+  width: 16%;
+}
+.basicInfoDetail .list.list2 {
+  width: 16%;
+}
+.basicInfoDetail .list.list3 {
+  width: 20%;
+}
+.basicInfoDetail .list.list4 {
+  width: 16%;
+}
+.basicInfoDetail .list.list5 {
+  width: 16%;
+}
+.basicInfoDetail .list.list6 {
+  width: 16%;
+}
+.basicInfoDetail .list .item {
+  width: 30%;
+  color: #1b1d1e;
+}
+.basicInfoDetail .list .con {
+  width: 70%;
+  color: #666666;
+}
+.basicInfoDetail .list.list7 {
+  width: 32%;
+}
+.basicInfoDetail .list.list7 .item {
+  width: 15%;
+}
+.basicInfoDetail .list.list7 .con {
+  width: 70%;
+}
+.basicInfoDetail .list.list8 {
+  width: 68%;
+}
+.basicInfoDetail .list.list8 .item {
+  width: 8%;
+}
+.basicInfoDetail .list.list8 .con {
+  width: 92%;
+}
+.basicInfoDetail .list.especially {
+  width: 100%;
+}
+.basicInfoDetail .list.especially .item {
+  width: 7%;
+}
+.basicInfoDetail .list.especially .con {
+  width: 93%;
+}
+.basicInfoDetail .txtBox {
+  margin-bottom: 20px;
+}
+.basicSugarTab {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.basicSugarTab a {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  color: #819cad;
+  border-radius: 20px;
+  background-color: #fff;
+  margin-right: 20px;
+}
+.basicSugarTab a.active {
+  background-color: #2fa6f0;
+  color: #fff;
+}
+table {
+  width: 100%;
+  background: #fff;
+  border-collapse: collapse;
+}
+table thead tr td {
+  background: #1D9EEF;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid #cecece;
+}
+table tbody tr td {
+  height: 40px;
+  font-size: 14px;
+  color: #111;
+  border: 1px solid #cecece;
+  text-align: center;
+}
+.tabLeft {
+  width: 100%;
+}
+/*血糖概况*/
+.sugarStatus {
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  margin-bottom: 20px;
+}
+.sugarStatus .analyseTitle .sugarStatusPrintBtn {
+  display: block;
+  min-width: 10px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  margin-top: 8px;
+  color: #2fa6f0;
+  border-radius: 4px;
+  border: 1px solid #2fa6f0;
+  cursor: pointer;
+  padding: 0 10px;
+  margin-left: 15px;
+}
+.dataDisplay {
+  width: 98%;
+  height: 190px;
+  margin: 0 1%;
+}
+.dataDisplay .dataLeft {
+  width: 33%;
+}
+.dataDisplay .dataBox {
+  width: 33.3%;
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+}
+.dataDisplay .dataBox .dataNum {
+  font-size: 48px;
+  height: 85px;
+  line-height: 85px;
+}
+.dataDisplay .dataBox .sup,
+.dataDisplay .dataBox .unit {
+  font-size: 14px;
+  color: #999999;
+}
+.dataDisplay .dataMin .dataNum {
+  color: #edb344;
+}
+.dataDisplay .dataMax .dataNum {
+  color: #e95959;
+}
+.dataDisplay .dataCount .dataNum {
+  color: #111111;
+}
+.dataDisplay .dataBox .line {
+  display: block;
+  width: 1px;
+  height: 100px;
+  position: absolute;
+  top: 20px;
+  right: 1px;
+  background-color: #eceff1;
+}
+.dataDisplay .dataMid {
+  width: 31%;
+  position: relative;
+}
+.dataDisplay .dataMid .dataPieChart {
+  width: 60%;
+  height: 190px;
+}
+.dataDisplay .dataMid .pieChartLegend {
+  width: 40%;
+  height: 190px;
+  overflow: hidden;
+  font-size: 14px;
+  padding-top: 48px;
+}
+.dataDisplay .dataMid .pieChartLegend ul li {
+  line-height: 47px;
+}
+.dataDisplay .dataMid .pieChartLegend ul li span {
+  display: inline-block;
+}
+.dataDisplay .dataMid .pieChartLegend ul li span i {
+  font-style: normal;
+}
+.dataDisplay .dataMid .pieChartLegend ul li .sugarFlag {
+  color: #666;
+  width: 58%;
+}
+.dataDisplay .dataMid .pieChartLegend ul li .sugarFlag:before {
+  content: '';
+  text-align: center;
+  width: 16px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.dataDisplay .dataMid .pieChartLegend ul li .count {
+  color: #999;
+}
+.dataDisplay .dataMid .pieChartLegend ul li .high:before {
+  background: url("../image/status_hzxx_high.png") no-repeat center / 16px 20px;
+}
+.dataDisplay .dataMid .pieChartLegend ul li .normal:before {
+  background: url("../image/status_hzxx_normal.png") no-repeat center / 16px 20px;
+}
+.dataDisplay .dataMid .pieChartLegend ul li .low:before {
+  background: url("../image/status_hzxx_low.png") no-repeat center / 16px 20px;
+}
+.dataDisplay .dataMid .line {
+  display: block;
+  width: 1px;
+  height: 100px;
+  position: absolute;
+  top: 65px;
+  right: 1px;
+  background-color: #eceff1;
+}
+.dataDisplay .dataRight {
+  width: 35%;
+  font-size: 14px;
+}
+.dataDisplay .dataRight .dataBarChart {
+  width: 100%;
+  height: 180px;
+}
+/*血糖概况表格*/
+.sugarStatus {
+  padding-bottom: 20px;
+}
+.sugarStatus .patientList {
+  width: 100%;
+  padding: 20px 20px 40px 20px;
+  background: #fff;
+}
+.sugarStatus .patientList table tr td {
+  position: relative;
+  cursor: pointer;
+}
+.sugarStatus .patientList table tr .td1 {
+  width: 16%;
+}
+.sugarStatus .patientList table tr .td2 {
+  width: 10.5%;
+}
+.sugarStatus .patientList table tr .td2 b {
+  display: none;
+  width: 12px;
+  height: 12px;
+  background: url("../image/icon_handwriting.png") no-repeat center / 12px 12px;
+}
+.sugarStatus .patientList table tr .td2 .handImg {
+  display: inline-block;
+}
+.sugarStatus .patientList table tr .td2 i {
+  width: 0;
+  height: 0;
+  border: 5px solid #1d9eef;
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  display: none;
+}
+.sugarStatus .patientList table tr .td2 .handTriangle {
+  display: inline-block;
+}
+.sugarStatus .patientList table tr .td2 .addSugarDisplayMask {
+  display: none;
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: -20%;
+  z-index: 20;
+}
+.sugarStatus .patientList table tr .td2 .addSugarDisplayMask .addSugarDisplay {
+  display: none;
+  width: 330px;
+  position: absolute;
+  top: 20px;
+  transform: translateX(30%);
+  word-break: break-all;
+  z-index: 22;
+  box-shadow: 0 0 2px 2px #ccc;
+  background-color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+.sugarStatus .patientList table tr .td2 .addSugarDisplayMask .addSugarDisplay ul li {
+  margin-bottom: 10px;
+}
+.sugarStatus .patientList table tr .td2 .addSugarDisplayMask .addSugarDisplay ul li .addSugarTitle {
+  width: 60px;
+  padding-right: 10px;
+  text-align: center;
+  border-right: 1px solid #cecece;
+  vertical-align: middle;
+}
+.sugarStatus .patientList table tr .td2 .addSugarDisplayMask .addSugarDisplay ul li .addSugarTxt {
+  overflow: hidden;
+  max-width: 228px;
+  padding: 0 10px;
+}
+.sugarStatus .patientList .page {
+  margin-top: 10px;
+  background: #fff;
+}
+.sugarTotal {
+  background-color: #fff;
+}
+.sugarTotal .patientList2 {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 26px 20px 50px;
+  margin-bottom: 20px;
+}
+.sugarTotal .patientList2 table tr .td1 {
+  width: 16%;
+}
+.sugarTotal .patientList2 table tr .td2 {
+  width: 10.5%;
+}
+/*.tabRight {
+	width: 100%;
+	//background-color: yellow;
+	.sugarTestAnalyse{
+		.analyseTitle{
+			.addRecordBtn {
+				display: block;
+				width: 80px;
+				height: 28px;
+				line-height: 28px;
+				font-size: 14px;
+				margin-top: 6px;
+				color: #fff;
+				border-radius: 4px;
+				background-color: #2fa6f0;
+				cursor: pointer;
+			}
+		}
+	}
+	.patientList3 {
+		width: 100%;
+		padding: 26px 20px 50px;
+		margin-bottom: 20px;
+		background-color: #fff;
+		table {
+			tr {
+				.td1 {
+					width: 25%;
+				}
+				.td2 {
+					width: 30%;
+				}
+				.td3 {
+					width: 55%;
+				}
+			}
+		}
+	}
+}*/
+/*患者血糖打印--2*/
+.patient-gis-print2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+.patient-gis-print2 .content {
+  width: 40%;
+  background: #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 0 20px 75px;
+}
+.patient-gis-print2 .content .title {
+  width: 100%;
+  height: 60px;
+  font-size: 16px;
+  position: relative;
+}
+.patient-gis-print2 .content .title span {
+  line-height: 60px;
+}
+.patient-gis-print2 .content .title a {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  background: url("../image/close_but_normal.png") no-repeat center;
+  background-size: 100%;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.patient-gis-print2 .content .title a:hover {
+  background: url("../image/close_but_press.png") no-repeat center;
+}
+.patient-gis-print2 .content .print-content2 {
+  width: 100%;
+  border: 1px solid #cecece;
+  padding: 8px 18px 40px;
+  height: 600px;
+  overflow-y: auto;
+}
+.patient-gis-print2 .content .print-content2 .hospital-title {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.patient-gis-print2 .content .print-content2 .hospital-title p:nth-of-type(1) {
+  font-size: 20px;
+  color: #666;
+  line-height: 70px;
+}
+.patient-gis-print2 .content .print-content2 .hospital-title p:nth-of-type(2) {
+  font-size: 24px;
+  color: #111;
+  margin-top: -15px;
+}
+.patient-gis-print2 .content .print-content2 .td-info {
+  width: 100%;
+}
+.patient-gis-print2 .content .print-content2 .td-info .patient-info {
+  width: 100%;
+  text-align: left;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.patient-gis-print2 .content .print-content2 .td-info .patient-info .item {
+  font-size: 14px;
+  color: #111;
+  line-height: 30px;
+}
+.patient-gis-print2 .content .print-content2 .td-info .patient-info .item:nth-last-of-type(1) {
+  text-align: right;
+}
+.patient-gis-print2 .content .print-content2 table {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #111;
+  border-collapse: collapse;
+}
+.patient-gis-print2 .content .print-content2 table thead {
+  background: #fff;
+}
+.patient-gis-print2 .content .print-content2 table thead tr td:nth-of-type(1) {
+  width: 16%;
+}
+.patient-gis-print2 .content .print-content2 table thead tr td {
+  width: 20%;
+  background: #fff;
+  font-size: 14px;
+  color: #111;
+  height: 35px;
+  border: 1px solid #999;
+}
+.patient-gis-print2 .content .print-content2 table tbody tr td {
+  height: 35px;
+  border: 1px solid #999;
+}
+.patient-gis-print2 .content .btn {
+  width: 100%;
+  height: 75px;
+  text-align: center;
+  line-height: 75px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.patient-gis-print2 .content .btn button {
+  width: 120px;
+  height: 36px;
+  color: #fff;
+  background: #00c2b1;
+  display: inline-block;
+  border: none;
+}
+@page {
+  size: A4;
+  margin: 0mm;
+  padding-bottom: 3mm;
+}
+@media print {
+  /* TODO: 添加打印样式 */
+  .print-content2 {
+    width: 90%;
+    padding: 8px 0 40px;
+    margin: 0 auto;
+  }
+  .print-content2 .hospital-title {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .print-content2 .hospital-title p:nth-of-type(1) {
+    font-size: 26px;
+    color: #000;
+    line-height: 160px;
+  }
+  .print-content2 .hospital-title p:nth-of-type(2) {
+    margin-top: -45px;
+    font-size: 30px;
+    color: #000;
+  }
+  .print-content2 .td-info {
+    width: 100%;
+    border: none;
+  }
+  .print-content2 .td-info .patient-info {
+    width: 100%;
+    text-align: left;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+  .print-content2 .td-info .patient-info .item {
+    font-size: 22px;
+    color: #000;
+    line-height: 40px;
+  }
+  .print-content2 .td-info .patient-info .item:nth-last-of-type(1) {
+    text-align: right;
+  }
+  .print-content2 table {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    font-size: 22px;
+    color: #000;
+    border-collapse: collapse;
+    background: #fff;
+  }
+  .print-content2 table thead tr td:nth-of-type(1) {
+    width: 16%;
+  }
+  .print-content2 table thead tr td {
+    width: 20%;
+    font-size: 22px;
+    color: #000;
+    height: 55px;
+    border: 1px solid #000;
+  }
+  .print-content2 table tbody tr td {
+    font-size: 22px;
+    height: 55px;
+    border: 1px solid #000;
+  }
+}
+/*患者血糖打印--3*/
+.patient-gis-print3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+.patient-gis-print3 .content {
+  width: 60%;
+  background: #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 0 20px 75px;
+}
+.patient-gis-print3 .content .title {
+  width: 100%;
+  height: 60px;
+  font-size: 16px;
+  position: relative;
+  border-bottom: 1px solid #cecece;
+}
+.patient-gis-print3 .content .title span {
+  line-height: 60px;
+}
+.patient-gis-print3 .content .title a {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  background: url("../image/close_but_normal.png") no-repeat center;
+  background-size: 100%;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.patient-gis-print3 .content .title a:hover {
+  background: url("../image/close_but_press.png") no-repeat center;
+}
+.patient-gis-print3 .content .dateSel {
+  margin: 10px 0;
+}
+.patient-gis-print3 .content .dateSel input {
+  width: 140px;
+  height: 28px;
+  border: 1px solid #cecece;
+  border-radius: 3px;
+}
+.patient-gis-print3 .content .dateSel a {
+  font-size: 14px;
+  line-height: 28px;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid #cecece;
+  display: inline-block;
+  border-radius: 5px;
+}
+.patient-gis-print3 .content .print-content3 {
+  width: 100%;
+  border: 1px solid #cecece;
+  padding: 8px 18px 40px;
+  height: 600px;
+  overflow-y: auto;
+}
+.patient-gis-print3 .content .print-content3 .hospital-title {
+  width: 100%;
+}
+.patient-gis-print3 .content .print-content3 .hospital-title p:nth-of-type(1) {
+  font-size: 20px;
+  color: #666;
+  line-height: 70px;
+}
+.patient-gis-print3 .content .print-content3 .hospital-title p:nth-of-type(2) {
+  font-size: 24px;
+  color: #111;
+  margin-top: -15px;
+}
+.patient-gis-print3 .content .print-content3 .td-info {
+  width: 100%;
+}
+.patient-gis-print3 .content .print-content3 .td-info .patient-info {
+  width: 100%;
+  text-align: left;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.patient-gis-print3 .content .print-content3 .td-info .patient-info .item {
+  font-size: 14px;
+  color: #111;
+  line-height: 30px;
+}
+.patient-gis-print3 .content .print-content3 .td-info .patient-info .item:nth-last-of-type(1) {
+  text-align: right;
+}
+.patient-gis-print3 .content .print-content3 table {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #111;
+  border-collapse: collapse;
+}
+.patient-gis-print3 .content .print-content3 table tbody tr td {
+  height: 30px;
+  border: 1px solid #999;
+}
+.patient-gis-print3 .content .print-content3 table tbody tr td.td1 {
+  width: 10%;
+}
+.patient-gis-print3 .content .print-content3 table tbody tr td.td2 {
+  width: 8%;
+}
+.patient-gis-print3 .content .print-content3 table tbody tr td.keepRight {
+  padding-right: 10px;
+}
+.patient-gis-print3 .content .print-content3 table tbody tr td.totalBasic div {
+  line-height: 35px;
+}
+.patient-gis-print3 .content .print-content3 .footer {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #111;
+}
+.patient-gis-print3 .content .btn {
+  width: 100%;
+  height: 75px;
+  text-align: center;
+  line-height: 75px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.patient-gis-print3 .content .btn button {
+  width: 120px;
+  height: 36px;
+  color: #fff;
+  background: #00c2b1;
+  display: inline-block;
+  border: none;
+}
+@media print {
+  /* TODO: 添加打印样式 */
+  .print-content3 {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .print-content3 .hospital-title {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .print-content3 .hospital-title p:nth-of-type(1) {
+    font-size: 26px;
+    color: #000;
+    line-height: 160px;
+  }
+  .print-content3 .hospital-title p:nth-of-type(2) {
+    margin-top: -45px;
+    font-size: 30px;
+    color: #000;
+  }
+  .print-content3 .td-info {
+    width: 100%;
+    border: none;
+  }
+  .print-content3 .td-info .patient-info {
+    width: 100%;
+    text-align: left;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+  .print-content3 .td-info .patient-info .item {
+    font-size: 22px;
+    color: #000;
+    line-height: 40px;
+  }
+  .print-content3 .td-info .patient-info .item:nth-last-of-type(1) {
+    text-align: right;
+  }
+  .print-content3 table {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    font-size: 22px;
+    color: #000;
+    border-collapse: collapse;
+    background: #fff;
+  }
+  .print-content3 table tbody tr td {
+    font-size: 22px;
+    height: 45px;
+    border: 1px solid #000;
+  }
+  .print-content3 table tbody tr td.keepRight {
+    padding-right: 20px;
+  }
+  .print-content3 table tbody tr td.totalBasic div {
+    line-height: 55px;
+  }
+  .print-content3 .footer {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #111;
+  }
+}
+.flex {
+  display: -webkit-box;
+  /*布局方式 相当于display:flex*/
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: box;
+}
+.boxSizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.time-select-btn {
+  padding-top: 20px;
+  display: -webkit-box;
+  /*布局方式 相当于display:flex*/
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: box;
+}
+.time-select-btn a {
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+  text-align: center;
+  border: 1px solid #cecece;
+  line-height: 28px;
+  margin: 0;
+  padding: 0;
+}
+.time-select-btn a:nth-of-type(1) {
+  border-right: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.time-select-btn a:nth-last-of-type(1) {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.time-select-btn a.active {
+  background: #1D9EEF;
+  color: #fff;
+}
+#table-vertical {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  position: relative;
+}
+#table-vertical #positionLeft {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  right: 20px;
+}
+#table-vertical .page {
+  margin-top: 10px;
+}
+#table-vertical .thead {
+  display: -webkit-box;
+  /*布局方式 相当于display:flex*/
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: box;
+}
+#table-vertical .thead .td {
+  flex: 1;
+  height: 40px;
+  line-height: 30px;
+  border: 1px solid #cecece;
+  background: #1D9EEF;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: none;
+}
+#table-vertical .tbody .tr-time {
+  display: -webkit-box;
+  /*布局方式 相当于display:flex*/
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: box;
+}
+#table-vertical .tbody .tr-time .td-time {
+  flex: 1;
+  position: relative;
+}
+#table-vertical .tbody .tr-time .td-time .tr {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #cecece;
+  border-right: 1px solid #cecece;
+  position: relative;
+  font-size: 14px;
+}
+#table-vertical .tbody .tr-time .td-time .tr .txt {
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  /*布局方式 相当于display:flex*/
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: box;
+}
+#table-vertical .tbody .tr-time .td-time .tr .txt span {
+  text-align: center;
+}
+#table-vertical .tbody .tr-time .td-time .tr .txt span b {
+  font-weight: 100;
+}
+#table-vertical .tbody .tr-time .td-time .tr .txt span:nth-of-type(1) {
+  font-size: 13px;
+  width: 40%;
+  text-align: right;
+}
+#table-vertical .tbody .tr-time .td-time .tr .txt span:nth-of-type(2) {
+  width: 40%;
+  text-align: left;
+  margin-left: 20%;
+}
+#table-vertical .tbody .tr-time .td-time .tr .showmore-remark {
+  background: #fff;
+  text-align: left;
+  width: 100%;
+  border: 1px solid #cecece;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 10px 10px;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  z-index: 999;
+  font-size: 14px;
+  color: #111;
+  display: none;
+}
+#table-vertical .tbody .tr-time .td-time .td-day {
+  height: 240px;
+  line-height: 240px;
+  border-left: 1px solid #cecece;
+}
+#table-vertical .tbody .tr-time .td-time .lastTr {
+  cursor: pointer;
+}
+#table-vertical .tbody .tr-time .td-time .lastTr .showmore {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid #cecece;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translate(90%, 100%);
+  -moz-transform: translate(90%, 100%);
+  -ms-transform: translate(90%, 100%);
+  -o-transform: translate(90%, 100%);
+  transform: translate(90%, 100%);
+  z-index: 999;
+  padding-bottom: 0;
+  max-height: 262px;
+  overflow-y: auto;
+  display: none;
+}
+#table-vertical .tbody .tr-time .td-time .lastTr .showmore ul li {
+  background: #fff;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  /*布局方式 相当于display:flex*/
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: box;
+  -webkit-box-align: center;
+  /*box的对齐方式 align-items:center;*/
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+#table-vertical .tbody .tr-time .td-time .lastTr .showmore ul li .timeshow {
+  width: 125px;
+  display: -webkit-box;
+  /*布局方式 相当于display:flex*/
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: box;
+}
+#table-vertical .tbody .tr-time .td-time .lastTr .showmore ul li .timeshow span {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+}
+#table-vertical .tbody .tr-time .td-time .lastTr .showmore ul li .timeshow span b {
+  font-weight: 100;
+}
+#table-vertical .tbody .tr-time .td-time .lastTr .showmore ul li .remark {
+  width: 195px;
+  text-align: left;
+  font-size: 14px;
+  color: #111;
+  line-height: 16px;
+  border-left: 1px solid #cecece;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+#table-vertical .tbody .tr-time .td-time .lastTr:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-top: 15px solid transparent;
+  border-right: 15px solid #819cad;
+}

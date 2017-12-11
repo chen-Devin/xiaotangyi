@@ -1,0 +1,61 @@
+<!--导航栏-->
+<div class="logo fl" id="logo">
+    <a href="javascript:void(0)">
+        <img src="../../../image/logo1.png" alt="" class="fl" width='50px' height='50px' style='margin-right:10px;;margin-top:-10px;'>
+        <span class='firmName' style="display:block;color:#fff;margin-top:-5px;"></span><br/>
+        <span style="display:block;color:#fff;font-size:13px;margin-top:-16px;">掌护智能血糖管理系统</span>
+        <!-- <img src="../../../image/home_people_pic_man.png" alt="" class="fl"> -->
+        <!--<div class="logoName">-->
+        <!--<p class="hospitalName">深圳南山人民医院</p>-->
+        <!--<p class="sugarSystem">掌护智能血糖管理系统</p>-->
+        <!--</div>-->
+    </a>
+</div>
+<ul class="navBarLeft clearfix fl"></ul>
+<div class="navBarRight fr tr clearfix">
+    <ul class="clearfix">
+        <li class="fl navMsgImg" id="navMsgBtn"><i></i>
+            <a><img src="../../../image/icon_message.png" alt=""></a>
+        </li>
+        <li class="line fl">|</li>
+        <li class="nav-my fl" id="nav-my">
+            <a href="javascript:void (0)" class="user" id="user-my"></a>
+            <div class="drapDown-user" id="drapDown-user">
+                <ul>
+                    <!--<li class="tc" id=""><a href="javascript:void(0)">个人中心</a></li>-->
+                    <li class="tc" id="updatePwd"><a href="javascript:void(0)" onclick="updatePwd()">修改密码</a></li>
+                    <li class="tc last" id="navExit"><a href="javascript:void(0)">退出</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--信息提醒弹窗-->
+<div class="navMsg" id="navMsgPop">
+    <div class="msgBg">
+        <ul>
+            <script type="text/template" id="navMsg-list-template">
+                <%_.each(obj,function(e,i){%>
+                    <li value="<%=e.hosNo%>">
+                        <a href="./intelligentWarn.html?navMsgInHospitalNo=<%=e.hosNo%>">
+                            <span><%=e.type==1?'高值预警':'低值预警'%>，</span>
+                            <span><%=e.name%></span>
+                            <span>
+							<%if(e.timeType==1){%>空腹
+							<%}else if(e.timeType==2){%>早餐后
+							<%}else if(e.timeType==3){%>午餐前
+							<%}else if(e.timeType==4){%>午餐后
+							<%}else if(e.timeType==5){%>晚餐前
+							<%}else if(e.timeType==6){%>晚餐后
+							<%}else if(e.timeType==7){%>睡前
+							<%}else if(e.timeType==8){%>凌晨<%}%>
+						</span>
+                            <span><%=e.sugar%>mmol/L</span>
+                        </a>
+                    </li>
+                    <%})%>
+            </script>
+        </ul>
+        <a class="tc" href="./intelligentWarn.html?navMsg=1">查看全部</a>
+    </div>
+</div>

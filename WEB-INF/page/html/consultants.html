@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>会诊管理</title>
+    <link rel="shortcut icon" href="../../../image/icon.ico">
+    <link rel="stylesheet" media="screen,print" href="../../../css/consultants.min.css">
+</head>
+
+<body>
+    <!--导航栏-->
+    <div class="nav clearfix"></div>
+
+    <div class="main-content">
+        <div class="leftNav">
+            <ul>
+                <li class="active" val="consultants-manage">
+                    <a href="javascript:void ( 0 )" onclick="consultantsManage()">
+                        <img src="../../../image/hz_hzgl_press.png">
+                        <span>会诊管理</span>
+                    </a>
+                </li>
+
+                <li val="doctor-consultants">
+                    <a href="javascript:void ( 0 )" onclick="doctorConsultants()">
+                        <img src="../../../image/hz_yshz_normal.png">
+                        <span>医生会诊</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="rightBox">
+            <!--会诊管理-->
+            <div class="consultants-manage main-template-block">
+                <div class="title-search clearfix">
+                    <div class="search">
+                        <img src="../../../image/home_search_icon.png">
+                        <input type="text" placeholder="姓名/住院号/会诊编号" class="txt">
+                    </div>
+                    <div class="select">
+                        <div class="triangle"></div>
+                        <input type="button" class="select-btn sex" readonly value="性别" valId="0" />
+                        <div class="list-show scrollBar" style="display: none;">
+                            <ul class="select-list">
+                                <li val="1">男</li>
+                                <li val="2">女</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="select">
+                        <div class="triangle"></div>
+                        <input type="button" class="select-btn type" readonly value="会诊类别" valId="0" />
+                        <div class="list-show scrollBar" style="display: none;">
+                            <ul class="select-list">
+                                <li val="1">一般会诊</li>
+                                <li val="2">紧急会诊</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="select">
+                        <!--会诊状态-->
+                        <div class="triangle"></div>
+                        <input type="button" class="select-btn state" readonly value="全部" valId="0" />
+                        <div class="list-show scrollBar" style="display: none;">
+                            <ul class="select-list">
+                                <li val="0">全部</li>
+                                <li val="1">未处理</li>
+                                <li val="2">已处理</li>
+                                <li val="3">已取消</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn searchBtn">搜索</button>
+                    <button class="btn resetBtn">重置</button>
+                    <div class="cousultantsBtn">
+                        <button class="btn addconsultants">新建会诊</button>
+                        <!--<button class="btn cancelconsultants">取消会诊</button>-->
+                    </div>
+                </div>
+                <div class="content">
+                    <table cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <td>会诊编号</td>
+                                <td>住院号</td>
+                                <td>患者姓名</td>
+                                <td>申请人</td>
+                                <td>申请时间</td>
+                                <td>会诊类别</td>
+                                <td>会诊人</td>
+                                <td>会诊科室</td>
+                                <td style="width:203px;">会诊时间</td>
+                                <td>会诊状态</td>
+                                <td>操作</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <script type="text/template" id="consultants-manage-template">
+                                <%_.each(obj,function(e,i){%>
+                                    <tr class="<%=((e.status==3||(e.isRead==2&&e.status==2))?'alreadyCheck':'')%>">
+
+                                        <td>
+                                            <%=e.id%>
+                                        </td>
+                                        <td>
+                                            <%=e.patient.hospitalizationNo%>
+                                        </td>
+                                        <td class="name" patientId="<%=e.patientId%>">
+                                            <%=e.patient.name%>
+                                        </td>
+                                        <td>
+                                            <%=e.applyUserName%>
+                                        </td>
+                                        <td>
+                                            <%=(e.createTime?e.createTime.split(' ')[0]:e.createTime)%>
+                                        </td>
+                                        <td class="type" type="<%=e.type%>">
+                                            <%=(e.type==1?'一般会诊':'紧急会诊')%>
+                                        </td>
+                                        <td class="doctor" doctorId="<%=e.doctorId%>">
+                                            <%=e.doctorName%>
+                                        </td>
+                                        <td class="dept" deptId="<%=e.deptId%>">
+                                            <%=e.doctorDeptName%>
+                                        </td>
+                                        <td>
+                                            <%=e.consultationTime%>
+                                        </td>
+                                        <td>
+                                            <%if(e.status==1){%>未处理
+                                                <%}else if(e.status==2){%>已处理
+                                                    <%}else if(e.status==3){%>已取消
+                                                        <%}%>
+                                        </td>
+                                        <td>
+                                            <%if(e.status==1){%>
+                                                <a href="javascript:void (0)" class="editBtn" consultantsId="<%=e.id%>">修改</a>
+                                                <a href="javascript:void (0)" class="delBtn" consultantsId="<%=e.id%>">取消</a>
+                                                <%}else if(e.status==2){%>
+                                                    <a href="javascript:void (0)" class="checkBtn" isReady="<%=e.isRead%>" consultantsId="<%=e.id%>">查看</a>
+                                                    <%}%>
+                                        </td>
+                                        <td class="remark" style="display:none!important;">
+                                            <%=e.applyRemark%>
+                                        </td>
+                                    </tr>
+                                    <%})%>
+
+                            </script>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page"></div>
+                <!--新建会诊-->
+                <div class="newConsultants hideItem">
+                    <div class="pupop-content">
+                        <div class="title">
+                            <span>新建会诊</span>
+                            <a href="javascript:void (0)" class="cancelBtn"></a>
+                        </div>
+                        <div class="text-content">
+                            <div class="item clearfix">
+                                <div class="second-item fl">
+                                    <span>患者姓名:</span>
+                                    <div class="text-serach">
+                                        <input type="text" class="patient-name">
+                                        <div class="text-show scrollBar" style="display: none;">
+                                            <ul class="text-list">
+                                                <span>暂无数据</span>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="second-item fr">
+                                    <span>会诊类别:</span>
+                                    <div class="select">
+                                        <div class="triangle"></div>
+                                        <input type="button" class="select-btn consultants-type" readonly value="" />
+                                        <div class="list-show scrollBar" style="display: none;">
+                                            <ul class="select-list">
+                                                <li val="1">一般会诊</li>
+                                                <li val="2">紧急会诊</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item clearfix">
+                                <div class="second-item fl">
+                                    <span>会诊科室:</span>
+                                    <div class="select">
+                                        <div class="triangle"></div>
+                                        <input type="button" class="select-btn consultants-dept" readonly value="" />
+                                        <div class="list-show scrollBar" style="display: none;">
+                                            <ul class="select-list deptList">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="second-item fr">
+                                    <span>会诊医生:</span>
+                                    <div class="select">
+                                        <div class="triangle"></div>
+                                        <input type="button" class="select-btn consultants-doctor" readonly value="" />
+                                        <div class="list-show scrollBar" style="display: none;">
+                                            <ul class="select-list doctorList">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item clearfix">
+                                <span class="fl" style="margin-right: 5px;">申请概述:</span>
+                                <div class="text">
+                                    <textarea class="consultants-text"></textarea>
+                                </div>
+                            </div>
+                            <div class="item tips">请确定信息完全填写正确</div>
+                        </div>
+
+                        <div class="btn-content">
+                            <button class="btn cancelBtn">取消</button>
+                            <button class="btn sureBtn">确定</button>
+                        </div>
+                    </div>
+                </div>
+                <!--删除会诊-->
+                <div class="del-consultants hideItem">
+                    <div class="pupop-content">
+                        <div class="title">
+                            <span>取消会诊</span>
+                            <a href="javascript:void (0)" class="cancelBtn"></a>
+                        </div>
+                        <div class="text-content">
+                            确定取消会诊吗？
+                        </div>
+                        <div class="btn-content">
+                            <button class="btn cancelBtn">取消</button>
+                            <button class="btn sureBtn">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--医生会诊-->
+            <div class="doctor-consultants main-template-block hideItem">
+                <div class="title-search clearfix">
+                    <div class="search">
+                        <img src="../../../image/home_search_icon.png">
+                        <input type="text" placeholder="姓名/住院号/会诊编号" class="txt">
+                    </div>
+                    <div class="select">
+                        <div class="triangle"></div>
+                        <input type="button" class="select-btn sex" readonly value="性别" valId="0" />
+                        <div class="list-show scrollBar" style="display: none;">
+                            <ul class="select-list">
+                                <li val="1">男</li>
+                                <li val="2">女</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="select">
+                        <div class="triangle"></div>
+                        <input type="button" class="select-btn type" readonly value="会诊类别" valId="0" />
+                        <div class="list-show scrollBar" style="display: none;">
+                            <ul class="select-list">
+                                <li val="1">一般会诊</li>
+                                <li val="2">紧急会诊</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="select">
+                        <!--会诊状态-->
+                        <div class="triangle"></div>
+                        <input type="button" class="select-btn state" readonly value="全部" valId="0" />
+                        <div class="list-show scrollBar" style="display: none;">
+                            <ul class="select-list">
+                                <li val="0">全部</li>
+                                <li val="1">未处理</li>
+                                <li val="2">已处理</li>
+                                <!--<li val="3">已取消</li>-->
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn searchBtn">搜索</button>
+                    <button class="btn resetBtn">重置</button>
+                </div>
+                <div class="content">
+                    <table cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <td>会诊编号</td>
+                                <td>住院号</td>
+                                <td>患者姓名</td>
+                                <td>申请人</td>
+                                <td>申请时间</td>
+                                <td>会诊类别</td>
+                                <td>会诊人</td>
+                                <td>会诊科室</td>
+                                <td style="width:203px;">会诊时间</td>
+                                <td>会诊状态</td>
+                                <td>操作</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <script type="text/template" id="doctor-consultants-template">
+                                <%_.each(obj,function(e,i){%>
+                                    <tr class="<%=((e.status==2)?'alreadyCheck':'')%>">
+                                        <td>
+                                            <%=e.id%>
+                                        </td>
+                                        <td>
+                                            <%=e.patient.hospitalizationNo%>
+                                        </td>
+                                        <td>
+                                            <%=e.patient.name%>
+                                        </td>
+                                        <td>
+                                            <%=e.applyUserName%>
+                                        </td>
+                                        <td>
+                                            <%=(e.createTime?e.createTime.split(' ')[0]:e.createTime)%>
+                                        </td>
+                                        <td>
+                                            <%=(e.type==1?'一般会诊':'紧急会诊')%>
+                                        </td>
+                                        <td>
+                                            <%=e.doctorName%>
+                                        </td>
+                                        <td>
+                                            <%=e.doctorDeptName%>
+                                        </td>
+                                        <td>
+                                            <%=e.consultationTime%>
+                                        </td>
+                                        <td>
+                                            <%if(e.status==1){%>未处理
+                                                <%}else if(e.status==2){%>已处理
+                                                    <%}else if(e.status==3){%>已取消
+                                                        <%}%>
+                                        </td>
+                                        <td>
+                                            <%if(e.status==1){%>
+                                                <a href="javascript:void (0)" class="handleBtn" valId="<%=e.id%>">处理</a>
+                                                <%}else if(e.status==2){%>
+                                                    <a href="javascript:void (0)" class="checkBtn" consultantsId="<%=e.id%>">查看</a>
+                                                    <a href="javascript:void (0)" class="eidtBtn" valId="<%=e.id%>">修改</a>
+                                                    <%}%>
+                                        </td>
+                                    </tr>
+                                    <%})%>
+                            </script>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page"></div>
+                <!--处理会诊-->
+                <div class="handle-consultants hideItem">
+                    <div class="pupop-content">
+                        <div class="title">
+                            <span>处理会诊</span>
+                            <a href="javascript:void (0)" class="cancelBtn"></a>
+                        </div>
+                        <div class="text-content">
+                            <div class="item">
+                                <table cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <script type="text/template" id="doctor-handle-template">
+                                            <tr>
+                                                <td><span>患者姓名：</span><b><%=patient.name%></b></td>
+                                                <td><span>性别：</span><b><%=(patient.sex==1?'男':'女')%></b></td>
+                                                <td><span>出生日期：</span><b><%=(patient.birthday?patient.birthday.split(' ')[0]:patient.birthday)%></b></td>
+                                                <td><span>年龄：</span><b><%=patient.age%>岁</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><span>入院日期：</span><b><%=(patient.inhospitalTime?patient.inhospitalTime.split(' ')[0]:patient.inhospitalTime)%></b></td>
+                                                <td><span>住院号：</span><b><%=patient.hospitalizationNo%></b></td>
+                                                <td><span>科室：</span><b><%=patient.deptName%></b></td>
+                                                <td><span>床位号：</span><b><%=patient.sickbedNo%></b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><span>申请人：</span><b><%=applyUserName%></b></td>
+                                                <td><span>会诊类别：</span><b><%=(type==1?'一般会诊':'紧急会诊')%></b></td>
+                                                <td colspan="2"><span>会诊时间：</span><b><%=consultationTime%></b></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span>入院诊断：</span>
+                                                    <b><%=(patient.inhospitalDiagnose?patient.inhospitalDiagnose:'无')%></b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span>并发症：</span>
+                                                    <b><%=(patient.complication?patient.complication:'无')%></b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span>药物过敏史：</span>
+                                                    <b><%=(patient.allergy?patient.allergy:'无')%></b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span>过去治疗方式:</span>
+                                                    <b><%=(patient.historyTherapy?patient.historyTherapy:'无')%></b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span>申请概述：</span>
+                                                    <b><%=applyRemark%></b>
+                                                </td>
+                                            </tr>
+                                        </script>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="item clearfix">
+                                <span class="fl" style="margin-right: 5px;">会诊意见:</span>
+                                <div class="text">
+                                    <textarea wrap="hard" id="enterspace">
+
+                                </textarea>
+                                </div>
+                            </div>
+                            <div class="item tips" style="display: none;color:red;text-align: center;">请填写会诊意见</div>
+                        </div>
+                        <div class="btn-content">
+                            <button class="btn cancelBtn">取消</button>
+                            <button class="btn sureBtn">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--导出/打印报表-->
+    <div class="consultantsRecord hideItem">
+        <div class="content">
+            <div class="title">
+                <span>会诊信息</span>
+                <a href="javascript:void (0)" class="cancelBtn"></a>
+            </div>
+            <div class="print-content">
+                <script type="text/template" id="consultants-record-template">
+                    <div class="hospitalName"></div>
+                    <div class="titleName">会诊记录单</div>
+                    <table cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr class="patientInfo">
+                                <td>患者姓名</td>
+                                <td class="gray">
+                                    <%=patient.name%>
+                                </td>
+                                <td>性别</td>
+                                <td class="gray">
+                                    <%=(patient.sex==1?'男':'女')%>
+                                </td>
+                                <td>出生日期</td>
+                                <td>
+                                    <%=(patient.birthday?patient.birthday.split(' ')[0]:patient.birthday)%>
+                                </td>
+                                <td>年龄</td>
+                                <td>
+                                    <%=patient.age%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>入院日期</td>
+                                <td class="gray">
+                                    <%=(patient.inhospitalTime?patient.inhospitalTime.split(' ')[0]:patient.inhospitalTime)%>
+                                </td>
+                                <td>住院号</td>
+                                <td>
+                                    <%=patient.hospitalizationNo%>
+                                </td>
+                                <td>科室</td>
+                                <td class="gray">
+                                    <%=patient.deptName%>
+                                </td>
+                                <td>床位号</td>
+                                <td class="gray">
+                                    <%=patient.sickbedNo%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>申请人</td>
+                                <td class="gray">
+                                    <%=applyUserName%>
+                                </td>
+                                <td>会诊类别</td>
+                                <td class="gray">
+                                    <%=(type==1?'一般会诊':'紧急会诊')%>
+                                </td>
+                                <td>会诊时间</td>
+                                <td class="gray" colspan="3">
+                                    <%=consultationTime%>
+                                </td>
+                            </tr>
+                            <tr class="typeInfo">
+                                <td>入院诊断</td>
+                                <td class="gray" colspan="7">
+                                    <%=(patient.inhospitalDiagnose?patient.inhospitalDiagnose:'无')%>
+                                </td>
+                            </tr>
+                            <tr class="typeInfo">
+                                <td>并发症</td>
+                                <td class="gray" colspan="7">
+                                    <%=(patient.complication?patient.complication:'无')%>
+                                </td>
+                            </tr>
+                            <tr class="typeInfo">
+                                <td>药物过敏史</td>
+                                <td class="gray" colspan="7">
+                                    <%=(patient.allergy?patient.allergy:'无')%>
+                                </td>
+                            </tr>
+                            <tr class="typeInfo">
+                                <td>过去 <br/>治疗方式</td>
+                                <td class="gray" colspan="7">
+                                    <%=(patient.historyTherapy?patient.historyTherapy:'无')%>
+                                </td>
+                            </tr>
+                            <tr class="typeInfo">
+                                <td>申请概述</td>
+                                <td class="gray" colspan="7">
+                                    <%=applyRemark%>
+                                </td>
+                            </tr>
+                            <tr class="advise">
+                                <td>会诊意见</td>
+                                <td class="gray" colspan="7">
+                                    <%=suggest%>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </script>
+            </div>
+            <div class="btncontent">
+                <button class="btn export">导出</button>
+                <button class="btn print">打印</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="PopMask"></div>
+    <!--修改密码弹窗-->
+    <div class="updatePwdPop" id="updatePwdPop"></div>
+
+    <script type="text/javascript" src="../../../js/control/underscore.min.js"></script>
+    <script type="text/javascript" src="../../../js/control/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../../../js/control/laydate.min.js"></script>
+    <script type="text/javascript" src="../../../js/control/jq-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../js/control/jquery.jqprint-0.3.min.js"></script>
+
+    <script type="text/javascript" src="../../../js/custom/config.js"></script>
+    <script type="text/javascript" src="../../../js/custom/common.js"></script>
+    <script type="text/javascript" src="../../../js/custom/createPage.min.js"></script>
+    <script type="text/javascript" src="../../../js/custom/consultants.js"></script>
+</body>
+
+</html>

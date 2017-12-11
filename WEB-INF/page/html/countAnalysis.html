@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>统计分析</title>
+    <link rel="shortcut icon" href="../../../image/icon.ico">
+    <link rel="stylesheet" href="../../../css/countAnalysis.min.css">
+</head>
+<body>
+<div class="countAnalysis">
+	<!--导航栏-->
+	<div class="nav clearfix">
+	</div>
+</div>
+
+
+<div class="main-content clearfix">
+	<div class="leftNav">
+		<ul>
+			<li class="active" val="patientCount">
+				<a href="javascript:void ( 0 )" value="patientCount" onclick="patientCount()">
+					<img src="../../../image/statistics_hzfb_press.png">
+					<span>患者分布统计</span>
+				</a>
+			</li>
+			<li val="blood-test-count">
+				<a href="javascript:void ( 0 )" value="blood-test-count" onclick="bloodTestCount()">
+					<img src="../../../image/statistics_ksxt_normal.png">
+					<span>科室血糖检测统计</span>
+				</a>
+			</li>
+			<li val="patient-test-count">
+				<a href="javascript:void ( 0 )" value="patient-test-count" onclick="patientTestCount()">
+					<img src="../../../image/statistics_hzjc_normal.png">
+					<span>患者检测统计</span>
+				</a>
+			</li>
+			<li val="blood-warn-count">
+				<a href="javascript:void ( 0 )" value="blood-warn-count" onclick="bloodWarnCount()">
+					<img src="../../../image/statistics_xtyjfb_normal.png">
+					<span>血糖预警分布统计</span>
+				</a>
+			</li>
+			<!--<li val="low-blood-count">
+				<a href="javascript:void ( 0 )" value="low-blood-count">
+					<img src="../../../image/statistics_dxtfs_normal.png">
+					<span>低血糖发生率统计</span>
+				</a>
+			</li>
+			<li val="average-blood-count">
+				<a href="javascript:void ( 0 )" value="average-blood-count">
+					<img src="../../../image/statistics_xtpjjc_normal.png">
+					<span>血糖检测平均值统计</span>
+				</a>
+			</li>-->
+			<li val="paper-test-count">
+				<a href="javascript:void ( 0 )" value="paper-test-count" onclick="paperTestCount()">
+					<img src="../../../image/statistics_szyltj_normal.png">
+					<span>试纸用量统计</span>
+				</a>
+			</li>
+			<!--<li val="patient-out-count">
+				<a href="javascript:void ( 0 )" value="patient-out-count">
+					<img src="../../../image/statistics_crytj_normal.png">
+					<span>入院出院患者统计</span>
+				</a>
+			</li>-->
+		</ul>
+	</div>
+	<div class="rightBox">
+		<!--患者分析统计-->
+		<div class="patientCount main-template-block allstyle">
+			<div class="title-search">
+				<span>科室：</span>
+				<div class="select">
+					<div class="triangle"></div>
+					<input type="button" class="select-btn" readonly value="请选择科室"/>
+					<div class="list-show scrollBar" style="display: none;">
+						<ul class="select-list">
+
+                        </ul>
+                    </div>
+                </div>
+                <span style="margin-left:20px;">入院时间：</span>
+                <div>
+                    <input type="text" class="laydate-icon dateEx" id="date1" readonly="readonly" onclick="laydate({elem:'#date1',format: 'YYYY-MM-DD'})">
+                </div>
+                <span style="margin-left:10px;"> 至 </span>
+                <div>
+                    <input type="text" class="laydate-icon dateAf" id="date2" readonly="readonly" onclick="laydate({elem:'#date2',format: 'YYYY-MM-DD'})">
+                </div>
+                <button class="btn searchBtn">搜索</button>
+                <button class="btn resetBtn">重置</button>
+            </div>
+            <table cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <td>科室编号</td>
+                        <td>科室名称</td>
+                        <td>患者数量（人）</td>
+                        <td>比例（%）</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <script type="text/template" id="patient-count-template">
+                    <%_.each(obj,function(e,i){%>
+                    <tr>
+                        <td><%=e.deptNo%></td>
+                        <td><%=e.deptName%></td>
+                        <td><%=e.count%></td>
+                        <td><%=parseFloat(e.scale).toFixed(2)%>%</td>
+                    </tr>
+                    <%})%>
+                </script>
+                </tbody>
+            </table>
+            <div class="page"></div>
+            <!--<div class="all-count">合计：180 人</div>-->
+        </div>
+        <!--科室血糖检测统计-->
+        <div class="blood-test-count main-template-block hideItem allstyle">
+			<div class="title-search">
+				<span>科室：</span>
+				<div class="select">
+					<div class="triangle"></div>
+					<input type="button" class="select-btn" readonly value="请选择科室"/>
+					<div class="list-show scrollBar" style="display: none;">
+						<ul class="select-list">
+
+						</ul>
+					</div>
+				</div>
+				<span style="margin-left:20px;">入院时间：</span>
+				<div>
+					<input type="text" class="laydate-icon dateEx" id="date3" readonly="readonly" onclick="laydate({elem:'#date3',format: 'YYYY-MM-DD'})">
+				</div>
+				<span style="margin-left:10px;"> 至 </span>
+				<div>
+					<input type="text" class="laydate-icon dateAf" id="date4" readonly="readonly" onclick="laydate({elem:'#date4',format: 'YYYY-MM-DD'})">
+				</div>
+				<button class="btn searchBtn">搜索</button>
+				<button class="btn resetBtn">重置</button>
+			</div>
+            <table cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <td>科室编号</td>
+                    <td>科室名称</td>
+                    <td>检测次数</td>
+                    <td>比例(%)</td>
+                </tr>
+                </thead>
+                <tbody>
+                <script type="text/template" id="blood-test-template">
+                    <%_.each(obj,function(e,i){%>
+                    <tr>
+                        <td><%=e.deptNo%></td>
+                        <td><%=e.deptName%></td>
+                        <td><%=e.count%></td>
+                        <td><%=parseFloat(e.scale).toFixed(2)%>%</td>
+                    </tr>
+                    <%})%>
+                </script>
+                </tbody>
+            </table>
+            <div class="page"></div>
+        </div>
+        <!--患者检测统计-->
+        <div class="patient-test-count main-template-block hideItem allstyle">
+            <div class="title-search">
+                <span>科室：</span>
+                <div class="select">
+                    <div class="triangle"></div>
+                    <input type="button" class="select-btn" readonly value="请选择科室"/>
+                    <div class="list-show scrollBar" style="display: none;">
+                        <ul class="select-list">
+
+						</ul>
+					</div>
+				</div>
+				<span style="margin-left:20px;">入院时间：</span>
+				<div>
+					<input type="text" class="laydate-icon dateEx" id="date5" readonly="readonly" onclick="laydate({elem:'#date5',format: 'YYYY-MM-DD'})">
+				</div>
+				<span style="margin-left:10px;"> 至 </span>
+				<div>
+					<input type="text" class="laydate-icon dateAf" id="date6" readonly="readonly" onclick="laydate({elem:'#date6',format: 'YYYY-MM-DD'})">
+				</div>
+				<button class="btn searchBtn">搜索</button>
+				<button class="btn resetBtn">重置</button>
+			</div>
+			<div class="patient-test-echartContent clearfix">
+				<div class="echart-leftBox fl" id="patient-test-leftPie"></div>
+				<div class="echart-rightBox fl" id="patient-test-rightPie"></div>
+			</div>
+			<table class="table1" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<td class="td1">年龄段</td>
+					<td class="td2">测量人数</td>
+					<td class="td2">男</td>
+					<td class="td2">女</td>
+					<td class="td1">比例</td>
+				</tr>
+				</thead>
+				<tbody>
+				<script type="text/template" id="patient-test-count-template1">
+					<%_.each(obj,function(e,i){%>
+					<tr>
+						<td><%=e.name%></td>
+						<td><%=e.count%></td>
+						<td><%=e.maleCount%></td>
+						<td><%=e.femaleCount%></td>
+						<td><%=parseFloat(e.scale).toFixed(2)%></td>
+					</tr>
+					<%})%>
+				</script>
+				</tbody>
+			</table>
+			<table class="table2" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<td class="td1">住院号</td>
+					<td class="td2">姓名</td>
+					<td class="td2">性别</td>
+					<td class="td2">年龄</td>
+					<td class="td2">科室</td>
+					<td class="td1">入院日期</td>
+					<td class="td2">检测次数</td>
+				</tr>
+				</thead>
+				<tbody>
+				<script type="text/template" id="patient-test-count-template2">
+					<%_.each(obj,function(e,i){%>
+					<tr>
+						<td><%=e.hospitalizationNo%></td>
+						<td><%=e.name%></td>
+						<td>
+							<%if(e.sex==1){%>
+							男
+							<%}else{%>
+							女
+							<%}%>
+						</td>
+						<td><%=e.age%></td>
+						<td><%=e.deptName%></td>
+						<td><%=(e.inhospitalTime?e.inhospitalTime.split(' ')[0]:'')%></td>
+						<td><%=e.count%></td>
+					</tr>
+					<%})%>
+				</script>
+				</tbody>
+			</table>
+			<div class="page"></div>
+		</div>
+		<!--血糖预警分布统计-->
+		<div class="blood-warn-count main-template-block hideItem allstyle">
+			<div class="title-search">
+				<span>科室：</span>
+				<div class="select">
+					<div class="triangle"></div>
+					<input type="button" class="select-btn" readonly value="请选择科室"/>
+					<div class="list-show scrollBar" style="display: none;">
+						<ul class="select-list">
+
+						</ul>
+					</div>
+				</div>
+				<span style="margin-left:20px;">入院时间：</span>
+				<div>
+					<input type="text" class="laydate-icon dateEx" readonly="readonly" id="date7" onclick="laydate({elem:'#date7',format: 'YYYY-MM-DD'})">
+				</div>
+				<span style="margin-left:10px;"> 至 </span>
+				<div>
+					<input type="text" class="laydate-icon dateAf" readonly="readonly" id="date8" onclick="laydate({elem:'#date8',format: 'YYYY-MM-DD'})">
+				</div>
+				<button class="btn searchBtn">搜索</button>
+				<button class="btn resetBtn">重置</button>
+			</div>
+			<div class="blood-warn-echartContent clearfix">
+				<p>单位：人</p>
+				<div class="ehartLine" id="blood-warn-ehartLine"></div>
+			</div>
+			<table class="table1" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<td class="td1">科室编号</td>
+					<td class="td2">科室名称</td>
+					<td class="td3">低血糖预警（次）</td>
+					<td class="td3">高血糖预警（次）</td>
+					<td class="td3">预警总数（次）</td>
+				</tr>
+				</thead>
+				<tbody>
+				<script type="text/template" id="blood-warn-count-template1">
+					<%_.each(obj,function(e,i){%>
+					<tr>
+						<td><%=e.deptCode%></td>
+						<td><%=e.deptName%></td>
+						<td><%=e.lowNum%></td>
+						<td><%=e.highNum%></td>
+						<td><%=e.totalNum%></td>
+					</tr>
+					<%})%>
+				</script>
+				</tbody>
+			</table>
+			<table class="table2" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<td class="td1">日期</td>
+					<td class="td1">次数（次）</td>
+				</tr>
+				</thead>
+				<tbody>
+				<script type="text/template" id="blood-warn-count-template2">
+					<%_.each(obj,function(e,i){%>
+					<tr>
+						<td><%=e.date%></td>
+						<td><%=e.count%></td>
+					</tr>
+					<%})%>
+				</script>
+				</tbody>
+			</table>
+			<div class="page"></div>
+		</div>
+		<!--低血糖发生率统计-->
+		<div class="low-blood-count main-template-block hideItem allstyle">
+			<div class="title-search">
+				<span>科室：</span>
+				<div class="select">
+					<div class="triangle"></div>
+					<input type="button" class="select-btn" readonly value="请选择科室"/>
+					<div class="list-show scrollBar" style="display: none;">
+						<ul class="select-list">
+
+						</ul>
+					</div>
+				</div>
+				<span style="margin-left:20px;">入院时间：</span>
+				<div>
+					<input type="text" class="laydate-icon dateEx" id="date9" readonly="readonly" onclick="laydate({elem:'#date9',format: 'YYYY-MM-DD'})">
+				</div>
+				<span style="margin-left:10px;"> 至 </span>
+				<div>
+					<input type="text" class="laydate-icon dateAf" readonly="readonly" id="date10" onclick="laydate({elem:'#date10',format: 'YYYY-MM-DD'})">
+				</div>
+				<button class="btn searchBtn">搜索</button>
+				<button class="btn resetBtn">重置</button>
+			</div>
+			<div class="low-blood-echartContent clearfix">
+				<p>单位：次</p>
+				<div class="ehartLine" id="low-blood-ehartLine"></div>
+			</div>
+			<table class="table1" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<td class="td1">科室编号</td>
+					<td class="td2">科室名称</td>
+					<td class="td3">低血糖预警（次）</td>
+					<td class="td3">高血糖预警（次）</td>
+					<td class="td3">预警总数（次）</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>10001</td>
+					<td>儿科</td>
+					<td>32</td>
+					<td>5</td>
+					<td>37</td>
+				</tr>
+				<tr>
+					<td>12001</td>
+					<td>内分泌</td>
+					<td>3</td>
+					<td>55</td>
+					<td>23</td>
+				</tr>
+				</tbody>
+			</table>
+			<table class="table2" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<td class="td1">日期</td>
+					<td class="td1">次数（次）</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>2017-02-03</td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<td>2017-08-03</td>
+					<td>12</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<!--血糖检测平均值统计-->
+		<div class="average-blood-count main-template-block hideItem allstyle">
+			<div class="title-search">
+				<span>科室：</span>
+				<div class="select">
+					<div class="triangle"></div>
+					<input type="button" class="select-btn" readonly value="请选择科室"/>
+					<div class="list-show scrollBar" style="display: none;">
+						<ul class="select-list">
+
+						</ul>
+					</div>
+				</div>
+				<span style="margin-left:20px;">入院时间：</span>
+				<div>
+					<input type="text" class="laydate-icon dateEx" readonly="readonly" id="date11" onclick="laydate({elem:'#date11',format: 'YYYY-MM-DD'})">
+				</div>
+				<span style="margin-left:10px;"> 至 </span>
+				<div>
+					<input type="text" class="laydate-icon dateAf" readonly="readonly" id="date12" onclick="laydate({elem:'#date12',format: 'YYYY-MM-DD'})">
+				</div>
+				<button class="btn searchBtn">搜索</button>
+				<button class="btn resetBtn">重置</button>
+			</div>
+			<table cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<td class="td1">科室编号</td>
+					<td class="td2">科室名称</td>
+					<td class="td3">检测次数</td>
+					<td class="td3">最高值（mmol/L）</td>
+					<td class="td3">最低值（mmol/L）</td>
+					<td class="td3">平均值（mmol/L）</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>10001</td>
+					<td>儿科</td>
+					<td>32</td>
+					<td>5</td>
+					<td>37</td>
+					<td>33</td>
+				</tr>
+				<tr>
+					<td>12001</td>
+					<td>内分泌</td>
+					<td>3</td>
+					<td>55</td>
+					<td>23</td>
+					<td>28</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<!--试纸用量统计-->
+		<div class="paper-test-count main-template-block hideItem allstyle">
+			<div class="title-search">
+				<span>科室：</span>
+				<div class="select">
+					<div class="triangle"></div>
+					<input type="button" class="select-btn" readonly value="请选择科室"/>
+					<div class="list-show scrollBar" style="display: none;">
+						<ul class="select-list">
+
+						</ul>
+					</div>
+				</div>
+				<span style="margin-left:20px;">测试日期：</span>
+				<div>
+					<input type="text" class="laydate-icon dateEx" readonly="readonly" id="date13" onclick="laydate({elem:'#date13',format: 'YYYY-MM-DD'})">
+				</div>
+				<span style="margin-left:10px;"> 至 </span>
+				<div>
+					<input type="text" class="laydate-icon dateAf" readonly="readonly" id="date14" onclick="laydate({elem:'#date14',format: 'YYYY-MM-DD'})">
+				</div>
+				<button class="btn searchBtn">搜索</button>
+				<button class="btn resetBtn">重置</button>
+			</div>
+			<div class="paper-test-echartContent clearfix">
+				<p>单位：片</p>
+				<div class="ehartLine" id="paper-test-ehartLine"></div>
+			</div>
+			<table class="table1" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<td class="td1">科室编号</td>
+					<td class="td2">科室名称</td>
+					<td class="td1">检测人数</td>
+					<td class="td1">试纸用量（片）</td>
+				</tr>
+				</thead>
+				<tbody>
+				<script type="text/template" id="paper-test-count-template1">
+					<%_.each(obj,function(e,i){%>
+					<tr>
+						<td><%=e.deptCode%></td>
+						<td><%=e.deptName%></td>
+						<td><%=e.patientCount%></td>
+						<td><%=e.testCount%></td>
+					</tr>
+					<%})%>
+				</script>
+				</tbody>
+			</table>
+			<table class="table2" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<td class="td1">日期</td>
+					<td class="td1">次数（次）</td>
+				</tr>
+				</thead>
+				<tbody>
+				<script type="text/template" id="paper-test-count-template2">
+					<%_.each(obj,function(e,i){%>
+					<tr>
+						<td><%=e.date%></td>
+						<td><%=e.count%></td>
+					</tr>
+					<%})%>
+				</script>
+				</tbody>
+			</table>
+			<div class="page"></div>
+		</div>
+		<!--入院出院院患者统计-->
+		<div class="patient-out-count main-template-block hideItem allstyle">
+			<div class="title-search">
+				<span>科室：</span>
+				<div class="select">
+					<div class="triangle"></div>
+					<input type="button" class="select-btn" readonly value="请选择科室"/>
+					<div class="list-show scrollBar" style="display: none;">
+						<ul class="select-list">
+
+						</ul>
+					</div>
+				</div>
+				<span style="margin-left:20px;">入院时间：</span>
+				<div>
+					<input type="text" class="laydate-icon dateEx" readonly="readonly" id="date15" onclick="laydate({elem:'#date15',format: 'YYYY-MM-DD'})">
+				</div>
+				<span style="margin-left:10px;"> 至 </span>
+				<div>
+					<input type="text" class="laydate-icon dateAf" readonly="readonly" id="date16" onclick="laydate({elem:'#date16',format: 'YYYY-MM-DD'})">
+				</div>
+				<button class="btn searchBtn">搜索</button>
+				<button class="btn resetBtn">重置</button>
+			</div>
+			<div class="patient-out-echartContent clearfix">
+				<p>单位：人</p>
+				<div class="ehartLine" id="patient-out-ehartLine"></div>
+			</div>
+			<table class="table1" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<td class="td1">序号</td>
+					<td class="td2">科室编号</td>
+					<td class="td3">科室名称</td>
+					<td class="td3">入院人数</td>
+					<td class="td3">出院人数</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>01</td>
+					<td>1001</td>
+					<td>儿科</td>
+					<td>32</td>
+					<td>5</td>
+
+				</tr>
+				<tr>
+					<td>02</td>
+					<td>12001</td>
+					<td>内分泌</td>
+					<td>3</td>
+					<td>55</td>
+				</tr>
+				</tbody>
+			</table>
+			<table class="table2" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<td class="td1">日期</td>
+					<td class="td2">类别</td>
+					<td class="td2">总数</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>2017-02-03</td>
+					<td>入院</td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<td>2017-08-03</td>
+					<td>出院</td>
+					<td>12</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>
+
+<!--修改密码弹窗-->
+<div class="PopMask"></div>
+<div class="updatePwdPop" id="updatePwdPop"></div>
+
+<script type="text/javascript" src="../../../js/control/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../../js/control/underscore.min.js"></script>
+<script type="text/javascript" src="../../../js/control/laydate.min.js"></script>
+<script type="text/javascript" src="../../../js/control/echarts.min.js"></script>
+<script type="text/javascript" src="../../../js/custom/config.js"></script>
+
+<script type="text/javascript" src="../../../js/custom/common.js"></script>
+<script type="text/javascript" src="../../../js/custom/createPage.min.js"></script>
+<script type="text/javascript" src="../../../js/custom/patientTestEchart.js"></script>
+<script type="text/javascript" src="../../../js/custom/countAnalysis.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>智能提醒</title>
+    <link rel="shortcut icon" href="../../../image/icon.ico">
+    <link rel="stylesheet" href="../../../css/intelligentWarn.min.css">
+</head>
+<body>
+<div class="warning">
+    <!--导航栏-->
+    <div class="nav clearfix"></div>
+</div>
+<div class="main-content">
+    <div class="all-content">
+        <div class="searchNav">
+            <div class="clearfix">
+                <div class="search">
+                    <img src="../../../image/home_search_icon.png">
+                    <input type="text" placeholder="姓名/住院号" class="txt">
+                </div>
+                <button class="current-week btn" value="1">24小时</button>
+                <button class="oneBtn btn" value="2">48小时</button>
+                <button class="threeBtn btn" value="3">72小时</button>
+                <button class="allBtn btn activeBtn" value="-1">全部</button>
+
+                <button class="searchBtn">搜索</button>
+                <button class="resetBtn">重置</button>
+            </div>
+        </div>
+
+        <!--列表模式-->
+        <div class="patientList">
+            <div class="listContent">
+                <table class="list"  cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <td class="td1">住院号</td>
+                        <td class="td2">患者姓名</td>
+                        <td class="td3">性别</td>
+                        <td class="td4">年龄</td>
+                        <td class="td5">科室</td>
+                        <td class="td6">床号</td>
+                        <td class="td7">分组</td>
+                        <td class="td8">预警原因</td>
+                    </tr>
+                    </thead>
+                    <tbody class="page1">
+                    <script type="text/template" id="warn-list-template">
+                        <%_.each(obj,function(e,i){%>
+                        <tr>
+                            <td class="td1"><%=e.patient.hospitalizationNo%></td>
+                            <td class="td2"><%=e.patient.name%></td>
+                            <td class="td3"><%=(e.patient.sex==1?'男':'女')%></td>
+                            <td class="td4"><%=e.patient.age%></td>
+                            <td class="td5"><%=e.patient.deptName%></td>
+                            <td class="td6"><%=e.patient.sickbedNo%></td>
+                            <td class="td7">
+                                <%if(e.patient.diabetesType<3){%>
+                                <%=e.patient.diabetesType%>类糖尿病
+                                <%}else{%>
+                                妊娠型
+                                <%}%>
+                            </td>
+                            <td class="td8">
+                                <%=(e.type==1?'血糖偏高':'血糖偏低')%>
+                                <%=e.testTime%>
+                                测量血糖为
+                                <%if(e.sugar<4.4){%><span style="color:#edb344"><%=e.sugar%>mmol/L</span>
+                                <%}else if((e.timeType==1 || e.timeType==8)&&(e.sugar>7)){%><span style="color:#e95959"><%=e.sugar%>mmol/L</span>
+                                <%}else if(e.sugar>10){%><span style="color:#e95959"><%=e.sugar%>mmol/L</span>
+                                <%}else{%><span><%=e.sugar%>mmol/L</span><%}%>
+                            </td>
+                        </tr>
+                        <%})%>
+                    </script>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page"></div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<div class="PopMask"></div>
+<!--修改密码弹窗-->
+<div class="updatePwdPop" id="updatePwdPop"></div>
+
+
+<script type="text/javascript" src="../../../js/control/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../../js/control/underscore.min.js"></script>
+<script type="text/javascript" src="../../../js/custom/config.js"></script>
+
+<script type="text/javascript" src="../../../js/custom/common.js"></script>
+<script type="text/javascript" src="../../../js/custom/createPage.min.js"></script>
+<script type="text/javascript" src="../../../js/custom/intelligentWarn.js"></script>
+</body>
+</html>

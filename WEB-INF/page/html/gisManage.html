@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>血糖管理</title>
+    <link rel="shortcut icon" href="../../../image/icon.ico">
+    <!-- <link rel="stylesheet" href="../../../css/gisManage.min.css"> -->
+    <link rel="stylesheet" href="../../../css/gisManage.css">
+    <!-- <link rel="stylesheet" media="screen,print" href="../../../css/gisManage.min.css"> -->
+    <link rel="stylesheet" media="screen,print" href="../../../css/gisManage.css">
+</head>
+
+<body>
+    <div class="gisManage">
+        <!--导航栏-->
+        <div class="nav clearfix"></div>
+    </div>
+    <div class="main-content">
+        <div class="leftNav">
+            <ul>
+                <li class="active" val="gis-record">
+                    <a href="javascript:void ( 0 )" onclick="getData()">
+                        <img src="../../../image/xlgl_xtjl_icon_press.png">
+                        <span>血糖记录</span>
+                    </a>
+                </li>
+
+                <li val="gis-addrecord">
+                    <a href="javascript:void ( 0 )" onclick="gisAddRecord()">
+                        <img src="../../../image/xlgl_xtbl_icon_normal.png">
+                        <span>血糖补录</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="rightBox">
+            <div class="all-content gis-record main-template-block">
+                <div class="searchNav">
+                    <div class="clearfix">
+                        <div class="search">
+                            <img src="../../../image/home_search_icon.png">
+                            <input type="text" placeholder="姓名/住院号" class="txt">
+                        </div>
+                        <button class="current-week btn activeBtn" value="1">最近一周</button>
+                        <button class="oneBtn btn" value="2">最近1个月</button>
+                        <button class="threeBtn btn" value="3">最近3个月</button>
+                        <button class="allBtn btn" value="4">全部</button>
+                        <div class="choose-time">
+                            <div class="select time-select">
+                                <div class="triangle"></div>
+                                <input type="button" class="select-btn" readonly value="选择时段" valId="0" />
+                                <div class="list-show scrollBar" style="display: none;">
+                                    <ul class="select-list">
+                                        <li val="0" selected="selected">全部时段</li>
+                                        <li val="1">空腹</li>
+                                        <li val="2">早餐后</li>
+                                        <li val="3">午餐前</li>
+                                        <li val="4">午餐后</li>
+                                        <li val="5">晚餐前</li>
+                                        <li val="6">晚餐后</li>
+                                        <li val="7">睡前</li>
+                                        <li val="8">凌晨</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="searchBtn">搜索</button>
+                        <button class="resetBtn">重置</button>
+                        <button class="printRecordBtn fr">打印交接班记录表</button>
+                        <button class="addBloodSugar fr" data-edit='true'>添加血糖</button>
+                        <!--添加血糖弹窗-->
+                        <div class="addSugarPop" id="addSugarBox">
+                            <div class="addSugarTitile clearfix">
+                                <p class="fl"></p>
+                                <a class="fr" href="javascript:void(0)" id="addSugarCloseBtn"></a>
+                            </div>
+                            <div class="addSugarContent clearfix">
+                                <div class="list clearfix">
+                                    <p class='patientName fl'>患者姓名 : </p>
+                                    <div class='choiceOnePatient'>请选择一个患者</div>
+                                    <div class="patientNameSeach text-serach fl">
+                                        <input type="text" class="patient-name">
+                                        <div class="text-show scrollBar" style="display: none;">
+                                            <ul class="text-list">
+                                                <span>暂无数据</span>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list clearfix">
+                                    <p class="fl">血糖数值：</p>
+                                    <input type="text" id="addSugarNo">
+                                    <span>mmol/L</span>
+                                    <div class="noTips tc">输入范围0.6-33.3</div>
+                                </div>
+                                <div class="list clearfix">
+                                    <p class="fl">时间段：</p>
+                                    <div class="select_box fl itemSelct" id="">
+                                        <input type="text" value="空腹" data-value="1" class="select_txt" id="addSugarTime" readonly/>
+                                        <div class="triangle"></div>
+                                        <div class="option_box">
+                                            <a data-value="1">空腹</a>
+                                            <a data-value="2">早餐后</a>
+                                            <a data-value="3">午餐前</a>
+                                            <a data-value="4">午餐后</a>
+                                            <a data-value="5">晚餐前</a>
+                                            <a data-value="6">晚餐后</a>
+                                            <a data-value="7">睡前</a>
+                                            <a data-value="8">凌晨</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list clearfix">
+                                    <p class="fl">测量时间：</p>
+                                    <!-- <input readonly type="text" class="measureTime laydate-icon" id="addSugarMeasureTime" onclick="laydate({elem:'#addSugarMeasureTime',istime: true,format: 'YYYY-MM-DD hh:mm',start:laydate.now(0,'YYYY/MM/DD hh:mm'),choose:checkDate})"> -->
+                                    <input readonly type="text" class="measureTime laydate-icon" id="addSugarMeasureTime" onclick="laydate({elem:'#addSugarMeasureTime',istime: true,format: 'YYYY-MM-DD hh:mm',start:laydate.now(0,'YYYY/MM/DD hh:mm')})">
+                                    <p id='rightTime' style='display:none;margin-top:-5px;text-align:center;width:100%;color:red'>请输入正确时间</p>
+                                </div>
+                                <div class="list listLast clearfix">
+                                    <p class="fl">备注：</p>
+                                    <textarea class="fl" maxlength="140" id="addSugarRemark"></textarea>
+                                </div>
+                                <div class="addSugarBtn fr">
+                                    <button class="fl" id="addSugarCancel">取消</button>
+                                    <button class="active fl" id="addSugarSubmit">确认</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--列表模式-->
+                <div class="patientList">
+                    <div class="listContent">
+                        <table class="list" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                    <td class="td1">住院号</td>
+                                    <td class="td2">患者姓名</td>
+                                    <td class="td3">性别</td>
+                                    <td class="td4">年龄</td>
+                                    <td class="td5">科室</td>
+                                    <td class="td6">床号</td>
+                                    <td class="td7">分组</td>
+                                    <td class="td8">操作护士</td>
+                                    <td class="td9">检测时间</td>
+                                    <td class="td10">检测时段</td>
+                                    <td class="td11">检测结果(mmol/L)</td>
+                                    <td class="td13">备注</td>
+                                    <td class="td12">操作</td>
+                                </tr>
+                            </thead>
+                            <tbody class="page1">
+                                <script type="text/template" id="gispatient-list-template">
+                                    <%_.each(obj,function(e,i){%>
+                                        <tr>
+                                            <td class="td1" data-patientId='<%=e.patientId%>'>
+                                                <%=e.patient.hospitalizationNo%>
+                                                    <span style='display:none'>
+                                                            <%=e.remark%>
+                                                    </span>
+                                            </td>
+                                            <td class="td2">
+                                                <%=e.patient.name%>
+                                            </td>
+                                            <td class="td3">
+                                                <%=(e.patient.sex==1?'男':'女')%>
+                                            </td>
+                                            <td class="td4">
+                                                <%=e.patient.age%>
+                                            </td>
+                                            <td class="td5">
+                                                <%=e.patient.deptName%>
+                                            </td>
+                                            <td class="td6">
+                                                <%=e.patient.sickbedNo%>
+                                            </td>
+                                            <td class="td7">
+                                                <%if(e.patient.diabetesType<3){%>
+                                                    <%=e.patient.diabetesType%>类糖尿病
+                                                        <%}else{%>
+                                                            妊娠型
+                                                            <%}%>
+                                            </td>
+                                            <td class="td8">
+                                                <%=e.nurseName%>
+                                            </td>
+                                            <td class="td9">
+                                                <%=e.createTime%>
+                                            </td>
+                                            <td class="td10">
+                                                <%if(e.timeType==1){%>空腹
+                                                    <%}else if(e.timeType==2){%>早餐后
+                                                        <%}else if(e.timeType==3){%>午餐前
+                                                            <%}else if(e.timeType==4){%>午餐后
+                                                                <%}else if(e.timeType==5){%>晚餐前
+                                                                    <%}else if(e.timeType==6){%>晚餐后
+                                                                        <%}else if(e.timeType==7){%>睡前
+                                                                            <%}else if(e.timeType==8){%>凌晨
+                                                                                <%}%>
+                                            </td>
+                                            <td class="td11">
+                                                <%if(e.type==1){%>
+
+                                                    <%if(e.timeTypeName=='空腹'){%>
+                                                        <%if(e.sugar<e.text[0].minValue){%><span style="color:#edb344"><%=e.sugar%></span>
+                                                            <%}else if(e.sugar>e.text[0].maxValue){%><span style="color:#e95959"><%=e.sugar%></span>
+                                                                <%}else{%><span><%=e.sugar%></span>
+                                                                    <%}%>
+                                                                        <%}%>
+                                                                            <%if(e.timeTypeName=='早餐后'){%>
+                                                                                <%if(e.sugar<e.text[1].minValue){%><span style="color:#edb344"><%=e.sugar%></span>
+                                                                                    <%}else if(e.sugar>e.text[1].maxValue){%><span style="color:#e95959"><%=e.sugar%></span>
+                                                                                        <%}else{%><span><%=e.sugar%></span>
+                                                                                            <%}%>
+                                                                                                <%}%>
+                                                                                                    <%if(e.timeTypeName=='午餐前'){%>
+                                                                                                        <%if(e.sugar<e.text[2].minValue){%><span style="color:#edb344"><%=e.sugar%></span>
+                                                                                                            <%}else if(e.sugar>e.text[2].maxValue){%><span style="color:#e95959"><%=e.sugar%></span>
+                                                                                                                <%}else{%><span><%=e.sugar%></span>
+                                                                                                                    <%}%>
+                                                                                                                        <%}%>
+                                                                                                                            <%if(e.timeTypeName=='午餐后'){%>
+                                                                                                                                <%if(e.sugar<e.text[3].minValue){%><span style="color:#edb344"><%=e.sugar%></span>
+                                                                                                                                    <%}else if(e.sugar>e.text[3].maxValue){%><span style="color:#e95959"><%=e.sugar%></span>
+                                                                                                                                        <%}else{%><span><%=e.sugar%></span>
+                                                                                                                                            <%}%>
+                                                                                                                                                <%}%>
+                                                                                                                                                    <%if(e.timeTypeName=='晚餐前'){%>
+                                                                                                                                                        <%if(e.sugar<e.text[4].minValue){%><span style="color:#edb344"><%=e.sugar%></span>
+                                                                                                                                                            <%}else if(e.sugar>e.text[4].maxValue){%><span style="color:#e95959"><%=e.sugar%></span>
+                                                                                                                                                                <%}else{%><span><%=e.sugar%></span>
+                                                                                                                                                                    <%}%>
+                                                                                                                                                                        <%}%>
+                                                                                                                                                                            <%if(e.timeTypeName=='晚餐后'){%>
+                                                                                                                                                                                <%if(e.sugar<e.text[5].minValue){%>
+                                                                                                                                                                                    <span style="color:#edb344"><%=e.sugar%></span>
+                                                                                                                                                                                    <%}else if(e.sugar>e.text[5].maxValue){%>
+                                                                                                                                                                                        <span style="color:#e95959"><%=e.sugar%></span>
+                                                                                                                                                                                        <%}else{%>
+                                                                                                                                                                                            <span><%=e.sugar%></span>
+                                                                                                                                                                                            <%}%>
+                                                                                                                                                                                                <%}%>
+                                                                                                                                                                                                    <%if(e.timeTypeName=='睡前'){%>
+                                                                                                                                                                                                        <%if(e.sugar<e.text[6].minValue){%>
+                                                                                                                                                                                                            <span style="color:#edb344"><%=e.sugar%></span>
+                                                                                                                                                                                                            <%}else if(e.sugar>e.text[6].maxValue){%>
+                                                                                                                                                                                                                <span style="color:#e95959"><%=e.sugar%></span>
+                                                                                                                                                                                                                <%}else{%>
+                                                                                                                                                                                                                    <span><%=e.sugar%></span>
+                                                                                                                                                                                                                    <%}%>
+                                                                                                                                                                                                                        <%}%>
+                                                                                                                                                                                                                            <%if(e.timeTypeName=='凌晨'){%>
+                                                                                                                                                                                                                                <%if(e.sugar<e.text[7].minValue){%>
+                                                                                                                                                                                                                                    <span style="color:#edb344"><%=e.sugar%></span>
+                                                                                                                                                                                                                                    <%}else if(e.sugar>e.text[7].maxValue){%>
+                                                                                                                                                                                                                                        <span style="color:#e95959"><%=e.sugar%></span>
+                                                                                                                                                                                                                                        <%}else{%>
+                                                                                                                                                                                                                                            <span><%=e.sugar%></span>
+                                                                                                                                                                                                                                            <%}%>
+                                                                                                                                                                                                                                                <%}%>
+
+
+
+
+
+                                                                                                                                                                                                                                                    <%}else if(e.type==2){%>
+                                                                                                                                                                                                                                                        <span>拒测</span>
+                                                                                                                                                                                                                                                        <%}else if(e.type==3){%>
+                                                                                                                                                                                                                                                            <span>外出</span>
+                                                                                                                                                                                                                                                            <%}else if(e.type==4){%>
+                                                                                                                                                                                                                                                                <span>进食</span>
+                                                                                                                                                                                                                                                                <%}else if(e.type==5){%>
+                                                                                                                                                                                                                                                                    <span>检查</span>
+                                                                                                                                                                                                                                                                    <%}else if(e.type==6){%>
+                                                                                                                                                                                                                                                                        <span>其他</span>
+                                                                                                                                                                                                                                                                        <%}%>
+                                            </td>
+                                            <td class="td13">
+                                                <span style='display:block;margin:0 auto;width:150px; overflow:hidden;white-space:nowrap;text-overflow:ellipsis;'><%=e.remark%></span>
+                                            </td>
+                                            <td class="td12">
+                                                <a href="javascript:void(0);" class="edit">编辑</a>&nbsp;&nbsp;
+                                                <a href="javascript:void(0);" class="delete" data-id=<%=e.testId%>>删除</a>
+                                            </td>
+                                        </tr>
+                                        <%})%>
+                                </script>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 删除弹窗 -->
+                    <div class="all-del hideItem">
+                        <div class="content">
+                            <div class="title">
+                                <span>删除</span>
+                                <a class="cancelBtn"></a>
+                            </div>
+                            <div class="tips">
+                                确定要删除该血糖值么？
+                            </div>
+                            <div class="btn">
+                                <div class="cancelBtn">取消</div>
+                                <div class="sureBtn">确定</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page"></div>
+                </div>
+            </div>
+            <div class="gis-addrecord main-template-block hideItem">
+                <div class="searchNav">
+                    <span>测量时间 : </span>
+                    <input type="text" readonly="readonly">
+                    <span> 至 </span>
+                    <input type="text" readonly="readonly">
+                    <button class="searchBtn">搜索</button>
+                    <button class="resetBtn">重置</button>
+                </div>
+                <div class="gis-addrecord-table">
+                    <table cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <td>测量时间</td>
+                                <td>血糖值(mmol/L)</td>
+                                <td>时段</td>
+                                <td>操作护士</td>
+                                <td>备注</td>
+                                <td>操作</td>
+                            </tr>
+                        </thead>
+                        <tbody class="gis-addrecord-list">
+                            <script type="text/template" id="addrecord-list-template">
+                                <%_.each(obj,function(e,i){%>
+                                    <tr>
+                                        <td><span><%=e.createTime%></span></td>
+                                        <td>
+                                            <%if(e.type==1){%>
+
+                                                <%if(e.timeTypeName=='空腹'){%>
+                                                    <%if(e.sugar<e.text[0].minValue){%><span style="color:#edb344"><%=e.sugar%></span>
+                                                        <%}else if(e.sugar>e.text[0].maxValue){%><span style="color:#e95959"><%=e.sugar%></span>
+                                                            <%}else{%><span><%=e.sugar%></span>
+                                                                <%}%>
+                                                                    <%}%>
+                                                                        <%if(e.timeTypeName=='早餐后'){%>
+                                                                            <%if(e.sugar<e.text[1].minValue){%><span style="color:#edb344"><%=e.sugar%></span>
+                                                                                <%}else if(e.sugar>e.text[1].maxValue){%><span style="color:#e95959"><%=e.sugar%></span>
+                                                                                    <%}else{%><span><%=e.sugar%></span>
+                                                                                        <%}%>
+                                                                                            <%}%>
+                                                                                                <%if(e.timeTypeName=='午餐前'){%>
+                                                                                                    <%if(e.sugar<e.text[2].minValue){%><span style="color:#edb344"><%=e.sugar%></span>
+                                                                                                        <%}else if(e.sugar>e.text[2].maxValue){%><span style="color:#e95959"><%=e.sugar%></span>
+                                                                                                            <%}else{%><span><%=e.sugar%></span>
+                                                                                                                <%}%>
+                                                                                                                    <%}%>
+                                                                                                                        <%if(e.timeTypeName=='午餐后'){%>
+                                                                                                                            <%if(e.sugar<e.text[3].minValue){%><span style="color:#edb344"><%=e.sugar%></span>
+                                                                                                                                <%}else if(e.sugar>e.text[3].maxValue){%><span style="color:#e95959"><%=e.sugar%></span>
+                                                                                                                                    <%}else{%><span><%=e.sugar%></span>
+                                                                                                                                        <%}%>
+                                                                                                                                            <%}%>
+                                                                                                                                                <%if(e.timeTypeName=='晚餐前'){%>
+                                                                                                                                                    <%if(e.sugar<e.text[4].minValue){%><span style="color:#edb344"><%=e.sugar%></span>
+                                                                                                                                                        <%}else if(e.sugar>e.text[4].maxValue){%><span style="color:#e95959"><%=e.sugar%></span>
+                                                                                                                                                            <%}else{%><span><%=e.sugar%></span>
+                                                                                                                                                                <%}%>
+                                                                                                                                                                    <%}%>
+                                                                                                                                                                        <%if(e.timeTypeName=='晚餐后'){%>
+                                                                                                                                                                            <%if(e.sugar<e.text[5].minValue){%>
+                                                                                                                                                                                <span style="color:#edb344"><%=e.sugar%></span>
+                                                                                                                                                                                <%}else if(e.sugar>e.text[5].maxValue){%>
+                                                                                                                                                                                    <span style="color:#e95959"><%=e.sugar%></span>
+                                                                                                                                                                                    <%}else{%>
+                                                                                                                                                                                        <span><%=e.sugar%></span>
+                                                                                                                                                                                        <%}%>
+                                                                                                                                                                                            <%}%>
+                                                                                                                                                                                                <%if(e.timeTypeName=='睡前'){%>
+                                                                                                                                                                                                    <%if(e.sugar<e.text[6].minValue){%>
+                                                                                                                                                                                                        <span style="color:#edb344"><%=e.sugar%></span>
+                                                                                                                                                                                                        <%}else if(e.sugar>e.text[6].maxValue){%>
+                                                                                                                                                                                                            <span style="color:#e95959"><%=e.sugar%></span>
+                                                                                                                                                                                                            <%}else{%>
+                                                                                                                                                                                                                <span><%=e.sugar%></span>
+                                                                                                                                                                                                                <%}%>
+                                                                                                                                                                                                                    <%}%>
+                                                                                                                                                                                                                        <%if(e.timeTypeName=='凌晨'){%>
+                                                                                                                                                                                                                            <%if(e.sugar<e.text[7].minValue){%>
+                                                                                                                                                                                                                                <span style="color:#edb344"><%=e.sugar%></span>
+                                                                                                                                                                                                                                <%}else if(e.sugar>e.text[7].maxValue){%>
+                                                                                                                                                                                                                                    <span style="color:#e95959"><%=e.sugar%></span>
+                                                                                                                                                                                                                                    <%}else{%>
+                                                                                                                                                                                                                                        <span><%=e.sugar%></span>
+                                                                                                                                                                                                                                        <%}%>
+                                                                                                                                                                                                                                            <%}%>
+
+                                                                                                                                                                                                                                                <%}else if(e.type==2){%>
+                                                                                                                                                                                                                                                    <span>拒测</span>
+                                                                                                                                                                                                                                                    <%}else if(e.type==3){%>
+                                                                                                                                                                                                                                                        <span>外出</span>
+                                                                                                                                                                                                                                                        <%}else if(e.type==4){%>
+                                                                                                                                                                                                                                                            <span>进食</span>
+                                                                                                                                                                                                                                                            <%}else if(e.type==5){%>
+                                                                                                                                                                                                                                                                <span>检查</span>
+                                                                                                                                                                                                                                                                <%}else if(e.type==6){%>
+                                                                                                                                                                                                                                                                    <span>其他</span>
+                                                                                                                                                                                                                                                                    <%}%>
+                                        </td>
+                                        <td>
+                                            <%=e.timeTypeName%>
+                                        </td>
+                                        <td>
+                                            <%=e.nurseName%>
+                                        </td>
+                                        <td>
+                                            <%=e.remark%>
+                                        </td>
+                                        <td class="addrecordBtn" testId="<%=e.testId%>"><a href="javascript:void (0)">补录 </a></td>
+                                    </tr>
+                                    <%})%>
+                            </script>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page"></div>
+                <!-- 补录弹出层 -->
+                <div class="addrecordPupop hideItem">
+                    <div class="content">
+                        <div class="title">
+                            <span>补录</span>
+                            <a href="javascript:void (0)" class="cancelBtn"></a>
+                        </div>
+                        <div class="text-content">
+                            <div class="item">
+                                <span>患者姓名 : </span>
+                                <div class="text-serach">
+                                    <input type="text" class="patient-name">
+                                    <div class="text-show scrollBar" style="display: none;">
+                                        <ul class="text-list">
+                                            <span>暂无数据</span>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <span>住院号 : </span>
+                                <input type="text" disabled="disabled" class="hospitalizationNo">
+                            </div>
+                            <div class="item">
+                                <span>入院日期 : </span>
+                                <input type="text" disabled="disabled" class="time">
+                            </div>
+                            <div class="item tips">请选择一个患者</div>
+                        </div>
+                        <div class="btn">
+                            <div class="cancelBtn">取消</div>
+                            <div class="sureBtn">确定</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="consultantsRecord hideItem">
+        <div class="content">
+            <div class="title">
+                <input type="text" id="printDateSel" value="" class="laydate-icon tc" onclick="laydate({format: 'YYYY-MM-DD',choose:chooseDate})">
+                <a href="javascript:void (0)" class="cancelBtn"></a>
+            </div>
+            <div class="print-content">
+                <table cellpadding="0" cellspacing="0">
+                    <thead style="display:table-header-group;">
+                        <!--<tr>-->
+                        <!--<td class="hospitalName" colspan="7" align="center">深圳市第一人民医院</td>-->
+                        <!--</tr>-->
+                        <tr>
+                            <td class="titleName" colspan="7" align="center">血糖监测交接班记录表</td>
+                        </tr>
+                        <tr class="sheetHead">
+                            <td class="td1">住院号</td>
+                            <td class="td2">患者姓名</td>
+                            <td class="td2">数值</td>
+                            <td class="td3">测量时间</td>
+                            <td class="td2">时段</td>
+                            <td class="td2">操作人</td>
+                            <td class="td4">备注</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <script type="text/template" id="gispatient-crewChange-sheet-template">
+                            <%_.each(obj,function(e,i){%>
+                                <tr>
+                                    <td class="td1">
+                                        <%=e.patient.hospitalizationNo%>
+                                    </td>
+                                    <td class="td2">
+                                        <%=e.patient.name%>
+                                    </td>
+                                    <td class="td2">
+                                        <%if(e.type==1){%>
+                                            <%=e.sugar%>
+                                                <%}else if(e.type==2){%>
+                                                    <span>拒测</span>
+                                                    <%}else if(e.type==3){%>
+                                                        <span>外出</span>
+                                                        <%}else if(e.type==4){%>
+                                                            <span>进食</span>
+                                                            <%}else if(e.type==5){%>
+                                                                <span>检查</span>
+                                                                <%}else if(e.type==6){%>
+                                                                    <span>其他</span>
+                                                                    <%}%>
+                                                                        <!-- <%=e.sugar%> -->
+                                    </td>
+                                    <td class="td3">
+                                        <%var time=(e.createTime).split(":")%>
+                                            <%print(time[0]+':'+time[1])%>
+                                    </td>
+                                    <td class="td2">
+                                        <%if(e.timeType==1){%>空腹
+                                            <%}else if(e.timeType==2){%>早餐后
+                                                <%}else if(e.timeType==3){%>午餐前
+                                                    <%}else if(e.timeType==4){%>午餐后
+                                                        <%}else if(e.timeType==5){%>晚餐前
+                                                            <%}else if(e.timeType==6){%>晚餐后
+                                                                <%}else if(e.timeType==7){%>睡前
+                                                                    <%}else if(e.timeType==8){%>凌晨
+                                                                        <%}%>
+                                    </td>
+                                    <td class="td2">
+                                        <%=e.nurseName%>
+                                    </td>
+                                    <td class="td4"></td>
+                                </tr>
+                                <%})%>
+                        </script>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="btncontent">
+                <button class="btn export">导出</button>
+                <button class="btn print">打印</button>
+            </div>
+        </div>
+    </div>
+    <!--<OBJECT id="WebBrowser1" height=0 width=0 classid=CLSID:8856F961-340A-11D0-A96B-00C04FD705A2 name=wb></OBJECT>-->
+
+    <div class="PopMask"></div>
+    <!--修改密码弹窗-->
+    <div class="updatePwdPop" id="updatePwdPop"></div>
+
+    <script type="text/javascript" src="../../../js/control/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../../../js/control/underscore.min.js"></script>
+    <script type="text/javascript" src="../../../js/control/laydate.min.js"></script>
+    <script type="text/javascript" src="../../../js/custom/config.js"></script>
+    <script type="text/javascript" src="../../../js/control/jq-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../js/control/jquery.jqprint-0.3.min.js"></script>
+
+    <script type="text/javascript" src="../../../js/custom/common.js"></script>
+    <script type="text/javascript" src="../../../js/custom/createPage.min.js"></script>
+    <script type="text/javascript" src="../../../js/custom/gisManage.js"></script>
+</body>
+
+</html>

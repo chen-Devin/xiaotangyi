@@ -1,0 +1,976 @@
+@charset "utf-8";
+@import "common";
+
+.main-content {
+	width: 100%;
+	height: 90%;
+	padding: 20px 20px 0;
+	.boxSizing;
+	// 自定义下拉框
+	.select{
+		display: inline-block;
+		position: relative;
+		height:28px;
+		min-width:100px;
+		max-width: 180px;
+		margin-left: 5px;
+		.select-btn{
+			position: relative;top:0;left:0; cursor: pointer;width: 100%;border: 1px solid @lineCol;
+			margin: 0;
+			width: 100%;
+			.boxSizing;
+			padding:0 10px;
+			height: 100%;
+			.borderRadius;
+			background: #fff;
+			text-align: left;
+		}
+		.triangle{
+			width:0;
+			height:0;
+			border-left:5px solid transparent;
+			border-right:5px solid transparent;
+			border-top:7px solid #111111;
+			position: absolute;
+			right:10px;
+			top:10px;
+			z-index: 10;
+		}
+		.list-show{
+			background:#fff;
+			min-width:100%;
+			//min-height:90px;
+			height:auto;
+			max-height:150px;
+			padding-bottom: 10px;
+			background:#fff;
+			overflow-y: auto;
+			border:1px solid @lineCol;
+			//border-top:none;
+			position: absolute;
+			bottom:0;
+			left: 0;
+			-webkit-transform: translateY(100%);
+			-moz-transform: translateY(100%);
+			-ms-transform: translateY(100%);
+			-o-transform: translateY(100%);
+			transform: translateY(100%);
+			z-index: 100;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+		}
+		.select-list{
+			width:100%;
+			height:auto;
+			background:#fff;
+			z-index: 222;
+			li{
+				//border-left:1px solid @lineCol;
+				width:100%;height:36px;
+				line-height:36px;
+				text-align: center;
+				cursor: pointer;
+				font-size:14px;
+				color:#000;
+				.boxSizing;
+			}
+			li:hover{
+				background:#e6eaed;
+			}
+		}
+
+	}
+	/*自定义模糊输入框*/
+	.text-serach{
+		.select;
+		display: inline-block;
+		position: relative;
+		height:28px;
+		min-width:100px;
+		//width: 140px;
+		margin-left: 0;
+		input{cursor: text;}
+		.text-show{
+			.list-show;
+			left: -1px;
+			min-width: 190px !important;
+			box-shadow: 0px 0px 1px @lineCol;
+			width: auto!important;
+			.borderRadius;
+			.text-list{
+				.select-list;
+				li{
+					width: 100%;
+					display: table;text-align: left;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					padding:0 5px;
+					span{display: table-cell;width:33%;}
+				}
+			}
+			.text-list>span{
+				text-align: center;
+			}
+		}
+	}
+
+	/*左边子菜单*/
+	.leftNav{
+		height:100%;
+		background:#fff;
+		width: 260px;
+		float: left;
+		margin-right:2%;
+		ul{
+			width:100%;
+			li{
+				width: 100%;height:60px;
+				background:#fff;
+				cursor: pointer;
+				a{
+					display: block;
+					width: 100%;
+					.boxSizing;
+					padding-left: 40px;
+					height:60px;
+					line-height:60px;
+					font-size:16px;
+					color:#819cad;
+					background:#fff;
+					vertical-align: middle;
+					img{width:30px;vertical-align: middle;margin-right:25px;}
+				}
+			}
+			.active{
+				a{
+					background:#ebf0f3;
+					color:@blue;
+				}
+			}
+		}
+	}
+
+	.rightBox{
+		min-height: 100%;
+		background: #fff;
+		overflow: hidden;
+	}
+
+	.all-content {
+		width: 100%;
+		min-height: 100%;
+		background: #fff;
+	}
+	.searchNav {
+		width: 100%;
+		background: #fff;
+		height: 68px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding: 0 20px;
+		font-size: 14px;
+		.clearfix {
+			border-bottom: 1px solid @lineCol;
+			width: 100%;
+			height: 68px;
+			padding: 20px 0;
+		}
+		.search {
+			height: 100%;
+			width: 280px;
+			border: 1px solid @lineCol;
+			line-height: 28px;
+			height: 28px;
+			color: #999;
+			float: left;
+			.borderRadius;
+			position: relative;
+			img {
+				height: 12px;
+				margin-top: 7px;
+				position: absolute;
+				left: 10px;
+			}
+			input {
+				padding-left: 30px;
+				width: 100%;
+				.boxSizing;
+				padding-right: 10px;
+
+			}
+			input::-webkit-input-placeholder { /* WebKit browsers*/
+				color: #999;
+			}
+			input:-moz-placeholder { /* Mozilla Firefox 4 to 18*/
+				color: #999;
+			}
+			input::-moz-placeholder { /* Mozilla Firefox 19+*/
+				color: #999;
+			}
+			input:-ms-input-placeholder { /* Internet Explorer 10+*/
+				color: #999;
+			}
+		}
+		.choose-time {
+			//width:107px;
+			height: 28px;
+			line-height: 28px;
+			float: left;
+			margin-right:20px;
+			select {
+				.borderRadius;
+				padding: 5px 10px;
+				border: 1px solid @lineCol;
+			}
+		}
+		.btn {
+			float: left;
+			padding: 0 12px;
+			height: 28px;
+			border: 1px solid @lineCol;
+			line-height: 28px;
+			font-size: 14px;
+			color: #111;
+			background: #fff;
+			.borderRadius;
+			margin: 0 5px;
+			cursor: pointer;
+		}
+		.activeBtn {
+			background: @blue;
+			color: #fff;
+			border: none;
+		}
+		.searchBtn {
+			width: 60px;
+			height: 28px;
+			font-szie: 14px;
+			color: #fff;
+			text-align: center;
+			line-height: 28px;
+			background: @blue;
+			margin-right: 20px;
+			.borderRadius;
+			cursor: pointer;
+		}
+		.resetBtn {
+			.searchBtn;
+			background: #fff;
+			color:@blue;
+			border: 1px solid @blue;
+		}
+		.addBloodSugar {
+            width: 80px;
+            height: 28px;
+            font-szie: 14px;
+            color: #fff;
+            text-align: center;
+            line-height: 28px;
+            background: @blue;
+            margin-right: 20px;
+            .borderRadius;
+            cursor: pointer;
+        }
+        .printRecordBtn {
+            width: 140px;
+            height: 28px;
+            font-szie: 14px;
+            color: #fff;
+            text-align: center;
+            line-height: 28px;
+            background: @greenBtn;
+            .borderRadius;
+            cursor: pointer;
+        }
+    }
+    .patientList {
+        width: 100%;
+        .boxSizing;
+        padding: 26px 20px 0;
+        background: #fff;
+        margin-bottom: 40px;
+        background: #fff;
+        .list {
+            width: 100%;
+            border-collapse: collapse;
+            thead {
+                width: 100%;
+                tr {
+                    width: 100%;
+                    background: @blue;
+                    td {
+                        color: #fff;
+                        background: @blue;
+                        margin: 0;
+                        height: 40px;
+                        text-align: center;
+                        border: 1px solid @lineCol;
+                    }
+                }
+            }
+            tr {
+                width: 100%;
+                td {
+                    .boxSizing;
+                    border: 1px solid @lineCol;
+                    font-size: 14px;
+                    text-align: center;
+                    height: 40px;
+                    .boxSizing;
+                    .text;
+                    padding: 0 5px;
+                }
+                .td1 {
+                    width: 118px;
+                }
+                .td9 {
+                    width: 203px;
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    color: #333;
+                }
+            }
+        }
+    }
+    .page {
+        margin-top: 10px;
+        background: #fff;
+    }
+    .gis-addrecord {
+        .boxSizing;
+        width: 100%;
+        padding: 0 20px;
+        .searchNav {
+            padding: 0;
+            border-bottom: 1px solid @lineCol;
+            font-size: 14px;
+            color: #111;
+            .flex;
+            .align-items-center;
+            display: none;
+            span {
+                margin-right: 5px;
+            }
+            span:nth-of-type(2) {
+                margin-left: 5px;
+            }
+            input {
+                height: 28px;
+                width: 140px;
+                border: 1px solid @lineCol;
+                .borderRadius;
+                cursor: pointer;
+            }
+            .searchBtn {
+                margin-right: 10px;
+                margin-left: 20px;
+            }
+        }
+        .gis-addrecord-table {
+            padding: 20px 0;
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                thead {
+                    tr {
+                        td {
+                            border: 1px solid @lineCol;
+                            text-align: center;
+                            font-size: 14px;
+                            color: #fff;
+                            background: @blue;
+                            height: 40px;
+                        }
+                        td:nth-of-type(1) {
+                            width: 15%;
+                        }
+                        td:nth-of-type(2) {
+                            width: 15%
+                        }
+                        td:nth-of-type(3) {
+                            width: 15%;
+                        }
+                        td:nth-of-type(4) {
+                            width: 15%;
+                        }
+                        td:last-child {
+                            width: 10%;
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            border: 1px solid @lineCol;
+                            text-align: center;
+                            font-size: 14px;
+                            color: #111;
+                            height: 40px;
+                            a {
+                                color: @blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .addrecordPupop {
+            // 补录弹窗
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.3);
+            .content {
+                width: 270px; //height:262px;
+                background: #fff;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                .borderRadius;
+                .boxSizing;
+                padding: 0 20px 75px;
+                .title {
+                    width: 100%;
+                    height: 60px;
+                    line-height: 60px;
+                    margin: 0 auto;
+                    font-size: 16px;
+                    color: #333; //border-bottom: 1px solid #eceff1;
+                    a {
+                        width: 24px;
+                        height: 24px;
+                        float: right;
+                        margin-top: 18px;
+                        cursor: pointer;
+                        background: url("../image/close_but_normal.png") no-repeat center;
+                        background-size: 100%;
+                        cursor: pointer;
+                    }
+                    a:hover {
+                        background: url("../image/close_but_press.png") no-repeat center;
+                    }
+                }
+                .text-content {
+                    .item {
+                        font-size: 14px;
+                        color: #111;
+                        margin-bottom: 10px;
+                        input {
+                            border: 1px @lineCol solid;
+                            height: 30px;
+                            width: 140px;
+                            .borderRadius;
+                            .boxSizing;
+                            padding: 0 10px;
+                        }
+                        input:disabled {
+                            color: #8b959b;
+                            font-size: 14px;
+                            background-color: #eceff1;
+                        }
+                    }
+                    .item>span {
+                        display: inline-block;
+                        width: 80px;
+                        text-align: right;
+                    }
+                    .tips {
+                        font-size: 14px;
+                        color: red;
+                        width: 100%;
+                        text-align: center;
+                        display: none;
+                    }
+                }
+                .btn {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 29px;
+                    height: 36px;
+                    left: 0;
+                    text-align: center;
+                    .cancelBtn {
+                        .borderRadius;
+                        background: #fff;
+                        width: 80px;
+                        height: 36px;
+                        border: 1px solid #cecece;
+                        font-size: 16px;
+                        color: #111;
+                        text-align: center;
+                        margin-right: 20px;
+                        line-height: 36px;
+                        display: inline-block;
+                        cursor: pointer;
+                    }
+                    .sureBtn {
+                        .cancelBtn;
+                        background: @blue;
+                        color: #fff;
+                        margin: 0;
+                        border: none;
+                    }
+                }
+            }
+        }
+    } // 自己添加的样式开始
+    //添加血糖弹窗
+    .addSugarPop,
+    .addRecordPop {
+        display: none;
+        min-width: 382px; //min-height: 310px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -191px;
+        margin-top: -20%;
+        background-color: #fff; //border: 1px solid #000000;
+        border-radius: 8px;
+        padding: 0 15px 20px 15px;
+        z-index: 11;
+        .clearfix {
+            border-bottom: none !important;
+        }
+        .addSugarTitile {
+            width: 100%;
+            height: 50px;
+            line-height: 20px;
+            font-size: 16px;
+            color: #111;
+            border-bottom: 1px solid @lineCol !important;
+            a {
+                width: 44px;
+                height: 30px;
+                background: url("../image/close_but2.png") no-repeat center/44px 44px;
+                margin-top: -3px;
+            }
+        }
+        .addSugarContent {
+            padding: 0px 85px 10px 10px; //padding-left: 10px;
+            .list {
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+                color: #111;
+                position: relative;
+                p {
+                    width: 75px;
+                    text-align: right;
+                    line-height: 30px;
+                }
+                p.addRecordLeftTitile {
+                    width: 100px;
+                }
+                input {
+                    width: 120px;
+                    height: 30px;
+                    border-radius: 4px;
+                    border: 1px solid @lineCol;
+                    text-align: center;
+                }
+                .measureTime {
+                    width: 180px;
+                }
+                span {
+                    color: #666;
+                }
+                .noTips {
+                    color: red;
+                    font-size: 12px;
+                    display: none;
+                }
+            }
+            .listLast {
+                height: 100%;
+                margin-bottom: 10px;
+                textarea {
+                    width: 180px;
+                    min-height: 110px;
+                    outline: none;
+                    resize: none;
+                    border: 1px solid @lineCol;
+                    border-radius: 4px;
+                    padding: 5px;
+                    overflow: hidden;
+                }
+            } //选项框
+            .select_box {
+                width: 120px;
+                border-radius: 4px;
+                position: relative;
+                font-size: 14px;
+                text-align: center;
+                .select_txt {
+                    cursor: pointer;
+                }
+                .option_box {
+                    display: none;
+                    width: 100%;
+                    max-height: 144px;
+                    overflow-y: auto;
+                    border: 1px solid #d3dadf;
+                    position: absolute;
+                    z-index: 32;
+                    a {
+                        display: block;
+                        height: 36px;
+                        line-height: 36px;
+                        background-color: #fff;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                    a:hover {
+                        background-color: #ebf0f3;
+                    }
+                }
+            } //按钮
+            button {
+                display: block;
+                width: 80px;
+                height: 36px;
+                border: 1px solid #d3dadf;
+                border-radius: 5px;
+                text-align: center;
+                line-height: 36px;
+                background-color: transparent;
+                font-size: 16px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+            button.active {
+                background-color: #2fa6f0;
+                color: #fff;
+                margin-left: 20px;
+            } // 三角形箭头
+            .triangle {
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 7px solid #111;
+                position: absolute;
+                right: 10px;
+                top: 15px;
+                z-index: 10;
+            }
+            .patientName {
+                margin-left: -5px;
+            }
+            .patientNameSeach {
+                margin-left: 5px;
+            }
+            .text-list span {
+                color: #000;
+            }
+            .choiceOnePatient {
+                display: none;
+                position: absolute;
+                left: 80px;
+                top: 50px;
+                color: red;
+            }
+        }
+    } // 编辑/删除
+    .edit,
+    .delete {
+        color: #1d9eef;
+    } // 删除弹出样式
+    .all-del {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        background: rgba(0, 0, 0, 0.3);
+        .content {
+            width: 382px;
+            height: 262px;
+            background: #fff;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            margin-left: -191px;
+            margin-top: -131px;
+            .borderRadius;
+            .title {
+                width: 342px;
+                height: 60px;
+                line-height: 60px;
+                margin: 0 auto;
+                font-size: 16px;
+                color: #333;
+                border-bottom: 1px solid #eceff1;
+                a {
+                    width: 24px;
+                    height: 24px;
+                    float: right;
+                    margin-top: 18px;
+                    cursor: pointer;
+                    background: url("../image/close_but_normal.png") no-repeat center;
+                    background-size: 100%;
+                    cursor: pointer;
+                }
+                a:hover {
+                    background: url("../image/close_but_press.png") no-repeat center;
+                }
+            }
+            .tips {
+                width: 100%;
+                font-size: 18px;
+                text-align: center;
+                height: 100px;
+                line-height: 100px;
+            }
+            .btn {
+                position: absolute;
+                bottom: 30px;
+                right: 40px;
+                .cancelBtn {
+                    .borderRadius;
+                    background: #fff;
+                    width: 80px;
+                    height: 36px;
+                    border: 1px solid #cecece;
+                    font-size: 16px;
+                    color: #111;
+                    text-align: center;
+                    margin-right: 20px;
+                    line-height: 36px;
+                    display: inline-block;
+                    cursor: pointer;
+                }
+                .sureBtn {
+                    .cancelBtn;
+                    background: @blue;
+                    color: #fff;
+                    margin: 0;
+                    border: none;
+                }
+            }
+        }
+    } // 自己添加的样式结束
+}
+.consultantsRecord {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	background: rgba(0, 0, 0, 0.3);
+	overflow-y: scroll;
+	.content {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		background: #fff;
+
+		-webkit-transform: translate(-50%,-50%);
+		-moz-transform: translate(-50%,-50%);
+		-ms-transform: translate(-50%,-50%);
+		-o-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+		width: 60%;
+		.boxSizing;
+		padding: 0 20px;
+		.title {
+			position: relative;
+			width: 100%;
+			height: 60px;
+			color: #111;
+			font-size: 16px;
+			line-height: 60px;
+			background: #fff;
+			input{
+				width: 140px;
+				height: 28px;
+				border:1px solid @lineCol;
+				border-radius: 3px;
+			}
+			a {
+				width: 24px;
+				height: 24px;
+				background: url("../image/close_but_normal.png") no-repeat center;
+				background-size: 100%;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				margin-top: -12px;
+				cursor: pointer;
+			}
+			a:hover {
+				background: url("../image/close_but_press.png") no-repeat center;
+			}
+		}
+		.btncontent {
+			width: 100%;
+			text-align: center;
+			padding: 20px 0;
+			.btn {
+				width: 120px;
+				height: 36px;
+				font-size: 16px;
+				.borderRadius;
+				text-align: center;
+				background: @greenBtn;
+				cursor: pointer;
+				color: #fff;
+			}
+			.print {
+				background: @blue;
+				border: none;
+				margin-left: 20px;
+			}
+		}
+
+		.print-content {
+			width: 100%;
+			height: 500px;
+			overflow-y: scroll;
+			border: 1px solid @lineCol;
+			table {
+				width: 95%;
+				margin:20px auto;
+				font-size: 12px;
+				color: #111;
+				text-align: center;
+				border-collapse: collapse;
+				thead {
+					tr {
+						.hospitalName {
+							font-size: 20px;
+							color: #666;
+							//line-height: 54px;
+							width: 100%;
+							height: 40px;
+							vertical-align: top;
+						}
+						.titleName {
+							width: 100%;
+							font-size: 24px;
+							color: #111;
+							border-bottom: 1px solid #999;
+							height: 65px;
+							vertical-align: top;
+						}
+					}
+					.sheetHead{
+						height: 34px;
+						td{
+							border: 1px solid #999;
+						}
+					}
+				}
+				tbody {
+					tr {
+						height: 34px;
+						td {
+							border: 1px solid #999;
+						}
+						.td1 {
+							width: 15%;
+						}
+						.td2 {
+							width: 9%;
+						}
+						.td3 {
+							width: 22%;
+						}
+						.td4 {
+							width: 27%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@page {
+	size: A4;
+	margin: 1cm;
+}
+
+@media print {
+	/* TODO: 添加打印样式 */
+
+	.print-content {
+		width: auto;
+		//padding-top: 35px;
+		.boxSizing;
+		margin: auto;
+	}
+
+	table {
+		width: 90%;
+		margin:auto;
+		//margin: 10px auto;
+		font-size: 22px;
+		color: #111;
+		text-align: center;
+		border-collapse: collapse;
+		position: relative;
+		thead {
+			//margin: 100px auto 20px auto;
+			tr {
+				.hospitalName {
+					font-size: 30px;
+					color: #666;
+					line-height: 64px;
+					text-align: center;
+					width: 100%;
+				}
+				.titleName {
+					width: 100%;
+					text-align: center;
+					font-size: 34px;
+					color: #111;
+					height: 100px;
+					vertical-align: middle;
+				}
+			}
+			.sheetHead{
+				height: 75px;
+				td{
+					border: 1px solid #000;
+				}
+			}
+		}
+		tbody {
+			tr {
+				height: 70px;
+				td {
+					border: 1px solid #000;
+					padding: 0 10px;
+				}
+				.td1 {
+					width: 15%;
+				}
+				.td2 {
+					width: 9%;
+				}
+				.td3 {
+					width: 22%;
+				}
+				.td4 {
+					width: 27%;
+				}
+			}
+		}
+	}
+}

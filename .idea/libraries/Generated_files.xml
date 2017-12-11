@@ -1,0 +1,47 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/js/custom/intelligentWarn.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/index.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/patientManage.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/patientInfo.min.js" />
+        <item url="file://$PROJECT_DIR$/js/control/jquery-1.12.4.min.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/qualityControl.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/common.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/setting.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/gisManage.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/consultants.min.js" />
+        <item url="file://$PROJECT_DIR$/js/control/jquery.jqprint-0.3.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/patientTestEchart.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/config.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/login.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/countAnalysis.min.js" />
+        <item url="file://$PROJECT_DIR$/js/custom/createPage.min.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/js/custom/patientTestEchart.min.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/patientTestEchart.min.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/createPage.min.min.js" />
+      <root url="file://$PROJECT_DIR$/js/control/jq-migrate-1.2.1.min.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/intelligentWarn.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/index.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/patientManage.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/patientInfo.min.js" />
+      <root url="file://$PROJECT_DIR$/js/control/jquery-1.12.4.min.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/qualityControl.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/common.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/setting.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/gisManage.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/consultants.min.js" />
+      <root url="file://$PROJECT_DIR$/js/control/jquery.jqprint-0.3.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/patientTestEchart.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/config.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/login.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/countAnalysis.min.js" />
+      <root url="file://$PROJECT_DIR$/js/custom/createPage.min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
